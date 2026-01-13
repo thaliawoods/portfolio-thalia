@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import { projects, type Locale } from "@/data/projects";
+import ImageHover from "@/components/ImageHover";
 
 export default async function HomePage({
   params,
@@ -12,88 +12,122 @@ export default async function HomePage({
   const t =
     locale === "fr"
       ? {
-          headline: "Développeuse web — Front / Full-stack",
-          sub: "Next.js · React · TypeScript · Strapi · Prisma",
-          cta: "Voir tout le portfolio",
-          section: "PROJETS",
-          view: "Voir →",
+          role: "Développeuse web — Front / Full-stack",
+          blurb:
+            "Je conçois des interfaces claires et des produits utiles, avec un soin particulier pour l’UX/UI, la qualité du code et la mise en production.",
+          cta: "Voir le portfolio",
+          cta2: "Me contacter",
+          selection: "SÉLECTION",
+          open: "Ouvrir →",
         }
       : {
-          headline: "Web Developer — Front / Full-stack",
-          sub: "Next.js · React · TypeScript · Strapi · Prisma",
-          cta: "View full portfolio",
-          section: "PROJECTS",
-          view: "View →",
+          role: "Web developer — Front / Full-stack",
+          blurb:
+            "I build clean interfaces and useful products, with a strong focus on UX/UI, code quality, and shipping to production.",
+          cta: "View portfolio",
+          cta2: "Contact",
+          selection: "SELECTED",
+          open: "Open →",
         };
 
-  const ordered = [...projects].sort(
-    (a, b) => Number(!!b.featured) - Number(!!a.featured)
-  );
-
-  // Home = limiter un peu
-  const items = ordered.slice(0, 9);
+  // 2 projets visuels à droite
+  const featured = [...projects].filter((p) => p.featured).slice(0, 2);
 
   return (
-    <main className="mx-auto max-w-5xl px-4 py-10">
-      <div className="mb-10 flex items-end justify-between gap-6">
-        <div>
-          <h1 className="text-xl tracking-wide">{t.headline}</h1>
-          <p className="mt-2 text-sm text-black/60">{t.sub}</p>
+    <main className="mx-auto max-w-6xl px-6 py-14">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        {/* LEFT */}
+        <div className="lg:col-span-4">
+          <h1 className="text-3xl tracking-wide">Thalia Woods</h1>
+
+          <div className="mt-3 text-sm tracking-wide text-black/60">
+            {t.role}
+          </div>
+
+          <p className="mt-8 text-sm leading-relaxed text-black/70 max-w-sm">
+            {t.blurb}
+          </p>
+
+          <div className="mt-10 flex gap-3">
+            <Link
+              href={`/${locale}/portfolio`}
+              className="border border-black/20 bg-white px-5 py-2.5 text-sm hover:bg-black hover:text-white transition"
+            >
+              {t.cta}
+            </Link>
+
+            <Link
+              href={`/${locale}/info`}
+              className="border border-black/10 bg-white px-5 py-2.5 text-sm hover:bg-black hover:text-white transition"
+            >
+              {t.cta2}
+            </Link>
+          </div>
         </div>
 
-        <Link
-          href={`/${locale}/portfolio`}
-          className="text-sm underline underline-offset-4"
-        >
-          {t.cta}
-        </Link>
-      </div>
-
-      <div className="text-xs tracking-widest text-black/50 mb-3">
-        {t.section}
-      </div>
-
-      {/* ✅ rectangles plus grands : 3 colonnes desktop */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {items.map((p) => (
+        {/* CENTER - carré portfolio avec image statique au hover */}
+        <div className="lg:col-span-5">
           <Link
-            key={p.slug}
-            href={`/${locale}/projects/${p.slug}`}
-            className="group relative border border-black/10 bg-black/[0.03] hover:bg-black/[0.05] transition overflow-hidden"
+            href={`/${locale}/portfolio`}
+            className="group relative block border border-black/10 bg-white h-[420px] overflow-hidden"
+            aria-label="Open portfolio"
           >
-            {/* image au hover */}
+            {/* preview image au hover */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-              <Image
-                src={p.cover.src}
-                alt={p.cover.alt}
-                fill
-                className="object-cover"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/portfolio-preview.png"
+                alt="Portfolio preview"
+                className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black/35" />
+              <div className="absolute inset-0 bg-white/55" />
             </div>
 
-            {/* texte */}
-            <div className="relative p-4 min-h-[160px] flex flex-col justify-between">
-              <div>
-                <div className="text-sm text-black/90 group-hover:text-white">
-                  {p.title[locale]}
+            {/* contenu central */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center px-8">
+                <div className="text-xs tracking-widest text-black/40 mb-5">
+                  PORTFOLIO
+                </div>
+                <div className="text-3xl tracking-[0.18em] uppercase">
+                  THALIA WOODS
                 </div>
 
-                <div className="mt-2 text-xs leading-relaxed text-black/60 group-hover:text-white/80 line-clamp-4">
-                  {p.subtitle[locale]}
+                <div className="mt-6 text-xs text-black/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                  {t.open}
                 </div>
-              </div>
-
-              <div className="mt-3 flex items-center justify-between text-xs text-black/50 group-hover:text-white/80">
-                <span>{p.years}</span>
-                <span className="opacity-0 group-hover:opacity-100 transition-opacity underline underline-offset-4">
-                  {t.view}
-                </span>
               </div>
             </div>
           </Link>
-        ))}
+        </div>
+
+        {/* RIGHT - images noir & blanc -> couleur au hover */}
+        <div className="lg:col-span-3">
+          <div className="flex items-center justify-between mb-3">
+            <div className="text-xs tracking-widest text-black/40">
+              {t.selection}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            {featured.map((p) => (
+              <Link
+                key={p.slug}
+                href={`/${locale}/projects/${p.slug}`}
+                className="group block border border-black/10 bg-white overflow-hidden"
+                aria-label={`Open ${p.title[locale]}`}
+              >
+                <div className="relative aspect-[4/5]">
+                  <ImageHover
+                    src={p.cover.src}
+                    alt={p.cover.alt}
+                    sizes="(max-width: 1024px) 50vw, 320px"
+                  />
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
     </main>
   );
