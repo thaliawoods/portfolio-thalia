@@ -1,4 +1,4 @@
-import { projects, Locale } from "@/data/projects";
+import { projects, type Locale } from "@/data/projects";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -33,12 +33,22 @@ export default async function ProjectPage({
         <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
           <div>
             <div className="text-xs text-black/50 mb-2">ROLE</div>
-            <ul className="space-y-1">{project.roles.map((r) => <li key={r}>{r}</li>)}</ul>
+            <ul className="space-y-1">
+              {project.roles.map((r) => (
+                <li key={r}>{r}</li>
+              ))}
+            </ul>
           </div>
+
           <div>
             <div className="text-xs text-black/50 mb-2">STACK</div>
-            <ul className="space-y-1">{project.stack.map((s) => <li key={s}>{s}</li>)}</ul>
+            <ul className="space-y-1">
+              {project.stack.map((s) => (
+                <li key={s}>{s}</li>
+              ))}
+            </ul>
           </div>
+
           <div>
             <div className="text-xs text-black/50 mb-2">LINKS</div>
             <ul className="space-y-1">
@@ -54,13 +64,34 @@ export default async function ProjectPage({
         </div>
       </div>
 
-      <div className="space-y-6">
-        {project.gallery.map((img) => (
-          <div key={img.src} className="border border-black/10">
-            <Image src={img.src} alt={img.alt} width={1600} height={1100} className="w-full h-auto" />
-          </div>
-        ))}
+      {/* ✅ Toujours la cover en premier */}
+      <div className="mb-6 border border-black/10">
+        <Image
+          src={project.cover.src}
+          alt={project.cover.alt}
+          width={1600}
+          height={1000}
+          className="w-full h-auto"
+          priority
+        />
       </div>
+
+      {/* ✅ Puis la galerie si elle existe */}
+      {project.gallery.length > 0 && (
+        <div className="space-y-6">
+          {project.gallery.map((img) => (
+            <div key={img.src} className="border border-black/10">
+              <Image
+                src={img.src}
+                alt={img.alt}
+                width={1600}
+                height={1100}
+                className="w-full h-auto"
+              />
+            </div>
+          ))}
+        </div>
+      )}
     </main>
   );
 }

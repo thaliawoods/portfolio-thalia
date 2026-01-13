@@ -18,20 +18,11 @@ export type Project = {
   featured?: boolean;
 };
 
-const cover = (slug: string) => ({
-  src: `/projects/${slug}/cover.jpg`,
-  alt: `${slug} cover`,
-});
-
-const gallery = (slug: string) => [
-  { src: `/projects/${slug}/01.jpg`, alt: `${slug} screenshot 1` },
-  { src: `/projects/${slug}/02.jpg`, alt: `${slug} screenshot 2` },
-  { src: `/projects/${slug}/03.jpg`, alt: `${slug} screenshot 3` },
-];
+const img = (src: string, alt: string) => ({ src, alt });
 
 export const projects: Project[] = [
   // =========================
-  // FEATURED (actuels)
+  // FEATURED
   // =========================
   {
     slug: "jardin-solidaire",
@@ -51,86 +42,109 @@ export const projects: Project[] = [
       { label: "Live", href: "https://jardin-solidaire.vercel.app" },
       { label: "GitHub", href: "https://github.com/thaliawoods/JardinSolidaire" },
     ],
-    cover: cover("jardin-solidaire"),
-    gallery: gallery("jardin-solidaire"),
+    cover: img("/projects/jardin-solidaire/cover.png", "JardinSolidaire cover"),
+    gallery: [
+      // (tu n’as que cover pour le moment d’après ta capture)
+      // Ajoute 01/02/03 si tu veux, et je les mets ici
+    ],
     featured: true,
   },
 
   {
-    slug: "julaya-cms-strapi-next",
+    slug: "landing-page-julaya",
     years: "2025–2026",
-    title: {
-      fr: "Julaya — CMS Strapi + Landing/Blog",
-      en: "Julaya — Strapi CMS + Landing/Blog",
-    },
+    title: { fr: "Julaya — Landing Page", en: "Julaya — Landing Page" },
     subtitle: {
-      fr: "CMS headless (Strapi) connecté à une landing Next.js + blog (i18n) : modélisation contenu, composants réutilisables, fetch, perf/SEO.",
-      en: "Headless CMS (Strapi) connected to a Next.js landing + blog (i18n): content modeling, reusable components, data fetching, performance/SEO.",
+      fr: "Intégration front & composants, amélioration UI/UX et performance.",
+      en: "Front-end integration & components, UI/UX improvements and performance.",
     },
     content: {
-      fr: "Objectif : autonomie des équipes marketing/communication, amélioration de la maintenabilité et des performances, tout en gardant une UI cohérente côté front.",
-      en: "Goal: empower marketing teams, improve maintainability and performance while keeping a consistent UI on the front-end.",
+      fr: "Travail sur une landing page Next.js en production : composants réutilisables, intégration design, attention SEO/perf.",
+      en: "Worked on a production Next.js landing page: reusable components, design integration, SEO/performance focus.",
     },
-    roles: ["Front-end", "CMS integration", "Content modeling"],
-    stack: ["Next.js", "TypeScript", "Strapi", "i18n", "SEO"],
+    roles: ["Front-end"],
+    stack: ["Next.js", "React", "TypeScript"],
     links: [{ label: "Case study", href: "#" }],
-    cover: cover("julaya-cms-strapi-next"),
-    gallery: gallery("julaya-cms-strapi-next"),
+    cover: img("/projects/landing-page-julaya/cover.png", "Julaya landing cover"),
+    gallery: [],
     featured: true,
   },
 
   {
-    slug: "julaya-pricing-strapi",
+    slug: "blog-julaya",
     years: "2025–2026",
-    title: {
-      fr: "Julaya — Pricing dynamique (JSON → Strapi)",
-      en: "Julaya — Dynamic pricing (JSON → Strapi)",
-    },
+    title: { fr: "Julaya — Blog", en: "Julaya — Blog" },
     subtitle: {
-      fr: "Migration d’une page pricing statique vers Strapi : structure par pays/sections/lignes (multi-niveaux) + rendu dynamique côté Next.js.",
-      en: "Migrated a static pricing page to Strapi: country/sections/rows (multi-level) + dynamic rendering in Next.js.",
+      fr: "Blog + contenu : intégration et structuration, routes et pages article.",
+      en: "Blog + content: integration and structuring, routes and article pages.",
     },
     content: {
-      fr: "Objectif : sortir la donnée du code, permettre des mises à jour sans déploiement, et garder un rendu lisible et robuste (cas limites, champs optionnels).",
-      en: "Goal: move data out of code, enable updates without deployments, and keep rendering robust (edge cases, optional fields).",
+      fr: "Intégration blog Next.js : pages listing/détail, composants (topic/author), logique de fetch et robustesse des données.",
+      en: "Next.js blog integration: listing/detail pages, components (topic/author), fetch logic and data robustness.",
     },
-    roles: ["Front-end", "Data modeling", "Strapi integration"],
+    roles: ["Front-end", "Content integration"],
     stack: ["Next.js", "TypeScript", "Strapi"],
     links: [{ label: "Case study", href: "#" }],
-    cover: cover("julaya-pricing-strapi"),
-    gallery: gallery("julaya-pricing-strapi"),
+    cover: img("/projects/blog-julaya/cover.png", "Julaya blog cover"),
+    gallery: [],
     featured: true,
   },
 
   // =========================
-  // ANCIENS PROJETS
+  // AUTRES PROJETS
   // =========================
   {
-    slug: "safe-or-not",
+    slug: "besti-blog",
     years: "2024",
-    title: { fr: "Safe or Not?", en: "Safe or Not?" },
+    title: { fr: "Besti-Blog", en: "Besti-Blog" },
     subtitle: {
-      fr: "App iOS SwiftUI : médecins classés par niveau de confiance, avis et alertes.",
-      en: "SwiftUI iOS app: doctors ranked by trust level, reviews and safety alerts.",
+      fr: "Micro-blog photo (type Instagram) : posts image+texte, profil, feed.",
+      en: "Photo micro-blog (Instagram-like): image+text posts, profile, feed.",
     },
     content: {
-      fr: "Projet mobile SwiftUI : navigation, écrans liste/détail, publication d’avis et gestion d’alertes.",
-      en: "SwiftUI mobile project: navigation, list/detail screens, posting reviews and handling alerts.",
+      fr: "Projet collectif : UI Tailwind, posts, pages profil/feed, environnement Docker + DB.",
+      en: "Team project: Tailwind UI, posts, profile/feed pages, Docker environment + DB.",
     },
-    roles: ["iOS", "UI"],
-    stack: ["SwiftUI", "iOS"],
+    roles: ["Full-stack (collectif)"],
+    stack: ["PHP", "Tailwind", "PostgreSQL", "Docker"],
     links: [{ label: "GitHub", href: "#" }],
-    cover: cover("safe-or-not"),
-    gallery: gallery("safe-or-not"),
+    cover: img("/projects/besti-blog/cover.png", "Besti-Blog cover"),
+    gallery: [
+      img("/projects/besti-blog/01.png", "Besti-Blog screenshot 1"),
+      img("/projects/besti-blog/02.png", "Besti-Blog screenshot 2"),
+    ],
   },
 
   {
-    slug: "cash-management",
+    slug: "vintage-gallery",
     years: "2024",
-    title: { fr: "Cash Management", en: "Cash Management" },
+    title: { fr: "Vintage Gallery", en: "Vintage Gallery" },
     subtitle: {
-      fr: "Gestion de caisse et d’inventaire pour un club social : React + Express + PostgreSQL (Supabase).",
-      en: "Cash register and inventory management for a social club: React + Express + PostgreSQL (Supabase).",
+      fr: "Projet e-commerce collectif : React + Express + MongoDB.",
+      en: "Team e-commerce project: React + Express + MongoDB.",
+    },
+    content: {
+      fr: "Travail d’équipe, routes API, composants UI, pages e-commerce et intégration back.",
+      en: "Teamwork, API routes, UI components, e-commerce pages and back-end integration.",
+    },
+    roles: ["Full-stack (collectif)"],
+    stack: ["React", "Express", "MongoDB"],
+    links: [{ label: "GitHub", href: "#" }],
+    cover: img("/projects/vintage-gallery/cover.png", "Vintage Gallery cover"),
+    gallery: [
+      img("/projects/vintage-gallery/01.png", "Vintage Gallery screenshot 1"),
+      img("/projects/vintage-gallery/02.png", "Vintage Gallery screenshot 2"),
+      img("/projects/vintage-gallery/03.png", "Vintage Gallery screenshot 3"),
+    ],
+  },
+
+  {
+    slug: "gestion-de-caisse",
+    years: "2024",
+    title: { fr: "Gestion de caisse", en: "Cash Management" },
+    subtitle: {
+      fr: "Gestion de caisse & inventaire : React + Express + PostgreSQL (Supabase).",
+      en: "Cash & inventory management: React + Express + PostgreSQL (Supabase).",
     },
     content: {
       fr: "CRUD inventaire, opérations de caisse, endpoints API et interface orientée usage.",
@@ -139,122 +153,8 @@ export const projects: Project[] = [
     roles: ["Full-stack"],
     stack: ["React", "Node.js", "Express", "PostgreSQL", "Supabase"],
     links: [{ label: "GitHub", href: "#" }],
-    cover: cover("cash-management"),
-    gallery: gallery("cash-management"),
-  },
-
-  {
-    slug: "chess",
-    years: "2024",
-    title: { fr: "Chess", en: "Chess" },
-    subtitle: {
-      fr: "Jeu d’échecs (MVP) : logique du plateau, mouvements, conditions de victoire.",
-      en: "Chess game (MVP): board logic, piece moves, win conditions.",
-    },
-    content: {
-      fr: "Implémentation des règles principales, gestion d’état de partie. V2 TypeScript en cours.",
-      en: "Core rules implementation, game state management. TypeScript v2 in progress.",
-    },
-    roles: ["Front-end"],
-    stack: ["JavaScript", "HTML", "CSS", "TypeScript"],
-    links: [{ label: "GitHub", href: "#" }],
-    cover: cover("chess"),
-    gallery: gallery("chess"),
-  },
-
-  {
-    slug: "tetris",
-    years: "2024",
-    title: { fr: "Tetris", en: "Tetris" },
-    subtitle: {
-      fr: "Recréation du jeu : tetrominoes, collisions, lignes, score.",
-      en: "Tetris remake: tetrominoes, collisions, line clears, scoring.",
-    },
-    content: {
-      fr: "Gestion du board, rotations, collisions et boucle de jeu.",
-      en: "Board handling, rotations, collisions and game loop.",
-    },
-    roles: ["Front-end"],
-    stack: ["JavaScript", "HTML", "CSS"],
-    links: [{ label: "GitHub", href: "#" }],
-    cover: cover("tetris"),
-    gallery: gallery("tetris"),
-  },
-
-  {
-    slug: "draw-together",
-    years: "2024",
-    title: { fr: "Draw Together", en: "Draw Together" },
-    subtitle: {
-      fr: "App iOS responsive (iPhone/iPad) : réseau social dédié au dessin + œuvre collective.",
-      en: "Responsive iOS app (iPhone/iPad): drawing social network + collaborative artwork.",
-    },
-    content: {
-      fr: "Exploration UI iOS et features sociales, pensée pour mobile et tablette.",
-      en: "Explored iOS UI and social features, designed for both phone and tablet.",
-    },
-    roles: ["iOS"],
-    stack: ["Swift", "iOS"],
-    links: [{ label: "GitHub", href: "#" }],
-    cover: cover("draw-together"),
-    gallery: gallery("draw-together"),
-  },
-
-  {
-    slug: "vintage-gallery",
-    years: "2024",
-    title: { fr: "Vintage Gallery", en: "Vintage Gallery" },
-    subtitle: {
-      fr: "Projet e-commerce collectif : React + Express + MongoDB (équipes front/back alternées).",
-      en: "Team e-commerce project: React + Express + MongoDB (alternating front/back squads).",
-    },
-    content: {
-      fr: "Travail d’équipe, routes API, composants UI, pages e-commerce et intégration back.",
-      en: "Teamwork, API routes, UI components, e-commerce pages and back-end integration.",
-    },
-    roles: ["Team project", "Full-stack"],
-    stack: ["React", "Express", "MongoDB"],
-    links: [{ label: "GitHub", href: "#" }],
-    cover: cover("vintage-gallery"),
-    gallery: gallery("vintage-gallery"),
-  },
-
-  {
-    slug: "social-network-php",
-    years: "2024",
-    title: { fr: "Social Network (PHP)", en: "Social Network (PHP)" },
-    subtitle: {
-      fr: "Blog PHP simple : articles + commentaires, base MySQL (phpMyAdmin).",
-      en: "Simple PHP blog: posts + comments, MySQL database (phpMyAdmin).",
-    },
-    content: {
-      fr: "Base relationnelle, formulaires, listing/détail, publication de contenu.",
-      en: "Relational database, forms, list/detail pages, content publishing.",
-    },
-    roles: ["Full-stack"],
-    stack: ["PHP", "MySQL", "phpMyAdmin"],
-    links: [{ label: "GitHub", href: "#" }],
-    cover: cover("social-network-php"),
-    gallery: gallery("social-network-php"),
-  },
-
-  {
-    slug: "besti-blog",
-    years: "2024",
-    title: { fr: "Besti-Blog", en: "Besti-Blog" },
-    subtitle: {
-      fr: "Micro-blog photo (type Instagram) : posts image+texte, profil, feed. PHP + Tailwind + PostgreSQL + Docker.",
-      en: "Photo micro-blog (Instagram-like): image+text posts, profile, feed. PHP + Tailwind + PostgreSQL + Docker.",
-    },
-    content: {
-      fr: "Auth, création de posts, UI Tailwind et environnement Docker pour standardiser le dev.",
-      en: "Authentication, post creation, Tailwind UI and Docker setup to standardize development.",
-    },
-    roles: ["Team project", "Full-stack"],
-    stack: ["PHP", "Tailwind", "PostgreSQL", "Docker"],
-    links: [{ label: "GitHub", href: "#" }],
-    cover: cover("besti-blog"),
-    gallery: gallery("besti-blog"),
+    cover: img("/projects/gestion-de-caisse/cover.png", "Gestion de caisse cover"),
+    gallery: [img("/projects/gestion-de-caisse/01.png", "Gestion de caisse screenshot 1")],
   },
 
   {
@@ -272,7 +172,102 @@ export const projects: Project[] = [
     roles: ["Front-end"],
     stack: ["JavaScript", "HTML", "CSS"],
     links: [{ label: "GitHub", href: "#" }],
-    cover: cover("evening-experience"),
-    gallery: gallery("evening-experience"),
+    cover: img("/projects/evening-experience/cover.png", "Evening Experience cover"),
+    gallery: [img("/projects/evening-experience/01.png", "Evening Experience screenshot 1")],
+  },
+
+  {
+    slug: "safe-or-not",
+    years: "2024",
+    title: { fr: "Safe or Not?", en: "Safe or Not?" },
+    subtitle: {
+      fr: "App iOS SwiftUI : avis et alertes (niveau de confiance).",
+      en: "SwiftUI iOS app: reviews and safety alerts (trust level).",
+    },
+    content: {
+      fr: "Projet mobile SwiftUI : navigation, écrans liste/détail, publication d’avis et gestion d’alertes.",
+      en: "SwiftUI mobile project: navigation, list/detail screens, posting reviews and handling alerts.",
+    },
+    roles: ["iOS", "UI"],
+    stack: ["SwiftUI", "iOS"],
+    links: [{ label: "GitHub", href: "#" }],
+    cover: img("/projects/safe-or-not/cover.png", "Safe or Not cover"),
+    gallery: [img("/projects/safe-or-not/01.jpeg", "Safe or Not screenshot 1")],
+  },
+
+  {
+    slug: "chess",
+    years: "2024",
+    title: { fr: "Chess", en: "Chess" },
+    subtitle: {
+      fr: "Jeu d’échecs (MVP) : logique du plateau, mouvements, conditions de victoire.",
+      en: "Chess game (MVP): board logic, piece moves, win conditions.",
+    },
+    content: {
+      fr: "Implémentation des règles principales, gestion d’état de partie. V2 TypeScript en cours.",
+      en: "Core rules implementation, game state management. TypeScript v2 in progress.",
+    },
+    roles: ["Front-end"],
+    stack: ["JavaScript", "HTML", "CSS", "TypeScript"],
+    links: [{ label: "GitHub", href: "#" }],
+    cover: img("/projects/chess/cover.png", "Chess cover"),
+    gallery: [],
+  },
+
+  {
+    slug: "tetris",
+    years: "2024",
+    title: { fr: "Tetris", en: "Tetris" },
+    subtitle: {
+      fr: "Recréation du jeu : tetrominoes, collisions, lignes, score.",
+      en: "Tetris remake: tetrominoes, collisions, line clears, scoring.",
+    },
+    content: {
+      fr: "Gestion du board, rotations, collisions et boucle de jeu.",
+      en: "Board handling, rotations, collisions and game loop.",
+    },
+    roles: ["Front-end"],
+    stack: ["JavaScript", "HTML", "CSS"],
+    links: [{ label: "GitHub", href: "#" }],
+    cover: img("/projects/tetris/cover.png", "Tetris cover"),
+    gallery: [],
+  },
+
+  {
+    slug: "draw-together",
+    years: "2024",
+    title: { fr: "Draw Together", en: "Draw Together" },
+    subtitle: {
+      fr: "App iOS responsive : réseau social de dessin + création collective.",
+      en: "Responsive iOS app: drawing social network + collaborative creation.",
+    },
+    content: {
+      fr: "Exploration UI iOS et features sociales, pensée pour iPhone et iPad.",
+      en: "Explored iOS UI and social features, designed for both phone and tablet.",
+    },
+    roles: ["iOS"],
+    stack: ["Swift", "iOS"],
+    links: [{ label: "GitHub", href: "#" }],
+    cover: img("/projects/draw-together/cover.png", "Draw Together cover"),
+    gallery: [],
+  },
+
+  {
+    slug: "social-network",
+    years: "2024",
+    title: { fr: "Social Network (PHP)", en: "Social Network (PHP)" },
+    subtitle: {
+      fr: "Blog PHP simple : articles + commentaires, base MySQL (phpMyAdmin).",
+      en: "Simple PHP blog: posts + comments, MySQL database (phpMyAdmin).",
+    },
+    content: {
+      fr: "Base relationnelle, formulaires, listing/détail, publication de contenu.",
+      en: "Relational database, forms, list/detail pages, content publishing.",
+    },
+    roles: ["Full-stack"],
+    stack: ["PHP", "MySQL", "phpMyAdmin"],
+    links: [{ label: "GitHub", href: "#" }],
+    cover: img("/projects/social-network/cover.png", "Social Network cover"),
+    gallery: [],
   },
 ];
