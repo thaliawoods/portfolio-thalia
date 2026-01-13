@@ -65,22 +65,28 @@ export default async function HomePage({
           </div>
         </div>
 
-        {/* CENTER - carré portfolio avec image statique au hover */}
+        {/* CENTER - carré portfolio avec image statique au hover + marge blanche */}
         <div className="lg:col-span-5">
           <Link
             href={`/${locale}/portfolio`}
             className="group relative block border border-black/10 bg-white h-[420px] overflow-hidden"
             aria-label="Open portfolio"
           >
-            {/* preview image au hover */}
+            {/* preview image au hover (avec marge blanche derrière) */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/portfolio-preview.png"
-                alt="Portfolio preview"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-white/55" />
+              {/* cadre blanc */}
+              <div className="absolute inset-0 p-4 bg-white">
+                <div className="relative w-full h-full overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/portfolio-preview.png"
+                    alt="Portfolio preview"
+                    className="w-full h-full object-cover"
+                  />
+                  {/* voile (comme avant) */}
+                  <div className="absolute inset-0 bg-white/55" />
+                </div>
+              </div>
             </div>
 
             {/* contenu central */}

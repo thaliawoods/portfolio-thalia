@@ -1,21 +1,20 @@
-import "../globals.css";
-import Header from "@/components/Header";
+import type { ReactNode } from "react";
+import type { Locale } from "@/data/projects";
 
-export default async function LocaleLayout({
+export default function LocaleLayout({
   children,
   params,
 }: {
-  children: React.ReactNode;
-  params: { locale: "fr" | "en" } | Promise<{ locale: "fr" | "en" }>;
+  children: ReactNode;
+  params: { locale: string };
 }) {
-  const { locale } = await Promise.resolve(params);
+  const locale = (params.locale === "fr" || params.locale === "en"
+    ? params.locale
+    : "fr") as Locale;
 
   return (
     <html lang={locale}>
-      <body>
-        <Header locale={locale} />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <!-- Pixel arrow: blanc + outline noir -->
+  <!-- outline noir -->
+  <path fill="#000" d="
+    M2 2h2v2H2z M4 4h2v2H4z M6 6h2v2H6z M8 8h2v2H8z M10 10h2v2H10z
+    M12 12h2v2H12z M14 14h2v2H14z
+    M2 4h2v2H2z M2 6h2v2H2z M2 8h2v2H2z M2 10h2v2H2z M2 12h2v2H2z
+    M2 14h2v2H2z M2 16h2v2H2z M2 18h2v2H2z
+    M4 18h2v2H4z M6 18h2v2H6z M8 18h2v2H8z M10 18h2v2H10z
+    M12 18h2v2H12z M14 18h2v2H14z M16 18h2v2H16z
+    M12 20h2v2H12z M13 22h2v2H13z M14 24h2v2H14z M15 26h2v2H15z
+  "></path>
+
+  <!-- intérieur blanc -->
+  <path fill="#fff" d="
+    M4 6h2v2H4z M6 8h2v2H6z M8 10h2v2H8z M10 12h2v2H10z M12 14h2v2H12z
+    M4 8h2v2H4z M4 10h2v2H4z M4 12h2v2H4z M4 14h2v2H4z M4 16h2v2H4z
+    M6 16h2v2H6z M8 16h2v2H8z M10 16h2v2H10z M12 16h2v2H12z M14 16h2v2H14z
+    M12 18h2v2H12z M13 20h2v2H13z M14 22h2v2H14z
+  "></path>
+</svg>

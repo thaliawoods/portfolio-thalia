@@ -41,39 +41,44 @@ export default async function PortfolioPage({
         {t.section}
       </div>
 
-      {/* ✅ cartes + grandes + blanches */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {/* ✅ plus grands carrés + plus d’air + marge blanche au hover */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
         {ordered.map((p) => (
           <Link
             key={p.slug}
             href={`/${locale}/projects/${p.slug}`}
-            className="group relative border border-black/10 bg-white hover:bg-white transition overflow-hidden"
+            className="group relative border border-black/10 bg-white overflow-hidden"
           >
-            {/* image au hover */}
+            {/* hover image avec “cadre blanc” */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-              <Image
-                src={p.cover.src}
-                alt={p.cover.alt}
-                fill
-                className="object-cover"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              />
-              <div className="absolute inset-0 bg-black/35" />
+              {/* cadre blanc */}
+              <div className="absolute inset-0 p-5 sm:p-7 lg:p-9 bg-white">
+                <div className="relative w-full h-full overflow-hidden">
+                  <Image
+                    src={p.cover.src}
+                    alt={p.cover.alt}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-black/35" />
+                </div>
+              </div>
             </div>
 
-            {/* contenu */}
-            <div className="relative p-5 min-h-[190px] flex flex-col justify-between">
+            {/* contenu (plus “carré” / plus grand) */}
+            <div className="relative p-6 h-[250px] sm:h-[270px] flex flex-col justify-between">
               <div>
                 <div className="text-base tracking-wide text-black/90 group-hover:text-white">
                   {p.title[locale]}
                 </div>
 
-                <div className="mt-3 text-sm leading-relaxed text-black/60 group-hover:text-white/80 line-clamp-4">
+                <div className="mt-4 text-sm leading-relaxed text-black/60 group-hover:text-white/80 line-clamp-4">
                   {p.subtitle[locale]}
                 </div>
               </div>
 
-              <div className="mt-4 flex items-center justify-between text-xs text-black/50 group-hover:text-white/80">
+              <div className="mt-6 flex items-center justify-between text-xs text-black/50 group-hover:text-white/80">
                 <span>{p.years}</span>
                 <span className="opacity-0 group-hover:opacity-100 transition-opacity underline underline-offset-4">
                   {t.view}
