@@ -16,9 +16,6 @@ export default function Header({ locale }: { locale: "fr" | "en" }) {
         </Link>
 
         <nav className="flex items-center gap-5 text-sm">
-          <Link href={`/${locale}`} className="hover:underline">
-            {t.projects}
-          </Link>
           <Link href={`/${locale}/portfolio`} className="hover:underline">
             {t.portfolio}
           </Link>
