@@ -3,9 +3,10 @@ import type { Locale } from "@/data/projects";
 export default async function InfoPage({
   params,
 }: {
-  params: { locale: Locale } | Promise<{ locale: Locale }>;
+  params: { locale: string };
 }) {
-  const { locale } = await Promise.resolve(params);
+  const locale: Locale =
+    params.locale === "fr" || params.locale === "en" ? params.locale : "fr";
 
   const t =
     locale === "fr"
