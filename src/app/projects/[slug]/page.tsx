@@ -1,10 +1,18 @@
 import { projects } from "@/data/projects";
-import Gallery from "@/components/Gallery";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const project = projects.find((p) => p.slug === params.slug);
+type Params = { slug: string };
+
+export default async function ProjectPage({
+  params,
+}: {
+  params: Params | Promise<Params>;
+}) {
+  const { slug } = await Promise.resolve(params);
+
+  const project = projects.find((p) => p.slug === slug);
   if (!project) return notFound();
 
   return (
@@ -44,7 +52,12 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             <ul className="space-y-1">
               {project.links.map((l) => (
                 <li key={l.href}>
-                  <Link className="underline" href={l.href} target="_blank">
+                  <Link
+                    className="underline"
+                    href={l.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     {l.label}
                   </Link>
                 </li>
@@ -54,7 +67,19 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         </div>
       </div>
 
-      <Gallery items={project.gallery} />
+      <div className="space-y-6">
+        {project.gallery.map((img) => (
+          <div key={img.src} className="border border-black/10">
+            <Image
+              src={img.src}
+              alt={img.alt}
+              width={1600}
+              height={1100}
+              className="w-full h-auto"
+            />
+          </div>
+        ))}
+      </div>
     </main>
   );
 }

@@ -6,12 +6,9 @@ export default function HomePage() {
   return (
     <main className="mx-auto max-w-5xl px-4 py-10">
       <div className="mb-10">
-        <h1 className="text-xl tracking-wide">
-          Développeuse web — Front / Full-stack
-        </h1>
+        <h1 className="text-xl tracking-wide">Thalia Woods</h1>
         <p className="mt-2 text-sm text-black/70 max-w-2xl">
-          Je construis des produits web propres, performants et orientés usage
-          (Next.js, Strapi, Prisma).
+          Développeuse web (Front / Full-stack). Next.js · TypeScript · Strapi · Prisma.
         </p>
       </div>
 
