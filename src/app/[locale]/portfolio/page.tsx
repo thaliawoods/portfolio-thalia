@@ -31,23 +31,23 @@ export default async function PortfolioPage({
   );
 
   return (
-    <main className="mx-auto max-w-5xl px-4 py-10">
-      <div className="mb-8">
+    <main className="mx-auto max-w-6xl px-6 py-12">
+      <div className="mb-10">
         <h1 className="text-xl tracking-wide">{t.title}</h1>
         <p className="mt-2 text-sm text-black/60 max-w-2xl">{t.intro}</p>
       </div>
 
-      <div className="text-xs tracking-widest text-black/50 mb-3">
+      <div className="text-xs tracking-widest text-black/50 mb-4">
         {t.section}
       </div>
 
-      {/* ✅ rectangles plus grands : 3 colonnes desktop */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {/* ✅ cartes + grandes + blanches */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {ordered.map((p) => (
           <Link
             key={p.slug}
             href={`/${locale}/projects/${p.slug}`}
-            className="group relative border border-black/10 bg-black/[0.03] hover:bg-black/[0.05] transition overflow-hidden"
+            className="group relative border border-black/10 bg-white hover:bg-white transition overflow-hidden"
           >
             {/* image au hover */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
@@ -61,19 +61,19 @@ export default async function PortfolioPage({
               <div className="absolute inset-0 bg-black/35" />
             </div>
 
-            {/* texte */}
-            <div className="relative p-4 min-h-[160px] flex flex-col justify-between">
+            {/* contenu */}
+            <div className="relative p-5 min-h-[190px] flex flex-col justify-between">
               <div>
-                <div className="text-sm text-black/90 group-hover:text-white">
+                <div className="text-base tracking-wide text-black/90 group-hover:text-white">
                   {p.title[locale]}
                 </div>
 
-                <div className="mt-2 text-xs leading-relaxed text-black/60 group-hover:text-white/80 line-clamp-4">
+                <div className="mt-3 text-sm leading-relaxed text-black/60 group-hover:text-white/80 line-clamp-4">
                   {p.subtitle[locale]}
                 </div>
               </div>
 
-              <div className="mt-3 flex items-center justify-between text-xs text-black/50 group-hover:text-white/80">
+              <div className="mt-4 flex items-center justify-between text-xs text-black/50 group-hover:text-white/80">
                 <span>{p.years}</span>
                 <span className="opacity-0 group-hover:opacity-100 transition-opacity underline underline-offset-4">
                   {t.view}
