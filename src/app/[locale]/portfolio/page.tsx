@@ -48,6 +48,7 @@ export default async function PortfolioPage({
             href={`/${locale}/projects/${p.slug}`}
             className="group relative border border-black/10 bg-white overflow-hidden"
           >
+            {/* Hover image avec cadre blanc - SANS VOILE */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
               <div className="absolute inset-0 p-5 sm:p-7 lg:p-9 bg-white">
                 <div className="relative w-full h-full overflow-hidden">
@@ -58,11 +59,11 @@ export default async function PortfolioPage({
                     className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-black/35" />
                 </div>
               </div>
             </div>
 
+            {/* contenu caché au hover */}
             <div className="relative p-6 h-[250px] sm:h-[270px] flex flex-col justify-between transition-opacity duration-200 group-hover:opacity-0 group-hover:pointer-events-none">
               <div>
                 <div className="text-base tracking-wide text-black/90">
