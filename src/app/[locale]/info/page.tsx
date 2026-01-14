@@ -11,18 +11,17 @@ export default async function InfoPage({
     locale === "fr"
       ? {
           title: "Infos",
+
           aboutTitle: "À PROPOS",
           about1:
-            "Développeuse web (front-end / full-stack), diplômée RNCP niveau VI (Bac +3) — Conception et développement d’applications (Ada Tech School).",
-
+            "Développeuse web (front-end / full-stack), diplômée RNCP niveau VI (Bac+3) — Conception et développement d’applications (Ada Tech School).",
           about2:
-            "Après plusieurs années dans la restauration, la vente et le secteur social, j’ai eu envie de construire des outils numériques utiles, qui simplifient le quotidien. Ce qui me motive : transformer des besoins parfois flous en interfaces claires, esthétiques et fiables. J’accorde autant d’importance à l’UX/UI et aux détails visuels qu’à la rigueur technique (structure, qualité du code, cas limites).",
-
+            "Après plusieurs années dans la restauration, la vente et le secteur social, j’ai eu envie de construire des outils numériques utiles, qui simplifient vraiment le quotidien. Ce qui me motive : transformer des besoins parfois flous en interfaces claires, esthétiques et fiables. J’accorde autant d’importance à l’UX/UI et aux détails visuels qu’à la rigueur technique (structure, qualité du code, cas limites).",
           about3:
             "Je viens de terminer mon alternance de développeuse front-end chez Julaya (fintech B2B en Afrique de l’Ouest), et je recherche, dans le cadre de mon Master, une nouvelle alternance de 24 mois (4 jours entreprise / 1 jour école).",
 
           eduTitle: "FORMATION",
-          edu1a: "Ada Tech School — RNCP niveau VI (Bac +3)",
+          edu1a: "Ada Tech School — RNCP niveau VI (Bac+3)",
           edu1b: "Développement web & conception d’applications",
           edu1c: "2023–2026",
           edu2a: "Aix-Marseille University — DAEU A (Mention Très Bien)",
@@ -30,19 +29,23 @@ export default async function InfoPage({
           edu2c: "2020",
           edu3a: "Atelier de Sèvres — Foundation course (Art & Fashion)",
           edu3c: "2016",
+
           skillsTitle: "COMPÉTENCES",
           front: "FRONTEND",
           back: "BACKEND",
-          other: "AUTRES",
+          cms: "CMS / CONTENT",
           tools: "OUTILS",
+
           contactTitle: "CONTACT",
-          location: "Paris, France",
           email: "thaliadwoods@gmail.com",
           github: "GitHub",
           linkedin: "LinkedIn",
+          githubUrl: "https://github.com/thaliawoods",
+          linkedinUrl: "https://www.linkedin.com/",
         }
       : {
           title: "Info",
+
           aboutTitle: "ABOUT",
           about1:
             "Web developer (front-end / full-stack), RNCP Level VI graduate (Bachelor-equivalent) — Application design & development (Ada Tech School).",
@@ -50,32 +53,93 @@ export default async function InfoPage({
             "After several years working in hospitality, retail, and the social sector, I wanted to build useful digital tools that genuinely make everyday life easier. What drives me: turning sometimes fuzzy needs into clear, aesthetic, and reliable interfaces. I care as much about UX/UI and visual details as I do about technical rigor (structure, code quality, edge cases).",
           about3:
             "I’ve just completed my front-end developer apprenticeship at Julaya (a B2B fintech in West Africa), and I’m now looking for a new 24-month apprenticeship as part of my Master’s program (4 days in a company / 1 day at school).",
-          // ...
+
+          eduTitle: "EDUCATION",
+          edu1a: "Ada Tech School — RNCP Level VI (Bachelor-equivalent)",
+          edu1b: "Web development & application design",
+          edu1c: "2023–2026",
+          edu2a: "Aix-Marseille University — DAEU A (Honors)",
+          edu2b: "University access diploma",
+          edu2c: "2020",
+          edu3a: "Atelier de Sèvres — Foundation course (Art & Fashion)",
+          edu3c: "2016",
+
+          skillsTitle: "SKILLS",
+          front: "FRONTEND",
+          back: "BACKEND",
+          cms: "CMS / CONTENT",
+          tools: "TOOLING",
+
           contactTitle: "CONTACT",
-          location: "Paris, France",
           email: "thaliadwoods@gmail.com",
           github: "GitHub",
           linkedin: "LinkedIn",
+          githubUrl: "https://github.com/thaliawoods",
+          linkedinUrl: "https://www.linkedin.com/",
         };
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-10">
-      <h1 className="text-xl tracking-wide mb-6">{t.title}</h1>
+      {/* Title à gauche + CONTACT en haut à droite */}
+      <div className="flex items-start justify-between gap-10 mb-6">
+        <h1 className="text-xl tracking-wide">{t.title}</h1>
+
+        <div className="text-right">
+          <div className="text-xs text-black/50 mb-2">{t.contactTitle}</div>
+
+          <div className="space-y-2 text-black/70 text-sm">
+            <div>
+              <a
+                className="underline underline-offset-4 hover:text-black"
+                href={`mailto:${t.email}`}
+              >
+                {t.email}
+              </a>
+            </div>
+
+            <div className="flex justify-end gap-4 underline underline-offset-4">
+              <a
+                href={t.githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-black"
+              >
+                {t.github}
+              </a>
+
+              <a
+                href={t.linkedinUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-black"
+              >
+                {t.linkedin}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div className="space-y-10 text-sm">
+        {/* ABOUT */}
         <section>
           <div className="text-xs text-black/50 mb-2">{t.aboutTitle}</div>
+
           <p className="max-w-2xl leading-relaxed text-black/70">{t.about1}</p>
+
           <p className="mt-3 max-w-2xl leading-relaxed text-black/70">
             {t.about2}
           </p>
+
           <p className="mt-3 max-w-2xl leading-relaxed text-black/70">
             {t.about3}
           </p>
         </section>
 
+        {/* EDUCATION */}
         <section>
           <div className="text-xs text-black/50 mb-2">{t.eduTitle}</div>
+
           <ul className="space-y-3 text-black/80">
             <li>
               <div className="flex justify-between gap-6">
@@ -102,6 +166,7 @@ export default async function InfoPage({
           </ul>
         </section>
 
+        {/* SKILLS */}
         <section>
           <div className="text-xs text-black/50 mb-2">{t.skillsTitle}</div>
 
@@ -109,51 +174,28 @@ export default async function InfoPage({
             <div>
               <div className="text-black/50 text-xs mb-2">{t.front}</div>
               <div>
-                JavaScript · TypeScript · React · Next.js · Tailwind · UX/UI
+                JavaScript · TypeScript · React · Next.js · Tailwind · UX/UI ·
+                Accessibility · Performance
               </div>
             </div>
 
             <div>
               <div className="text-black/50 text-xs mb-2">{t.back}</div>
-              <div>Node.js · Express · Prisma · PostgreSQL · Python · PHP </div>
+              <div>
+                Node.js · Express · Prisma · PostgreSQL · Python · PHP · REST APIs
+                · Auth · Docker
+              </div>
             </div>
 
             <div>
-              <div className="text-black/50 text-xs mb-2">{t.other}</div>
-              <div>Agile · Accessibilité · Performances</div>
+              <div className="text-black/50 text-xs mb-2">{t.cms}</div>
+              <div>Strapi (Headless) · Content modeling · i18n · SEO</div>
             </div>
 
             <div>
               <div className="text-black/50 text-xs mb-2">{t.tools}</div>
-              <div>
-                Docker · Git / GitHub · Vercel · Render · Figma · Neon · Postman
-              </div>
+              <div>Git/GitHub · CI/CD · Vercel · Render · Figma · Agile</div>
             </div>
-          </div>
-        </section>
-
-        <section>
-          <div className="text-xs text-black/50 mb-2">{t.contactTitle}</div>
-          <div className="text-black/70">{t.location}</div>
-
-          <div className="mt-2 flex flex-wrap gap-4 underline">
-            <a href={`mailto:${t.email}`}>{t.email}</a>
-
-            <a
-              href="https://github.com/thaliawoods"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {t.github}
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/thalia-woods-794917281/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {t.linkedin}
-            </a>
           </div>
         </section>
       </div>
