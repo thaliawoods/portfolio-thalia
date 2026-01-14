@@ -5,10 +5,9 @@ import { projects, type Locale } from "@/data/projects";
 export default async function PortfolioPage({
   params,
 }: {
-  params: { locale: string };
+  params: { locale: Locale } | Promise<{ locale: Locale }>;
 }) {
-  const locale: Locale =
-    params.locale === "fr" || params.locale === "en" ? params.locale : "fr";
+  const { locale } = await Promise.resolve(params);
 
   const t =
     locale === "fr"
@@ -42,7 +41,6 @@ export default async function PortfolioPage({
         {t.section}
       </div>
 
-      {/* ✅ plus grands carrés + plus d’air + marge blanche au hover */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
         {ordered.map((p) => (
           <Link
@@ -50,9 +48,7 @@ export default async function PortfolioPage({
             href={`/${locale}/projects/${p.slug}`}
             className="group relative border border-black/10 bg-white overflow-hidden"
           >
-            {/* hover image avec “cadre blanc” */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-              {/* cadre blanc */}
               <div className="absolute inset-0 p-5 sm:p-7 lg:p-9 bg-white">
                 <div className="relative w-full h-full overflow-hidden">
                   <Image
@@ -67,7 +63,6 @@ export default async function PortfolioPage({
               </div>
             </div>
 
-            {/* contenu (caché au hover pour laisser place à l’image) */}
             <div className="relative p-6 h-[250px] sm:h-[270px] flex flex-col justify-between transition-opacity duration-200 group-hover:opacity-0 group-hover:pointer-events-none">
               <div>
                 <div className="text-base tracking-wide text-black/90">
@@ -81,7 +76,6 @@ export default async function PortfolioPage({
 
               <div className="mt-6 flex items-center justify-between text-xs text-black/50">
                 <span>{p.years}</span>
-                {/* gardé pour l'alignement, mais invisible */}
                 <span className="opacity-0 underline underline-offset-4">
                   {t.view}
                 </span>

@@ -5,10 +5,9 @@ import ImageHover from "@/components/ImageHover";
 export default async function HomePage({
   params,
 }: {
-  params: { locale: string };
+  params: { locale: Locale } | Promise<{ locale: Locale }>;
 }) {
-  const locale: Locale =
-    params.locale === "fr" || params.locale === "en" ? params.locale : "fr";
+  const { locale } = await Promise.resolve(params);
 
   const t =
     locale === "fr"
@@ -31,7 +30,6 @@ export default async function HomePage({
           open: "Open →",
         };
 
-  // 2 projets visuels à droite
   const featured = [...projects].filter((p) => p.featured).slice(0, 2);
 
   return (
@@ -66,16 +64,14 @@ export default async function HomePage({
           </div>
         </div>
 
-        {/* CENTER - carré portfolio avec image statique au hover + marge blanche */}
+        {/* CENTER */}
         <div className="lg:col-span-5">
           <Link
             href={`/${locale}/portfolio`}
             className="group relative block border border-black/10 bg-white h-[420px] overflow-hidden"
             aria-label="Open portfolio"
           >
-            {/* preview image au hover (avec marge blanche derrière) */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-              {/* cadre blanc */}
               <div className="absolute inset-0 p-4 bg-white">
                 <div className="relative w-full h-full overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -84,13 +80,11 @@ export default async function HomePage({
                     alt="Portfolio preview"
                     className="w-full h-full object-cover"
                   />
-                  {/* voile (comme avant) */}
                   <div className="absolute inset-0 bg-white/55" />
                 </div>
               </div>
             </div>
 
-            {/* contenu central */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center px-8">
                 <div className="text-xs tracking-widest text-black/40 mb-5">
@@ -108,7 +102,7 @@ export default async function HomePage({
           </Link>
         </div>
 
-        {/* RIGHT - images noir & blanc -> couleur au hover */}
+        {/* RIGHT */}
         <div className="lg:col-span-3">
           <div className="flex items-center justify-between mb-3">
             <div className="text-xs tracking-widest text-black/40">
