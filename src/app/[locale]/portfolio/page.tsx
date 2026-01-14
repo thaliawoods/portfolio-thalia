@@ -66,21 +66,22 @@ export default async function PortfolioPage({
               </div>
             </div>
 
-            {/* contenu (plus “carré” / plus grand) */}
-            <div className="relative p-6 h-[250px] sm:h-[270px] flex flex-col justify-between">
+            {/* contenu (caché au hover pour laisser place à l’image) */}
+            <div className="relative p-6 h-[250px] sm:h-[270px] flex flex-col justify-between transition-opacity duration-200 group-hover:opacity-0 group-hover:pointer-events-none">
               <div>
-                <div className="text-base tracking-wide text-black/90 group-hover:text-white">
+                <div className="text-base tracking-wide text-black/90">
                   {p.title[locale]}
                 </div>
 
-                <div className="mt-4 text-sm leading-relaxed text-black/60 group-hover:text-white/80 line-clamp-4">
+                <div className="mt-4 text-sm leading-relaxed text-black/60 line-clamp-4">
                   {p.subtitle[locale]}
                 </div>
               </div>
 
-              <div className="mt-6 flex items-center justify-between text-xs text-black/50 group-hover:text-white/80">
+              <div className="mt-6 flex items-center justify-between text-xs text-black/50">
                 <span>{p.years}</span>
-                <span className="opacity-0 group-hover:opacity-100 transition-opacity underline underline-offset-4">
+                {/* gardé pour l'alignement, mais invisible */}
+                <span className="opacity-0 underline underline-offset-4">
                   {t.view}
                 </span>
               </div>
