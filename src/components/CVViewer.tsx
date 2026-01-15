@@ -3,11 +3,11 @@
 import { useMemo, useState } from "react";
 import type { Locale } from "@/data/projects";
 import { Document, Page, pdfjs } from "react-pdf";
+import { useContainerWidth } from "@/components/useContainerWidth";
 
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
-// ✅ IMPORTANT : worker de la MÊME version que l'API pdfjs
 pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 type Props = { locale: Locale };
@@ -15,18 +15,32 @@ type Props = { locale: Locale };
 export default function CVViewer({ locale }: Props) {
   const defaultLang = locale === "fr" ? "fr" : "en";
   const [lang, setLang] = useState<"fr" | "en">(defaultLang);
-  const [scale, setScale] = useState(1);
 
-  const file = useMemo(() => (lang === "fr" ? "/cv/cv-woods-fr.pdf" : "/cv/cv-woods-en.pdf"), [lang]);
+  // zoom “user” (1 = normal). On multiplie ensuite par l’échelle responsive.
+  const [zoom, setZoom] = useState(1);
+
+  const file = useMemo(
+    () => (lang === "fr" ? "/cv/cv-woods-fr.pdf" : "/cv/cv-woods-en.pdf"),
+    [lang]
+  );
 
   const t =
     locale === "fr"
       ? { open: "ouvrir", download: "télécharger" }
       : { open: "open", download: "download" };
 
+  // largeur du conteneur (responsive)
+  const { ref, width } = useContainerWidth<HTMLDivElement>();
+
+  // width cible max (desktop) : 900px ; sur mobile : largeur container
+  // (on enlève un peu pour éviter que ça “colle” aux bords)
+  const targetWidth = Math.min(900, Math.max(320, width - 2));
+
   return (
     <section className="space-y-4">
-      <div className="flex items-center justify-between gap-6">
+      {/* BARRE TOP responsive */}
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        {/* switch FR/EN */}
         <div className="flex gap-2">
           <button
             type="button"
@@ -52,20 +66,25 @@ export default function CVViewer({ locale }: Props) {
           </button>
         </div>
 
-        <div className="flex items-center gap-6">
+        {/* zoom + liens */}
+        <div className="flex items-center justify-between sm:justify-end gap-4">
           <div className="flex items-center gap-2 text-xs text-black/70">
             <button
               type="button"
-              onClick={() => setScale((s) => Math.max(0.75, +(s - 0.1).toFixed(2)))}
+              onClick={() => setZoom((z) => Math.max(0.75, +(z - 0.1).toFixed(2)))}
               className="border border-black/15 px-2 py-1 hover:bg-black hover:text-white transition"
+              aria-label="zoom out"
             >
               −
             </button>
-            <span className="min-w-[52px] text-center">{Math.round(scale * 100)}%</span>
+            <span className="min-w-[52px] text-center">
+              {Math.round(zoom * 100)}%
+            </span>
             <button
               type="button"
-              onClick={() => setScale((s) => Math.min(2, +(s + 0.1).toFixed(2)))}
+              onClick={() => setZoom((z) => Math.min(2, +(z + 0.1).toFixed(2)))}
               className="border border-black/15 px-2 py-1 hover:bg-black hover:text-white transition"
+              aria-label="zoom in"
             >
               +
             </button>
@@ -82,16 +101,25 @@ export default function CVViewer({ locale }: Props) {
         </div>
       </div>
 
-      <div className="border border-black/10 bg-white p-4 sm:p-6">
-        <div className="mx-auto w-full max-w-[900px]">
-          <Document file={file} loading={<div className="text-sm text-black/60">loading…</div>}>
-            <Page
-              pageNumber={1}
-              scale={scale}
-              renderTextLayer={false}
-              renderAnnotationLayer={false}
-            />
-          </Document>
+      {/* WRAPPER BLANC responsive */}
+      <div className="border border-black/10 bg-white p-3 sm:p-6">
+        {/* conteneur mesuré */}
+        <div ref={ref} className="w-full">
+          <div className="mx-auto" style={{ width: targetWidth || "100%" }}>
+            <Document
+              file={file}
+              loading={<div className="text-sm text-black/60">loading…</div>}
+            >
+              <Page
+                pageNumber={1}
+                // ✅ responsive : on donne width, et on applique le zoom via scale
+                width={targetWidth || undefined}
+                scale={zoom}
+                renderTextLayer={false}
+                renderAnnotationLayer={false}
+              />
+            </Document>
+          </div>
         </div>
       </div>
     </section>
