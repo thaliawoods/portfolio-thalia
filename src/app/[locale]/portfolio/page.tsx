@@ -48,9 +48,8 @@ export default async function PortfolioPage({
             href={`/${locale}/projects/${p.slug}`}
             className="group relative border border-black/10 bg-white overflow-hidden"
           >
-            {/* Hover image avec cadre blanc - SANS VOILE */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-              <div className="absolute inset-0 p-5 sm:p-7 lg:p-9 bg-white">
+              <div className="absolute inset-0 p-7 bg-white">
                 <div className="relative w-full h-full overflow-hidden">
                   <Image
                     src={p.cover.src}
@@ -63,8 +62,7 @@ export default async function PortfolioPage({
               </div>
             </div>
 
-            {/* contenu caché au hover */}
-            <div className="relative p-6 h-[250px] sm:h-[270px] flex flex-col justify-between transition-opacity duration-200 group-hover:opacity-0 group-hover:pointer-events-none">
+            <div className="relative p-6 h-[270px] flex flex-col justify-between transition-opacity duration-200 group-hover:opacity-0 group-hover:pointer-events-none">
               <div>
                 <div className="text-base tracking-wide text-black/90">
                   {p.title[locale]}

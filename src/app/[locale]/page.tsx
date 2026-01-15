@@ -35,7 +35,6 @@ export default async function HomePage({
   return (
     <main className="mx-auto max-w-6xl px-6 py-14">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        {/* LEFT */}
         <div className="lg:col-span-4">
           <h1 className="text-3xl tracking-wide">Thalia Woods</h1>
 
@@ -64,18 +63,15 @@ export default async function HomePage({
           </div>
         </div>
 
-        {/* CENTER */}
         <div className="lg:col-span-5">
           <Link
             href={`/${locale}/portfolio`}
             className="group relative block border border-black/10 bg-white h-[420px] overflow-hidden"
             aria-label="Open portfolio"
           >
-            {/* preview image au hover (cadre blanc) */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
               <div className="absolute inset-0 p-5 bg-white">
                 <div className="relative w-full h-full overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/portfolio-preview.png"
                     alt="Portfolio preview"
@@ -86,7 +82,6 @@ export default async function HomePage({
               </div>
             </div>
 
-            {/* contenu central */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center px-8">
                 <div className="text-xs tracking-widest text-black/40 mb-5">
@@ -104,7 +99,6 @@ export default async function HomePage({
           </Link>
         </div>
 
-        {/* RIGHT */}
         <div className="lg:col-span-3">
           <div className="flex items-center justify-between mb-3">
             <div className="text-xs tracking-widest text-black/40">
@@ -121,7 +115,6 @@ export default async function HomePage({
                 aria-label={`Open ${p.title[locale]}`}
               >
                 <div className="relative aspect-[4/5]">
-                  {/* BASE (sans marge) */}
                   <div className="absolute inset-0 transition-opacity duration-200 group-hover:opacity-0">
                     <ImageHover
                       src={p.cover.src}
@@ -129,8 +122,6 @@ export default async function HomePage({
                       sizes="(max-width: 1024px) 50vw, 320px"
                     />
                   </div>
-
-                  {/* HOVER (avec marge/cadre blanc) */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                     <div className="absolute inset-0 p-3 bg-white">
                       <div className="relative w-full h-full overflow-hidden">

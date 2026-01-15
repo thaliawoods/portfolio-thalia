@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import type { Locale } from "@/data/projects";
-import Header from "@/components/Header"; // adapte le chemin (Navbar, SiteHeader, etc.)
+import Header from "@/components/Header"; 
 
 export default async function LocaleLayout({
   children,

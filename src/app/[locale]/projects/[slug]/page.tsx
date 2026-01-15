@@ -39,7 +39,6 @@ export default async function ProjectPage({
 
   return (
     <main className="mx-auto max-w-6xl px-6 py-12">
-      {/* top row */}
       <div className="mb-10 flex items-center justify-between">
         <Link
           href={`/${locale}/portfolio`}
@@ -53,9 +52,7 @@ export default async function ProjectPage({
         </div>
       </div>
 
-      {/* layout 2 colonnes */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-        {/* LEFT: texte */}
         <aside className="lg:col-span-4">
           <div className="text-xs tracking-widest text-black/50 mb-3">
             {project.years}
@@ -118,7 +115,6 @@ export default async function ProjectPage({
           </div>
         </aside>
 
-        {/* RIGHT: images */}
         <section className="lg:col-span-8">
           {images.length <= 1 ? (
             <div className="border border-black/10 bg-white overflow-hidden">
