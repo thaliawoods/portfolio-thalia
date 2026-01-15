@@ -71,8 +71,9 @@ export default async function HomePage({
             className="group relative block border border-black/10 bg-white h-[420px] overflow-hidden"
             aria-label="Open portfolio"
           >
+            {/* preview image au hover (cadre blanc) */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-              <div className="absolute inset-0 p-4 bg-white">
+              <div className="absolute inset-0 p-5 bg-white">
                 <div className="relative w-full h-full overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
@@ -85,6 +86,7 @@ export default async function HomePage({
               </div>
             </div>
 
+            {/* contenu central */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center px-8">
                 <div className="text-xs tracking-widest text-black/40 mb-5">
@@ -115,15 +117,33 @@ export default async function HomePage({
               <Link
                 key={p.slug}
                 href={`/${locale}/projects/${p.slug}`}
-                className="group block border border-black/10 bg-white overflow-hidden"
+                className="group relative block border border-black/10 bg-white overflow-hidden"
                 aria-label={`Open ${p.title[locale]}`}
               >
                 <div className="relative aspect-[4/5]">
-                  <ImageHover
-                    src={p.cover.src}
-                    alt={p.cover.alt}
-                    sizes="(max-width: 1024px) 50vw, 320px"
-                  />
+                  {/* BASE (sans marge) */}
+                  <div className="absolute inset-0 transition-opacity duration-200 group-hover:opacity-0">
+                    <ImageHover
+                      src={p.cover.src}
+                      alt={p.cover.alt}
+                      sizes="(max-width: 1024px) 50vw, 320px"
+                    />
+                  </div>
+
+                  {/* HOVER (avec marge/cadre blanc) */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    <div className="absolute inset-0 p-3 bg-white">
+                      <div className="relative w-full h-full overflow-hidden">
+                        <div className="absolute inset-0 scale-[1] group-hover:scale-[1.02] transition-transform duration-300">
+                          <ImageHover
+                            src={p.cover.src}
+                            alt={p.cover.alt}
+                            sizes="(max-width: 1024px) 50vw, 320px"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </Link>
             ))}
