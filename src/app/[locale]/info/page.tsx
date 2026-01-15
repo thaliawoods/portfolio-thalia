@@ -48,14 +48,14 @@ export default async function InfoPage({
 
           aboutTitle: "ABOUT",
           about1:
-            "Web developer (front-end / full-stack), RNCP Level VI graduate (Bachelor-equivalent) — Application design & development (Ada Tech School).",
+            "Web developer (front-end / full-stack), RNCP Level VI graduate (Bachelor) — Application design & development (Ada Tech School).",
           about2:
             "After several years working in hospitality, retail, and the social sector, I wanted to build useful digital tools that genuinely make everyday life easier. What drives me: turning sometimes fuzzy needs into clear, aesthetic, and reliable interfaces. I care as much about UX/UI and visual details as I do about technical rigor (structure, code quality, edge cases).",
           about3:
             "I’ve just completed my front-end developer apprenticeship at Julaya (a B2B fintech in West Africa), and I’m now looking for a new 24-month apprenticeship as part of my Master’s program (4 days in a company / 1 day at school).",
 
           eduTitle: "EDUCATION",
-          edu1a: "Ada Tech School — RNCP Level VI (Bachelor-equivalent)",
+          edu1a: "Ada Tech School — RNCP Level VI (Bachelor)",
           edu1b: "Web development & application design",
           edu1c: "2023–2026",
           edu2a: "Aix-Marseille University — DAEU A (Honors)",
