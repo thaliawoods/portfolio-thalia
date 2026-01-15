@@ -22,6 +22,12 @@ export default function Header({ locale }: { locale: Locale }) {
           >
             Portfolio
           </Link>
+          <Link
+            href={`/${locale}/cv`}
+            className="hover:text-black hover:underline underline-offset-4"
+          >
+            CV
+          </Link>
 
           <Link
             href={`/${locale}/info`}
