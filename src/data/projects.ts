@@ -1,5 +1,23 @@
 export type Locale = "fr" | "en";
 
+// =========================
+// MEDIA (images + vidéos)
+// =========================
+export type ProjectImage = {
+  kind: "image";
+  src: string;
+  alt: string;
+};
+
+export type ProjectVideo = {
+  kind: "video";
+  src: string;
+  alt: string;
+  poster?: string;
+};
+
+export type ProjectMedia = ProjectImage | ProjectVideo;
+
 export type Project = {
   slug: string;
   years?: string;
@@ -12,13 +30,19 @@ export type Project = {
   stack: string[];
   links: { label: string; href: string }[];
 
-  cover: { src: string; alt: string };
-  gallery: { src: string; alt: string }[];
+  cover: ProjectImage;
+  gallery: ProjectMedia[];
 
   featured?: boolean;
 };
 
-const img = (src: string, alt: string) => ({ src, alt });
+const img = (src: string, alt: string): ProjectImage => ({ kind: "image", src, alt });
+const vid = (src: string, alt: string, poster?: string): ProjectVideo => ({
+  kind: "video",
+  src,
+  alt,
+  poster,
+});
 
 export const projects: Project[] = [
   // =========================
@@ -44,8 +68,20 @@ export const projects: Project[] = [
     ],
     cover: img("/projects/jardin-solidaire/cover.png", "JardinSolidaire cover"),
     gallery: [
-      // (tu n’as que cover pour le moment d’après ta capture)
-      // Ajoute 01/02/03 si tu veux, et je les mets ici
+      // ✅ Vidéo comme une slide du carousel
+      // ⚠️ Ce chemin macOS ne fonctionnera pas dans le navigateur :
+      // garde-le seulement si tu l'utilises localement hors web.
+      // Pour que ça marche sur ton site (Vercel), utilise plutôt :
+      // "/projects/jardin-solidaire/demo.mp4"
+      vid(
+        "/projects/jardin-solidaire/demo.mp4",
+        "JardinSolidaire demo video",
+      ),
+
+      // Ajoute des images si tu veux :
+      // img("/projects/jardin-solidaire/01.png", "JardinSolidaire screenshot 1"),
+      // img("/projects/jardin-solidaire/02.png", "JardinSolidaire screenshot 2"),
+      // img("/projects/jardin-solidaire/03.png", "JardinSolidaire screenshot 3"),
     ],
     featured: true,
   },
@@ -84,7 +120,7 @@ export const projects: Project[] = [
     },
     roles: ["Front-end", "Content integration"],
     stack: ["Next.js · TypeScript · Strapi"],
-    links: [{ label: "Blog", href: "blog.julaya.co" }],
+    links: [{ label: "Blog", href: "https://blog.julaya.co/" }],
     cover: img("/projects/blog-julaya/cover.png", "Julaya blog cover"),
     gallery: [],
     featured: true,
@@ -107,7 +143,12 @@ export const projects: Project[] = [
     },
     roles: ["Full-stack (collectif)"],
     stack: ["PHP · Tailwind · PostgreSQL · Docker"],
-    links: [{ label: "GitHub", href: "https://github.com/thaliawoods/projet-collectif-microblogging-thalia-eda-ghislaine" }],
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/thaliawoods/projet-collectif-microblogging-thalia-eda-ghislaine",
+      },
+    ],
     cover: img("/projects/besti-blog/cover.png", "Besti-Blog cover"),
     gallery: [
       img("/projects/besti-blog/01.png", "Besti-Blog screenshot 1"),
@@ -129,7 +170,12 @@ export const projects: Project[] = [
     },
     roles: ["Full-stack (collectif)"],
     stack: ["React · Express · MongoDB"],
-    links: [{ label: "GitHub", href: "https://github.com/thaliawoods/projet-meubles-abelson-bastien-bruno-ghislaine-jay-thalia-zineb" }],
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/thaliawoods/projet-meubles-abelson-bastien-bruno-ghislaine-jay-thalia-zineb",
+      },
+    ],
     cover: img("/projects/vintage-gallery/cover.png", "Vintage Gallery cover"),
     gallery: [
       img("/projects/vintage-gallery/01.png", "Vintage Gallery screenshot 1"),
@@ -266,7 +312,12 @@ export const projects: Project[] = [
     },
     roles: ["Full-stack"],
     stack: ["PHP · MySQL · phpMyAdmin"],
-    links: [{ label: "GitHub", href: "https://github.com/thaliawoods/reseau-social-php-reseau_social_thalia_fatouma" }],
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/thaliawoods/reseau-social-php-reseau_social_thalia_fatouma",
+      },
+    ],
     cover: img("/projects/social-network/cover.png", "Social Network cover"),
     gallery: [],
   },

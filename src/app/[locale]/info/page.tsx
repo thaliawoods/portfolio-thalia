@@ -80,7 +80,6 @@ export default async function InfoPage({
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-10">
-      {/* Title à gauche + CONTACT en haut à droite */}
       <div className="flex items-start justify-between gap-10 mb-6">
         <h1 className="text-xl tracking-wide">{t.title}</h1>
 
@@ -121,7 +120,6 @@ export default async function InfoPage({
       </div>
 
       <div className="space-y-10 text-sm">
-        {/* ABOUT */}
         <section>
           <div className="text-xs text-black/50 mb-2">{t.aboutTitle}</div>
 
@@ -136,7 +134,6 @@ export default async function InfoPage({
           </p>
         </section>
 
-        {/* EDUCATION */}
         <section>
           <div className="text-xs text-black/50 mb-2">{t.eduTitle}</div>
 
@@ -166,7 +163,6 @@ export default async function InfoPage({
           </ul>
         </section>
 
-        {/* SKILLS */}
         <section>
           <div className="text-xs text-black/50 mb-2">{t.skillsTitle}</div>
 

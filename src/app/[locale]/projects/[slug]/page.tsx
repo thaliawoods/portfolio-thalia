@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { projects, type Locale } from "@/data/projects";
+import { projects, type Locale, type ProjectMedia } from "@/data/projects";
 import ProjectCarousel from "@/components/ProjectCarousel";
 
 type Params = { locale: Locale; slug: string };
@@ -20,7 +20,10 @@ export default async function ProjectPage({
   const subtitle = project.subtitle[locale];
   const content = project.content?.[locale];
 
-  const images = [project.cover, ...(project.gallery ?? [])].filter(Boolean);
+  // ✅ cover + gallery (gallery peut contenir image/video)
+  const media: ProjectMedia[] = [project.cover, ...(project.gallery ?? [])].filter(
+    Boolean
+  ) as ProjectMedia[];
 
   const t =
     locale === "fr"
@@ -37,6 +40,8 @@ export default async function ProjectPage({
           links: "LINKS",
         };
 
+  const first = media[0]; // ProjectMedia | undefined
+
   return (
     <main className="mx-auto max-w-6xl px-6 py-12">
       <div className="mb-10 flex items-center justify-between">
@@ -48,7 +53,7 @@ export default async function ProjectPage({
         </Link>
 
         <div className="text-xs tracking-widest text-black/40">
-          1/{Math.max(1, images.length)}
+          1/{Math.max(1, media.length)}
         </div>
       </div>
 
@@ -116,21 +121,35 @@ export default async function ProjectPage({
         </aside>
 
         <section className="lg:col-span-8">
-          {images.length <= 1 ? (
+          {media.length <= 1 ? (
             <div className="border border-black/10 bg-white overflow-hidden">
               <div className="relative w-full aspect-[16/10]">
-                <Image
-                  src={(images[0] ?? project.cover).src}
-                  alt={(images[0] ?? project.cover).alt}
-                  fill
-                  className="object-contain"
-                  sizes="(max-width: 1024px) 100vw, 900px"
-                  priority
-                />
+                {first?.kind === "video" ? (
+                  <video
+                    className="h-full w-full object-contain"
+                    controls
+                    playsInline
+                    preload="metadata"
+                    poster={first.poster}
+                    muted
+                  >
+                    <source src={first.src} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <Image
+                    src={(first ?? project.cover).src}
+                    alt={(first ?? project.cover).alt}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 1024px) 100vw, 900px"
+                    priority
+                  />
+                )}
               </div>
             </div>
           ) : (
-            <ProjectCarousel images={images} />
+            <ProjectCarousel items={media} />
           )}
         </section>
       </div>
