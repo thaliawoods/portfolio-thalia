@@ -13,12 +13,14 @@ export default async function InfoPage({
           title: "Infos",
 
           aboutTitle: "À PROPOS",
-          about1:
-            "Développeuse web (front-end / full-stack), diplômée RNCP niveau VI (Bac+3) — Conception et développement d’applications (Ada Tech School).",
+          about1: [
+            "Développeuse web (front-end / full-stack).",
+            "Diplômée RNCP niveau VI (Bac+3) — Conception et développement d’applications (Ada Tech School).",
+          ],
           about2:
-            "Après plusieurs années dans la restauration, la vente et le secteur social, j’ai eu envie de construire des outils numériques utiles, qui simplifient vraiment le quotidien. Ce qui me motive : transformer des besoins parfois flous en interfaces claires, esthétiques et fiables. J’accorde autant d’importance à l’UX/UI et aux détails visuels qu’à la rigueur technique (structure, qualité du code, cas limites).",
+            "Après plusieurs années dans la vente, la restauration et le secteur social, j’ai eu envie de construire des outils numériques utiles, qui simplifient le quotidien. Ce qui me motive : transformer des besoins parfois flous en interfaces claires, esthétiques et fiables. J’accorde autant d’importance à l’UX/UI et aux détails visuels qu’à la rigueur technique.",
           about3:
-            "Je viens de terminer mon alternance de développeuse front-end chez Julaya (fintech B2B en Afrique de l’Ouest), et je recherche, dans le cadre de mon Master, une nouvelle alternance de 24 mois (4 jours entreprise / 1 jour école).",
+            "Je viens de terminer mon alternance de développeuse front-end chez Julaya (fintech B2B en Afrique de l’Ouest), et je recherche, dans le cadre de mon Master, une nouvelle alternance de 24 mois.",
 
           eduTitle: "FORMATION",
           edu1a: "Ada Tech School — RNCP niveau VI (Bac+3)",
@@ -31,10 +33,10 @@ export default async function InfoPage({
           edu3c: "2016",
 
           skillsTitle: "COMPÉTENCES",
-          front: "FRONTEND",
-          back: "BACKEND",
-          cms: "CMS / CONTENT",
-          tools: "OUTILS",
+          front: "FRONT & UI ENGINEERING",
+          back: "BACK & DATA",
+          cms: "CMS & CONTENT",
+          tools: "DEVOPS & DELIVERY",
 
           contactTitle: "CONTACT",
           email: "thaliadwoods@gmail.com",
@@ -47,12 +49,14 @@ export default async function InfoPage({
           title: "Info",
 
           aboutTitle: "ABOUT",
-          about1:
-            "Web developer (front-end / full-stack), RNCP Level VI graduate (Bachelor) — Application design & development (Ada Tech School).",
+          about1: [
+            "Web developer (front-end / full-stack).",
+            "RNCP Level VI graduate (Bachelor) — Application design & development (Ada Tech School).",
+          ],
           about2:
-            "After several years working in hospitality, retail, and the social sector, I wanted to build useful digital tools that genuinely make everyday life easier. What drives me: turning sometimes fuzzy needs into clear, aesthetic, and reliable interfaces. I care as much about UX/UI and visual details as I do about technical rigor (structure, code quality, edge cases).",
+            "After several years working in hospitality, retail, and the social sector, I wanted to build useful digital tools that genuinely make everyday life easier. What drives me: turning sometimes fuzzy needs into clear, aesthetic, and reliable interfaces. I care as much about UX/UI and visual details as I do about technical rigor.",
           about3:
-            "I’ve just completed my front-end developer apprenticeship at Julaya (a B2B fintech in West Africa), and I’m now looking for a new 24-month apprenticeship as part of my Master’s program (4 days in a company / 1 day at school).",
+            "I’ve just completed my front-end developer apprenticeship at Julaya (a B2B fintech in West Africa), and I’m now looking for a new 24-month apprenticeship as part of my Master’s program.",
 
           eduTitle: "EDUCATION",
           edu1a: "Ada Tech School — RNCP Level VI (Bachelor)",
@@ -65,10 +69,10 @@ export default async function InfoPage({
           edu3c: "2016",
 
           skillsTitle: "SKILLS",
-          front: "FRONTEND",
-          back: "BACKEND",
-          cms: "CMS / CONTENT",
-          tools: "TOOLING",
+          front: "FRONT & UI ENGINEERING",
+          back: "BACK & DATA",
+          cms: "CMS & CONTENT",
+          tools: "DEVOPS & DELIVERY",
 
           contactTitle: "CONTACT",
           email: "thaliadwoods@gmail.com",
@@ -123,7 +127,10 @@ export default async function InfoPage({
         <section>
           <div className="text-xs text-black/50 mb-2">{t.aboutTitle}</div>
 
-          <p className="max-w-2xl leading-relaxed text-black/70">{t.about1}</p>
+          <div className="max-w-2xl">
+            <p className="leading-relaxed text-black/70">{t.about1[0]}</p>
+            <p className="leading-relaxed text-black/70">{t.about1[1]}</p>
+          </div>
 
           <p className="mt-3 max-w-2xl leading-relaxed text-black/70">
             {t.about2}
@@ -170,27 +177,30 @@ export default async function InfoPage({
             <div>
               <div className="text-black/50 text-xs mb-2">{t.front}</div>
               <div>
-                JavaScript · TypeScript · React · Next.js · Tailwind · UX/UI ·
-                Accessibility · Performance
+                TypeScript · React · Next.js · Tailwind · UI/UX · Responsive ·
+                Accessibility
               </div>
             </div>
 
             <div>
               <div className="text-black/50 text-xs mb-2">{t.back}</div>
               <div>
-                Node.js · Express · Prisma · PostgreSQL · Python · PHP · REST APIs
-                · Auth · Docker
+                Node.js · Express · Prisma · PostgreSQL · REST APIs · Auth (JWT)
               </div>
             </div>
 
             <div>
               <div className="text-black/50 text-xs mb-2">{t.cms}</div>
-              <div>Strapi (Headless) · Content modeling · i18n · SEO</div>
+              <div>
+                Strapi (Headless) · Content Modeling · i18n · SEO · Media/Relations
+              </div>
             </div>
 
             <div>
               <div className="text-black/50 text-xs mb-2">{t.tools}</div>
-              <div>Git/GitHub · CI/CD · Vercel · Render · Figma · Agile</div>
+              <div>
+                Docker · Git/GitHub · CI/CD · Vercel · Render · Env/Deploy workflows
+              </div>
             </div>
           </div>
         </section>

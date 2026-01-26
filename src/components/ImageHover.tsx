@@ -8,22 +8,23 @@ type Props = {
 
 export default function ImageHover({ src, alt, sizes }: Props) {
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full h-full overflow-hidden">
       {/* base : noir & blanc */}
       <Image
         src={src}
         alt={alt}
         fill
-        className="object-cover grayscale transition-opacity duration-200 group-hover:opacity-0"
+        className="object-cover grayscale transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-[1.02]"
         sizes={sizes}
         priority={false}
       />
+
       {/* hover : couleur */}
       <Image
         src={src}
         alt={alt}
         fill
-        className="object-cover opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+        className="object-cover opacity-0 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:scale-[1.02]"
         sizes={sizes}
         priority={false}
       />

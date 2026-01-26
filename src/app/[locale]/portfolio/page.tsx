@@ -30,6 +30,8 @@ export default async function PortfolioPage({
     (a, b) => Number(!!b.featured) - Number(!!a.featured)
   );
 
+  const ease = "ease-[cubic-bezier(0.16,1,0.3,1)]";
+
   return (
     <main className="mx-auto max-w-6xl px-6 py-12">
       <div className="mb-10">
@@ -46,23 +48,49 @@ export default async function PortfolioPage({
           <Link
             key={p.slug}
             href={`/${locale}/projects/${p.slug}`}
-            className="group relative border border-black/10 bg-white overflow-hidden"
+            className={[
+              "group relative border border-black/10 bg-white overflow-hidden",
+              "transition-shadow duration-500",
+              ease,
+              "hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)]",
+            ].join(" ")}
           >
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            {/* couche image (au hover) */}
+            <div
+              className={[
+                "absolute inset-0 opacity-0",
+                "transition-opacity duration-700",
+                ease,
+                "group-hover:opacity-100",
+              ].join(" ")}
+            >
               <div className="absolute inset-0 p-7 bg-white">
                 <div className="relative w-full h-full overflow-hidden">
                   <Image
                     src={p.cover.src}
                     alt={p.cover.alt}
                     fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                    className={[
+                      "object-cover",
+                      "transition-transform duration-700",
+                      ease,
+                      "group-hover:scale-[1.03]",
+                    ].join(" ")}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
               </div>
             </div>
 
-            <div className="relative p-6 h-[270px] flex flex-col justify-between transition-opacity duration-200 group-hover:opacity-0 group-hover:pointer-events-none">
+            {/* couche texte (par défaut) */}
+            <div
+              className={[
+                "relative p-6 h-[270px] flex flex-col justify-between",
+                "transition-opacity duration-700",
+                ease,
+                "group-hover:opacity-0 group-hover:pointer-events-none",
+              ].join(" ")}
+            >
               <div>
                 <div className="text-base tracking-wide text-black/90">
                   {p.title[locale]}
@@ -75,7 +103,17 @@ export default async function PortfolioPage({
 
               <div className="mt-6 flex items-center justify-between text-xs text-black/50">
                 <span>{p.years}</span>
-                <span className="opacity-0 underline underline-offset-4">
+
+                {/* ✅ maintenant il apparaît vraiment au hover */}
+                <span
+                  className={[
+                    "underline underline-offset-4",
+                    "opacity-0 translate-x-0",
+                    "transition-all duration-700",
+                    ease,
+                    "group-hover:opacity-100 group-hover:translate-x-0.5",
+                  ].join(" ")}
+                >
                   {t.view}
                 </span>
               </div>
