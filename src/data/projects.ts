@@ -44,7 +44,7 @@ const vid = (src: string, alt: string, poster?: string): ProjectVideo => ({
 export const projects: Project[] = [
 {
   slug: "jardin-solidaire",
-  years: "2025–2026",
+  years: "2025",
   title: { fr: "JardinSolidaire", en: "JardinSolidaire" },
   subtitle: {
     fr: "Projet RNCP - plateforme de mise en relation : jardins, disponibilités, réservations sans conflit, authentification.",
