@@ -45,7 +45,7 @@ export const projects: Project[] = [
 {
   slug: "jardin-solidaire",
   years: "2025",
-  title: { fr: "JardinSolidaire", en: "JardinSolidaire" },
+  title: { fr: "Jardin Solidaire", en: "Jardin Solidaire" },
   subtitle: {
     fr: "Projet RNCP - plateforme de mise en relation : jardins, disponibilités, réservations sans conflit, authentification.",
     en: "RNCP project - a matching platform: gardens, availability slots, conflict-free bookings, authentication.",
