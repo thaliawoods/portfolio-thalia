@@ -1,45 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Thalia Woods — Portfolio
 
-## Getting Started
+## À propos
 
-First, run the development server:
+Ce dépôt contient le code source de mon site portfolio personnel.
 
-```bash
+Je suis développeuse full-stack, orientée front-end, avec un intérêt particulier pour les expériences interactives, les interfaces sensibles et les projets à la frontière entre art et technologie.
+
+Ce portfolio présente une sélection de projets situés à l’intersection de :
+- Développement web (React / Next.js)
+- Design interactif
+- Creative coding
+- Performance et art numérique
+- UX/UI design
+
+Site en ligne :
+https://thalia-woods.vercel.app
+
+## Démarche
+
+Je conçois les interfaces comme des espaces vivants.
+
+Je m’intéresse particulièrement à :
+- Des layouts expérimentaux
+- Des interactions audio-réactives
+- Des projets d’archives interactives
+- Des pratiques hybrides entre art et technologie
+
+## Projets
+
+Le portfolio inclut notamment :
+- JardinSolidaire (plateforme collaborative autour du jardinage)
+- Hannah Hajar (site interactif pour un duo musical/performatif)
+- Témoigner pour lutter (outil d’archive et de performance)
+- Tests techniques front-end (ex : Lydia)
+
+## Stack technique
+
+Stack utilisée pour ce projet :
+- Next.js
+- React
+- TypeScript (si activé)
+- Tailwind CSS
+- Vercel (déploiement)
+
+## Lancer le projet en local
+
+Installer les dépendances :
+npm install
+
+Lancer le serveur de développement :
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build de production :
+npm run build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Lancer en production :
+npm run start
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Déploiement
 
-## Learn More
+Le site est déployé via Vercel.
 
-To learn more about Next.js, take a look at the following resources:
+## Contact
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-cd ~/portfolio
-
-# repasser en Node 20 dans CE terminal
-source ~/.zshrc
-nvm use 20
-node -v
-
-# relancer le dev server
-npm run dev
+- Portfolio : https://portfolio-thalia-phi.vercel.app
+- GitHub : https://github.com/thaliawoods
+- LinkedIn : https://www.linkedin.com/in/thalia-woods-794917281/
