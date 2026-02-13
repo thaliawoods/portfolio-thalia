@@ -16,7 +16,6 @@ export default function CVViewer({ locale }: Props) {
   const defaultLang = locale === "fr" ? "fr" : "en";
   const [lang, setLang] = useState<"fr" | "en">(defaultLang);
 
-  // zoom “user” (1 = normal). On multiplie ensuite par l’échelle responsive.
   const [zoom, setZoom] = useState(1);
 
   const file = useMemo(
@@ -29,18 +28,13 @@ export default function CVViewer({ locale }: Props) {
       ? { open: "ouvrir", download: "télécharger" }
       : { open: "open", download: "download" };
 
-  // largeur du conteneur (responsive)
   const { ref, width } = useContainerWidth<HTMLDivElement>();
 
-  // width cible max (desktop) : 900px ; sur mobile : largeur container
-  // (on enlève un peu pour éviter que ça “colle” aux bords)
   const targetWidth = Math.min(900, Math.max(320, width - 2));
 
   return (
     <section className="space-y-4">
-      {/* BARRE TOP responsive */}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        {/* switch FR/EN */}
         <div className="flex gap-2">
           <button
             type="button"
@@ -66,7 +60,6 @@ export default function CVViewer({ locale }: Props) {
           </button>
         </div>
 
-        {/* zoom + liens */}
         <div className="flex items-center justify-between sm:justify-end gap-4">
           <div className="flex items-center gap-2 text-xs text-black/70">
             <button
@@ -101,9 +94,7 @@ export default function CVViewer({ locale }: Props) {
         </div>
       </div>
 
-      {/* WRAPPER BLANC responsive */}
       <div className="border border-black/10 bg-white p-3 sm:p-6">
-        {/* conteneur mesuré */}
         <div ref={ref} className="w-full">
           <div className="mx-auto" style={{ width: targetWidth || "100%" }}>
             <Document
@@ -112,7 +103,6 @@ export default function CVViewer({ locale }: Props) {
             >
               <Page
                 pageNumber={1}
-                // ✅ responsive : on donne width, et on applique le zoom via scale
                 width={targetWidth || undefined}
                 scale={zoom}
                 renderTextLayer={false}

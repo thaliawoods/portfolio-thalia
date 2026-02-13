@@ -9,7 +9,6 @@ type Props = {
 export default function ImageHover({ src, alt, sizes }: Props) {
   return (
     <div className="relative w-full h-full overflow-hidden">
-      {/* base : noir & blanc */}
       <Image
         src={src}
         alt={alt}
@@ -19,7 +18,6 @@ export default function ImageHover({ src, alt, sizes }: Props) {
         priority={false}
       />
 
-      {/* hover : couleur */}
       <Image
         src={src}
         alt={alt}

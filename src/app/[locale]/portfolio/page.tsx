@@ -55,7 +55,6 @@ export default async function PortfolioPage({
               "hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)]",
             ].join(" ")}
           >
-            {/* couche image (au hover) */}
             <div
               className={[
                 "absolute inset-0 opacity-0",
@@ -82,7 +81,6 @@ export default async function PortfolioPage({
               </div>
             </div>
 
-            {/* couche texte (par défaut) */}
             <div
               className={[
                 "relative p-6 h-[270px] flex flex-col justify-between",
@@ -104,7 +102,6 @@ export default async function PortfolioPage({
               <div className="mt-6 flex items-center justify-between text-xs text-black/50">
                 <span>{p.years}</span>
 
-                {/* ✅ maintenant il apparaît vraiment au hover */}
                 <span
                   className={[
                     "underline underline-offset-4",

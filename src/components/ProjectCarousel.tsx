@@ -26,7 +26,6 @@ export default function ProjectCarousel({ items }: { items: Media[] }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [max]);
 
-  // ✅ force la vitesse 1.5x quand on est sur une slide vidéo
   useEffect(() => {
     const current = slides[i];
     if (current?.kind === "video" && videoRef.current) {

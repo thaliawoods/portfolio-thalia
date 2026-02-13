@@ -8,7 +8,6 @@ export default function LocaleSwitch({ locale }: { locale: Locale }) {
   const pathname = usePathname() || "/";
   const nextLocale: Locale = locale === "fr" ? "en" : "fr";
 
-  // pathname: "/fr/info" -> "/en/info"
   const parts = pathname.split("/").filter(Boolean);
 
   if (parts.length === 0) {
@@ -22,7 +21,6 @@ export default function LocaleSwitch({ locale }: { locale: Locale }) {
     );
   }
 
-  // remplace le 1er segment si c'est une locale, sinon on préfixe
   if (parts[0] === "fr" || parts[0] === "en") {
     parts[0] = nextLocale;
   } else {

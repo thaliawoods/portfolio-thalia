@@ -20,7 +20,6 @@ export default async function ProjectPage({
   const subtitle = project.subtitle[locale];
   const content = project.content?.[locale];
 
-  // ✅ cover + gallery (gallery peut contenir image/video)
   const media: ProjectMedia[] = [project.cover, ...(project.gallery ?? [])].filter(
     Boolean
   ) as ProjectMedia[];
@@ -40,7 +39,7 @@ export default async function ProjectPage({
           links: "LINKS",
         };
 
-  const first = media[0]; // ProjectMedia | undefined
+  const first = media[0];
 
   return (
     <main className="mx-auto max-w-6xl px-6 py-12">
