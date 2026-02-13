@@ -63,6 +63,6 @@ Le site est déployé via Vercel.
 
 ## Contact
 
-- Portfolio : https://portfolio-thalia-phi.vercel.app
+- Portfolio : https://thalia-woods.vercel.app
 - GitHub : https://github.com/thaliawoods
 - LinkedIn : https://www.linkedin.com/in/thalia-woods-794917281/
