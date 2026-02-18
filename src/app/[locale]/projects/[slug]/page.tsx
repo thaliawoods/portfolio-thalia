@@ -20,9 +20,10 @@ export default async function ProjectPage({
   const subtitle = project.subtitle[locale];
   const content = project.content?.[locale];
 
-  const media: ProjectMedia[] = [project.cover, ...(project.gallery ?? [])].filter(
-    Boolean
-  ) as ProjectMedia[];
+  const media: ProjectMedia[] = [
+    project.cover,
+    ...(project.gallery ?? []),
+  ].filter(Boolean) as ProjectMedia[];
 
   const t =
     locale === "fr"
@@ -64,7 +65,7 @@ export default async function ProjectPage({
 
           <h1 className="text-lg tracking-widest uppercase">{title}</h1>
 
-          <p className="mt-4 text-sm leading-relaxed text-black/70">
+          <p className="mt-4 text-sm leading-relaxed text-black/70 whitespace-pre-line">
             {subtitle}
           </p>
 

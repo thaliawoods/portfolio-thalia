@@ -51,15 +51,15 @@ export const projects: Project[] = [
     years: "2026",
     title: { fr: "Témoigner pour Lutter", en: "Testify to Resist" },
     subtitle: {
-      fr: "Outil d’archive & performance - Projet En cours. Navigation dans des témoignages, fragments média, structure documentaire.",
-      en: "Archive & performance tool - Ongoing Project. Navigating testimonies, media fragments, documentary structure.",
+      fr: "Outil d’archive & performance - En cours. Navigation dans des témoignages, fragments média, structure documentaire.",
+      en: "Archive & performance tool - Ongoing. \nNavigating testimonies, media fragments, documentary structure.",
     },
     content: {
       fr: "Conception d’une interface de consultation pour un projet artistique et documentaire pour Ely & Marion Collective. Travail sur la structuration des données (références, tags, liens), la navigation (parcours, filtres), et la mise en scène des contenus (fragments texte / image / vidéo) dans une logique d’archive vivante. Attention particulière portée à la lisibilité, à l’accessibilité et à la robustesse face aux contenus incomplets.",
       en: "Designed an exploration interface for an artistic and documentary project for Ely & Marion Collective. Worked on data structure (references, tags, links), navigation (user flows, filters), and content staging (text / image / video fragments) as a living archive. Strong focus on readability, accessibility, and robustness with imperfect content.",
     },
     roles: ["Full-Stack", "UX/UI"],
-    stack: ["Next.js · TypeScript · Tailwind"],
+    stack: ["Next.js · TypeScript · Tailwind · Supabase"],
     links: [
       {
         label: "GitHub",
@@ -120,7 +120,7 @@ export const projects: Project[] = [
     years: "2026",
     title: { fr: "Test Technique Lydia", en: "Tech Lydia Test" },
     subtitle: {
-      fr: "Test technique React - SPA de recherche dans des transactions, filtrage rapide et UI soignée. Projet En cours",
+      fr: "Test technique React - SPA de recherche dans des transactions, filtrage rapide et UI soignée.",
       en: "React technical test - SPA to search transactions, fast filtering and polished UI. Ongoing Project",
     },
     content: {
@@ -154,8 +154,8 @@ export const projects: Project[] = [
       en: "Hannah Hajar",
     },
     subtitle: {
-      fr: "Site expérimental audio / visuel - Projet En cours. Map avec zones interactives, esthétique organique, narration.",
-      en: "Experimental audio/visual site - Ongoing Project. Map with interactive zones, organic aesthetics, narrative.",
+      fr: "Site expérimental audio / visuel - En cours. \n Map avec zones interactives, esthétique organique, narration.",
+      en: "Experimental audio/visual site - Ongoing.\n Map with interactive zones, organic aesthetics, narrative.",
     },
     content: {
       fr: "Conception et développement d’un site expérimental pour un duo de performance musicale with Mathilde Proy & Jeanne Merone. Travail sur une direction artistique web (formes organiques, atmosphère), une navigation par zones dans une map, et des interactions orientées expérience. Mise en place d’une base front robuste (components, responsive, perf) pour accueillir des contenus média et faire évoluer le projet.",
@@ -184,7 +184,7 @@ export const projects: Project[] = [
     years: "2025",
     title: { fr: "Jardin Solidaire", en: "Jardin Solidaire" },
     subtitle: {
-      fr: "Projet RNCP - plateforme de mise en relation : jardins, disponibilités, réservations sans conflit, authentification.",
+      fr: "Projet RNCP - plateforme de mise en relation: jardins, disponibilités, réservations sans conflit, authentification.",
       en: "RNCP project - a matching platform: gardens, availability slots, conflict-free bookings, authentication.",
     },
     content: {
@@ -221,7 +221,7 @@ export const projects: Project[] = [
       en: "Contributions to a production Next.js landing page: integrating sections, factoring reusable components, responsive tweaks, and UI consistency. Work focused on performance (image optimization, lazy-loading, bundle awareness, lighter animations, improved LCP) and SEO (metadata, page structure, heading hierarchy, content clarity), within a shared codebase deployed across multiple environments (staging / production).",
     },
     roles: ["Front-end"],
-    stack: ["Next.js · React · TypeScript"],
+    stack: ["Next.js · React · TypeScript · CMS (Strapi)"],
     links: [{ label: "Landing Page", href: "https://julaya.co" }],
     cover: img(
       "/projects/landing-page-julaya/cover.png",
@@ -244,7 +244,7 @@ export const projects: Project[] = [
       en: "Blog integration within a production Next.js website: listing and article pages, dedicated components (author, topic), routing, and data fetching logic from the CMS. The work focused on content reliability and robustness (handling missing data, relationship consistency), as well as maintainability within a large, shared codebase.",
     },
     roles: ["Front-end", "Content integration"],
-    stack: ["Next.js · TypeScript · Strapi"],
+    stack: ["Next.js · TypeScript · CMS (Strapi)"],
     links: [{ label: "Blog", href: "https://blog.julaya.co/" }],
     cover: img("/projects/blog-julaya/cover.png", "Julaya blog cover"),
     gallery: [],
@@ -291,7 +291,7 @@ export const projects: Project[] = [
       en: "Team project built under constraints: Bootstrap UI, split into two teams (front / back) then switching mid-way. I contributed on the front in week one (React + e-commerce pages: listing, product detail, admin) and on the back in week two (Express API, MongoDB via Mongoose, first auth building blocks). The project covers the core journey (catalog → product page) and an admin baseline; some features remain MVP-level (login/cart not fully completed).",
     },
     roles: ["Full-stack (collectif)"],
-    stack: ["Node.js + Mongoose + Bootstrap"],
+    stack: ["Node.js · Mongoose · Bootstrap"],
     links: [
       {
         label: "GitHub",
@@ -340,14 +340,14 @@ export const projects: Project[] = [
     years: "2024",
     title: { fr: "Safe or Not?", en: "Safe or Not?" },
     subtitle: {
-      fr: "Projet école (6 jours) - app iOS SwiftUI : avis + alertes, niveau de confiance.",
-      en: "School project (6 days) - SwiftUI iOS app: reviews + alerts, trust level.",
+      fr: "Projet école (6 jours) - app iOS SwiftUI : avis, alertes, niveau de confiance.",
+      en: "School project (6 days) - SwiftUI iOS app: reviews, alerts, trust level.",
     },
     content: {
       fr: "Exploration de l’approche mobile avec SwiftUI : conception UI, navigation simple depuis une liste vers des écrans détail, et gestion des états. L’app est pensée pour répertorier des professionnel·les de santé selon un niveau de confiance, permettre la publication d’avis et la création d’alertes. Une étape du projet porte sur le parsing des données et la connexion à une API.",
       en: "Exploring the mobile approach with SwiftUI: UI design, simple navigation from a list to detail screens, and state handling. The app is designed to list healthcare professionals by trust level, allow users to post reviews, and create alerts. One step of the project focuses on data parsing and connecting to an API.",
     },
-    roles: ["iOS", "UI"],
+    roles: ["Mobile"],
     stack: ["SwiftUI · iOS"],
     links: [
       {

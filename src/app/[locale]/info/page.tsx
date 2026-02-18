@@ -20,7 +20,7 @@ export default async function InfoPage({
           about2:
             "Après plusieurs années dans la vente, la restauration et le secteur social, j’ai eu envie de construire des outils numériques utiles, qui simplifient le quotidien. Ce qui me motive : transformer des besoins parfois flous en interfaces claires, esthétiques et fiables. J’accorde autant d’importance à l’UX/UI et aux détails visuels qu’à la rigueur technique.",
           about3:
-            "Je viens de terminer mon alternance de développeuse front-end chez Julaya (fintech B2B en Afrique de l’Ouest), et je recherche, dans le cadre de mon Master, une nouvelle alternance de 24 mois.",
+            "Je viens de terminer mon alternance de développeuse front-end chez Julaya (fintech B2B), et je recherche, dans le cadre de mon Master, une nouvelle alternance de 24 mois.",
 
           eduTitle: "FORMATION",
           edu1a: "Ada Tech School — RNCP niveau VI (Bac+3)",
@@ -185,7 +185,7 @@ export default async function InfoPage({
             <div>
               <div className="text-black/50 text-xs mb-2">{t.back}</div>
               <div>
-                Node.js · Express · Prisma · PostgreSQL · REST APIs · Auth (JWT)
+                Node.js · Express · Prisma · PostgreSQL · PHP · Python
               </div>
             </div>
 
@@ -199,7 +199,7 @@ export default async function InfoPage({
             <div>
               <div className="text-black/50 text-xs mb-2">{t.tools}</div>
               <div>
-                Docker · Git/GitHub · CI/CD · Vercel · Render · Env/Deploy workflows
+                Docker · Git/GitHub · CI/CD · Vercel · Render · Postman
               </div>
             </div>
           </div>
