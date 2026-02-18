@@ -56,7 +56,7 @@ export default async function InfoPage({
           about2:
             "After several years working in hospitality, retail, and the social sector, I wanted to build useful digital tools that genuinely make everyday life easier. What drives me: turning sometimes fuzzy needs into clear, aesthetic, and reliable interfaces. I care as much about UX/UI and visual details as I do about technical rigor.",
           about3:
-            "I’ve just completed my front-end developer apprenticeship at Julaya (a B2B fintech in West Africa), and I’m now looking for a new 24-month apprenticeship as part of my Master’s program.",
+            "I’ve just completed my front-end developer apprenticeship at Julaya (B2B fintech), and I’m now looking for a new 24-month apprenticeship as part of my Master’s program.",
 
           eduTitle: "EDUCATION",
           edu1a: "Ada Tech School — RNCP Level VI (Bachelor)",
