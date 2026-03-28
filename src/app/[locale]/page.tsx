@@ -71,13 +71,13 @@ export default async function HomePage({
         </FadeIn>
       </div>
 
-      {/* ── Right panel — full-height images with side margins ── */}
-      <div className="flex flex-col gap-10 pl-1 pr-6 lg:pr-20 pb-20">
+      {/* ── Right panel — horizontal scroll on mobile, vertical on desktop ── */}
+      <div className="flex lg:flex-col gap-6 lg:gap-10 overflow-x-auto lg:overflow-x-visible snap-x snap-mandatory lg:snap-none no-scrollbar px-4 lg:pl-1 lg:pr-20 pb-20">
         {featured.map((p, i) => (
           <Link
             key={p.slug}
             href={`/${locale}/projects/${p.slug}`}
-            className="group relative block h-[60vh] lg:h-[calc(100vh-4rem)] bg-white"
+            className="group relative block flex-none w-[85vw] h-[60vh] lg:w-auto lg:h-[calc(100vh-4rem)] bg-white snap-start"
             aria-label={p.title[locale]}
           >
             <Image
@@ -85,7 +85,7 @@ export default async function HomePage({
               alt={p.cover.alt}
               fill
               className="object-contain transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.025]"
-              sizes="(max-width: 1024px) 100vw, 58vw"
+              sizes="(max-width: 1024px) 85vw, 58vw"
               priority={i === 0}
             />
 

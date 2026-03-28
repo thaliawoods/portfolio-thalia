@@ -87,6 +87,11 @@
   --font-sans: "Baskervvol", Georgia, serif;
 }
 
+/* ── Custom cursor ── */
+* {
+  cursor: url("/cursor.svg") 12 12, crosshair !important;
+}
+
 /* ── Base styles ── */
 body {
   background: var(--background);

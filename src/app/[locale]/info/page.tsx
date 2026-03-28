@@ -19,7 +19,7 @@ about1:
 about2:
   "Mon travail se situe à la croisée de la technique et de la direction artistique : je conçois des interfaces claires, sensibles et robustes, en portant autant d’attention à la structure des données et à la maintenabilité qu’à l’UX/UI, aux interactions et aux détails visuels.",
 about3:
-  "Je viens de terminer une alternance en tant que développeuse front-end chez Julaya (fintech B2B). Je suis actuellement en stage chez Détours en Cinécourt et recherche une alternance de 24 mois dans le cadre de mon Master.",
+  "Après avoir terminé une alternance en tant que développeuse front-end chez Julaya (fintech B2B), je suis actuellement en stage chez Détours en Cinécourt et recherche une alternance de 24 mois dans le cadre de mon Master.",
           eduTitle: "Formation",
           edu: [
             {
@@ -69,7 +69,7 @@ about1:
 about2:
   "My work sits at the intersection of technical development and art direction: I design interfaces that are clear, thoughtful, and robust, with as much attention to data structure and maintainability as to UX/UI, interactions, and visual details.",
 about3:
-  "I recently completed a front-end developer apprenticeship at Julaya (B2B fintech). I am currently an intern at Détours en Cinécourt and am looking for a 24-month apprenticeship as part of my Master’s degree.",
+  "After completing a front-end developer apprenticeship at Julaya (B2B fintech), I am currently an intern at Détours en Cinécourt and am looking for a 24-month apprenticeship as part of my Master’s degree.",
           eduTitle: "Education",
           edu: [
             {

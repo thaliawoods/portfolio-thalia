@@ -44,7 +44,7 @@ export default async function ProjectPage({
   const first = media[0];
 
   return (
-    <main className="mx-auto max-w-7xl px-8 py-14">
+    <main className="mx-auto max-w-7xl px-8 py-6">
       {/* Back link */}
       <FadeIn>
         <Link
@@ -57,7 +57,7 @@ export default async function ProjectPage({
 
       {/* Header: title + subtitle */}
       <FadeIn delay={60}>
-        <div className="mt-10 mb-2">
+        <div className="mt-6 mb-2">
           <p className="text-xs tracking-widest text-black/40 uppercase mb-2">
             {project.years}
           </p>
