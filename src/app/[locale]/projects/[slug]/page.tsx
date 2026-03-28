@@ -3,6 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { projects, type Locale, type ProjectMedia } from "@/data/projects";
 import ProjectCarousel from "@/components/ProjectCarousel";
+import FadeIn from "@/components/FadeIn";
 
 type Params = { locale: Locale; slug: string };
 
@@ -28,129 +29,125 @@ export default async function ProjectPage({
   const t =
     locale === "fr"
       ? {
-          back: "← Retour au portfolio",
-          role: "RÔLE",
-          stack: "STACK",
-          links: "LIENS",
+          back: "← Portfolio",
+          role: "Rôle",
+          stack: "Stack",
+          links: "Liens",
         }
       : {
-          back: "← Back to portfolio",
-          role: "ROLE",
-          stack: "STACK",
-          links: "LINKS",
+          back: "← Portfolio",
+          role: "Role",
+          stack: "Stack",
+          links: "Links",
         };
 
   const first = media[0];
 
   return (
-    <main className="mx-auto max-w-6xl px-6 py-12">
-      <div className="mb-10 flex items-center justify-between">
+    <main className="mx-auto max-w-7xl px-8 py-14">
+      {/* Back link */}
+      <FadeIn>
         <Link
           href={`/${locale}/portfolio`}
-          className="text-xs tracking-widest text-black/60 hover:text-black underline underline-offset-4"
+          className="text-xs tracking-wide text-black/40 hover:text-black transition-colors duration-200 uppercase"
         >
           {t.back}
         </Link>
+      </FadeIn>
 
-        <div className="text-xs tracking-widest text-black/40">
-          1/{Math.max(1, media.length)}
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-        <aside className="lg:col-span-4">
-          <div className="text-xs tracking-widest text-black/50 mb-3">
+      {/* Header: title + subtitle */}
+      <FadeIn delay={60}>
+        <div className="mt-10 mb-2">
+          <p className="text-xs tracking-widest text-black/40 uppercase mb-2">
             {project.years}
-          </div>
-
-          <h1 className="text-lg tracking-widest uppercase">{title}</h1>
-
-          <p className="mt-4 text-sm leading-relaxed text-black/70 whitespace-pre-line">
+          </p>
+          <h1 className="text-5xl font-light leading-tight tracking-tight">
+            {title}
+          </h1>
+          <p className="mt-2 text-xl italic font-light text-black/50">
             {subtitle}
           </p>
+        </div>
+      </FadeIn>
 
+      {/* Two-column: meta + content left, media right */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-8">
+        <div className="lg:col-span-4 lg:pt-6">
+          {/* Meta: role · stack · links */}
+          <FadeIn delay={120}>
+            <div className="space-y-5 mb-8">
+              <div>
+                <p className="text-xs tracking-widest text-black/30 uppercase mb-1">{t.role}</p>
+                <p className="text-base font-light text-black/70">{project.roles.join(" · ")}</p>
+              </div>
+              <div>
+                <p className="text-xs tracking-widest text-black/30 uppercase mb-1">{t.stack}</p>
+                <p className="text-base font-light text-black/70">{project.stack.join(" · ")}</p>
+              </div>
+              {project.links.length > 0 && (
+                <div>
+                  <p className="text-xs tracking-widest text-black/30 uppercase mb-1">{t.links}</p>
+                  <ul className="flex gap-4">
+                    {project.links.map((l) => (
+                      <li key={l.href}>
+                        <Link
+                          href={l.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-base font-light underline underline-offset-4 hover:opacity-60 transition-opacity duration-200"
+                        >
+                          {l.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </FadeIn>
+
+          {/* Content text */}
           {content && (
-            <p className="mt-6 text-sm leading-relaxed text-black/70">
-              {content}
-            </p>
+            <FadeIn delay={180}>
+              <p className="text-base font-light leading-relaxed text-black/60">
+                {content}
+              </p>
+            </FadeIn>
           )}
+        </div>
 
-          <div className="mt-10 space-y-6 text-sm">
-            <div>
-              <div className="text-xs tracking-widest text-black/40 mb-2">
-                {t.role}
-              </div>
-              <ul className="space-y-1 text-black/70">
-                {project.roles.map((r) => (
-                  <li key={r}>{r}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <div className="text-xs tracking-widest text-black/40 mb-2">
-                {t.stack}
-              </div>
-              <ul className="space-y-1 text-black/70">
-                {project.stack.map((s) => (
-                  <li key={s}>{s}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <div className="text-xs tracking-widest text-black/40 mb-2">
-                {t.links}
-              </div>
-              <ul className="space-y-1 text-black/70">
-                {project.links.map((l) => (
-                  <li key={l.href}>
-                    <Link
-                      href={l.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="underline underline-offset-4 hover:text-black"
+        <section className={content ? "lg:col-span-8" : "lg:col-span-12"}>
+          <FadeIn delay={180}>
+            {media.length <= 1 ? (
+              <div className="w-full overflow-hidden bg-white">
+                <div className="relative w-full aspect-[16/10]">
+                  {first?.kind === "video" ? (
+                    <video
+                      className="h-full w-full object-contain"
+                      controls
+                      playsInline
+                      preload="metadata"
+                      poster={first.poster}
+                      muted
                     >
-                      {l.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </aside>
-
-        <section className="lg:col-span-8">
-          {media.length <= 1 ? (
-            <div className="border border-black/10 bg-white overflow-hidden">
-              <div className="relative w-full aspect-[16/10]">
-                {first?.kind === "video" ? (
-                  <video
-                    className="h-full w-full object-contain"
-                    controls
-                    playsInline
-                    preload="metadata"
-                    poster={first.poster}
-                    muted
-                  >
-                    <source src={first.src} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                ) : (
-                  <Image
-                    src={(first ?? project.cover).src}
-                    alt={(first ?? project.cover).alt}
-                    fill
-                    className="object-contain"
-                    sizes="(max-width: 1024px) 100vw, 900px"
-                    priority
-                  />
-                )}
+                      <source src={first.src} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <Image
+                      src={(first ?? project.cover).src}
+                      alt={(first ?? project.cover).alt}
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 1024px) 100vw, 900px"
+                      priority
+                    />
+                  )}
+                </div>
               </div>
-            </div>
-          ) : (
-            <ProjectCarousel items={media} />
-          )}
+            ) : (
+              <ProjectCarousel items={media} />
+            )}
+          </FadeIn>
         </section>
       </div>
     </main>

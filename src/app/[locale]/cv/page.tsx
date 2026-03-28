@@ -1,5 +1,6 @@
 import type { Locale } from "@/data/projects";
 import CvClient from "./CvClient";
+import FadeIn from "@/components/FadeIn";
 
 export default async function CvPage({
   params,
@@ -20,13 +21,17 @@ export default async function CvPage({
         };
 
   return (
-    <main className="mx-auto max-w-6xl px-6 py-12">
-      <div className="mb-6">
-        <h1 className="text-xl tracking-wide">{t.title}</h1>
-        <p className="mt-2 text-sm text-black/60">{t.subtitle}</p>
-      </div>
+    <main className="mx-auto max-w-7xl px-8 py-16">
+      <FadeIn>
+        <div className="mb-10">
+          <h1 className="text-4xl font-light">{t.title}</h1>
+          <p className="mt-3 text-sm font-light text-black/50">{t.subtitle}</p>
+        </div>
+      </FadeIn>
 
-      <CvClient locale={locale} />
+      <FadeIn delay={100}>
+        <CvClient locale={locale} />
+      </FadeIn>
     </main>
   );
 }

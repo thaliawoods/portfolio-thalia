@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { projects, type Locale } from "@/data/projects";
-import ImageHover from "@/components/ImageHover";
+import FadeIn from "@/components/FadeIn";
+import ScrollHint from "@/components/ScrollHint";
 
 export default async function HomePage({
   params,
@@ -14,133 +16,91 @@ export default async function HomePage({
       ? {
           role: "Développeuse web — Front / Full-stack",
           blurb:
-            "Je conçois des interfaces claires et des produits utiles, avec un soin particulier pour l’UX/UI, la qualité du code et la mise en production.",
-          cta: "Voir le portfolio",
-          cta2: "Me contacter",
-          selection: "SÉLECTION",
-          open: "Ouvrir →",
+            "Je conçois et développe des interfaces où se rencontrent code, interaction et direction visuelle.",
+          cta: "Portfolio",
+          cta2: "Contact",
         }
       : {
           role: "Web developer — Front / Full-stack",
           blurb:
-            "I build clean interfaces and useful products, with a strong focus on UX/UI, code quality, and shipping to production.",
-          cta: "View portfolio",
+            "I design and build interfaces where code, interaction, and visual direction meet.",
+          cta: "Portfolio",
           cta2: "Contact",
-          selection: "SELECTED",
-          open: "Open →",
         };
 
-  const featured = [...projects].filter((p) => p.featured).slice(0, 2);
+  const featured = [...projects].filter((p) => p.featured);
 
   return (
-    <main className="mx-auto max-w-6xl px-6 py-14">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <div className="lg:col-span-4">
-          <h1 className="text-3xl tracking-wide">Thalia Woods</h1>
+    <main className="flex flex-col lg:grid lg:grid-cols-[42%_58%]">
 
-          <div className="mt-3 text-sm tracking-wide text-black/60">
+      {/* ── Left panel — sticky hero ── */}
+      <div className="lg:sticky lg:top-16 lg:h-[calc(100vh-4rem)] flex flex-col justify-center px-8 lg:px-14 py-20 lg:py-0">
+        <FadeIn>
+          <h1 className="text-5xl lg:text-6xl font-light tracking-tight leading-[1.05] uppercase">
+            Thalia Woods
+          </h1>
+        </FadeIn>
+
+        <FadeIn delay={80}>
+          <p className="mt-4 text-base italic font-light text-black/50">
             {t.role}
-          </div>
+          </p>
+        </FadeIn>
 
-          <p className="mt-8 text-sm leading-relaxed text-black/70 max-w-sm">
+        <FadeIn delay={160}>
+          <p className="mt-8 text-sm font-light leading-relaxed text-black/60 max-w-xs">
             {t.blurb}
           </p>
+        </FadeIn>
 
-          <div className="mt-10 flex gap-3">
+        <FadeIn delay={240}>
+          <div className="mt-10 flex flex-col gap-3 text-sm">
             <Link
               href={`/${locale}/portfolio`}
-              className="border border-black/20 bg-white px-5 py-2.5 text-sm hover:bg-black hover:text-white transition"
+              className="underline underline-offset-4 hover:opacity-50 transition-opacity duration-200 w-fit"
             >
               {t.cta}
             </Link>
-
             <Link
-              href={`/${locale}/info`}
-              className="border border-black/10 bg-white px-5 py-2.5 text-sm hover:bg-black hover:text-white transition"
+              href={`/${locale}/contact`}
+              className="underline underline-offset-4 hover:opacity-50 transition-opacity duration-200 w-fit"
             >
               {t.cta2}
             </Link>
           </div>
-        </div>
-
-        <div className="lg:col-span-5">
-          <Link
-            href={`/${locale}/portfolio`}
-            className="group relative block border border-black/10 bg-white h-[420px] overflow-hidden"
-            aria-label="Open portfolio"
-          >
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-              <div className="absolute inset-0 p-5 bg-white">
-                <div className="relative w-full h-full overflow-hidden">
-                  <img
-                    src="/portfolio-preview.png"
-                    alt="Portfolio preview"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-white/55" />
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center px-8">
-                <div className="text-xs tracking-widest text-black/40 mb-5">
-                  PORTFOLIO
-                </div>
-                <div className="text-3xl tracking-[0.18em] uppercase">
-                  THALIA WOODS
-                </div>
-
-                <div className="mt-6 text-xs text-black/50 opacity-0 group-hover:opacity-100 transition-opacity">
-                  {t.open}
-                </div>
-              </div>
-            </div>
-          </Link>
-        </div>
-
-        <div className="lg:col-span-3">
-          <div className="flex items-center justify-between mb-3">
-            <div className="text-xs tracking-widest text-black/40">
-              {t.selection}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-4">
-            {featured.map((p) => (
-              <Link
-                key={p.slug}
-                href={`/${locale}/projects/${p.slug}`}
-                className="group relative block border border-black/10 bg-white overflow-hidden"
-                aria-label={`Open ${p.title[locale]}`}
-              >
-                <div className="relative aspect-[4/5]">
-                  <div className="absolute inset-0 transition-opacity duration-200 group-hover:opacity-0">
-                    <ImageHover
-                      src={p.cover.src}
-                      alt={p.cover.alt}
-                      sizes="(max-width: 1024px) 50vw, 320px"
-                    />
-                  </div>
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    <div className="absolute inset-0 p-3 bg-white">
-                      <div className="relative w-full h-full overflow-hidden">
-                        <div className="absolute inset-0 scale-[1] group-hover:scale-[1.02] transition-transform duration-300">
-                          <ImageHover
-                            src={p.cover.src}
-                            alt={p.cover.alt}
-                            sizes="(max-width: 1024px) 50vw, 320px"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
+        </FadeIn>
       </div>
+
+      {/* ── Right panel — full-height images with side margins ── */}
+      <div className="flex flex-col gap-10 pl-1 pr-6 lg:pr-20 pb-20">
+        {featured.map((p, i) => (
+          <Link
+            key={p.slug}
+            href={`/${locale}/projects/${p.slug}`}
+            className="group relative block h-[60vh] lg:h-[calc(100vh-4rem)] bg-white"
+            aria-label={p.title[locale]}
+          >
+            <Image
+              src={p.cover.src}
+              alt={p.cover.alt}
+              fill
+              className="object-contain transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.025]"
+              sizes="(max-width: 1024px) 100vw, 58vw"
+              priority={i === 0}
+            />
+
+            {/* Project label on hover */}
+            <div className="absolute bottom-0 left-0 right-0 px-7 py-6 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <p className="text-white text-sm font-light">{p.title[locale]}</p>
+              <p className="text-white/60 text-xs font-light mt-0.5">{p.years}</p>
+            </div>
+
+            {/* Scroll hint — only on first image */}
+            {i === 0 && <ScrollHint />}
+          </Link>
+        ))}
+      </div>
+
     </main>
   );
 }
