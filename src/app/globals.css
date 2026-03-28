@@ -1,23 +1,97 @@
 @import "tailwindcss";
 
+/* ── Baskervvol font faces ── */
+@font-face {
+  font-family: "Baskervvol";
+  src: url("/fonts/BBBBaskervvol-Book.woff2") format("woff2"),
+       url("/fonts/BBBBaskervvol-Book.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Baskervvol";
+  src: url("/fonts/BBBBaskervvol-BookItalic.woff2") format("woff2"),
+       url("/fonts/BBBBaskervvol-BookItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Baskervvol";
+  src: url("/fonts/BBBBaskervvol-Regular.woff2") format("woff2"),
+       url("/fonts/BBBBaskervvol-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Baskervvol";
+  src: url("/fonts/BBBBaskervvol-Italic.woff2") format("woff2"),
+       url("/fonts/BBBBaskervvol-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Baskervvol";
+  src: url("/fonts/BBBBaskervvol-Medium.woff2") format("woff2"),
+       url("/fonts/BBBBaskervvol-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Baskervvol";
+  src: url("/fonts/BBBBaskervvol-MediumItalic.woff2") format("woff2"),
+       url("/fonts/BBBBaskervvol-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Baskervvol";
+  src: url("/fonts/BBBBaskervvol-Bold.woff2") format("woff2"),
+       url("/fonts/BBBBaskervvol-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Baskervvol";
+  src: url("/fonts/BBBBaskervvol-BoldItalic.woff2") format("woff2"),
+       url("/fonts/BBBBaskervvol-BoldItalic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ── Design tokens ── */
 :root {
   --background: #ffffff;
   --foreground: #111111;
+  --muted: #888888;
+  --border: rgba(17, 17, 17, 0.1);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: "Baskervvol", Georgia, serif;
 }
 
+/* ── Base styles ── */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), system-ui, -apple-system, Segoe UI, Roboto, Arial,
-    sans-serif;
-  letter-spacing: 0.01em;
+  font-family: "Baskervvol", Georgia, serif;
 }
 
 * {
@@ -25,6 +99,27 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ── Scroll animations ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.will-animate {
+  opacity: 0;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ── Utilities ── */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -32,21 +127,3 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
-/* html,
-body {
-  cursor: url("/cursors/retro-arrow.svg") 4 4, auto;
-}
-
-/* éléments interactifs */
-/* a,
-button,
-[role="button"],
-input,
-textarea,
-select {
-  cursor: url("/cursors/retro-arrow.svg") 4 4, pointer;
-}
-a:hover {
-  cursor: url("/cursors/retro-arrow.svg") 4 4, pointer;
-} */ 

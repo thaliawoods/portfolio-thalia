@@ -38,6 +38,7 @@ const img = (src: string, alt: string): ProjectImage => ({
   src,
   alt,
 });
+
 const vid = (src: string, alt: string, poster?: string): ProjectVideo => ({
   kind: "video",
   src,
@@ -47,12 +48,45 @@ const vid = (src: string, alt: string, poster?: string): ProjectVideo => ({
 
 export const projects: Project[] = [
   {
+    slug: "https-experience",
+    years: "2026",
+    title: {
+      fr: "HTTPS",
+      en: "HTTPS",
+    },
+    subtitle: {
+      fr: "Expérience interactive 3D — jeu exploratoire mêlant photogrammétrie, narration et spatialisation.",
+      en: "3D interactive experience — exploratory game combining photogrammetry, narrative, and spatial audio.",
+    },
+    content: {
+      fr: "Projet développé en collaboration avec une artiste dans le cadre des Ateliers Médicis. HTTPS est un jeu vidéo exploratoire construit à partir d’archives photogrammétriques, qui interroge internet comme un système de liens entre territoires, mémoires et individus. Le projet propose une traversée d’espaces hybrides (physiques et numériques), où les récits personnels et collectifs se superposent.\n\nDéveloppement d’une architecture modulaire sous Godot (mondes, événements, audio), gestion du chargement dynamique des scènes et synchronisation des interactions visuelles et sonores. Intégration d’interactions temps réel via contrôleur MIDI et travail sur des environnements 3D issus de captations réelles.",
+      en: "Developed in collaboration with an artist as part of the Ateliers Médicis program, HTTPS is an exploratory video game built from photogrammetry archives. The project explores the internet as a system of links between territories, memories, and individuals. It creates a journey through hybrid spaces (physical and digital), where personal and collective narratives overlap.\n\nBuilt a modular architecture in Godot (worlds, events, audio), implemented dynamic scene loading, and synchronized visual and sound interactions. Integrated real-time input via MIDI controllers and worked with 3D environments generated from real-world captures.",
+    },
+    roles: ["Creative coding", "Game dev", "Interactive design"],
+    stack: ["Godot · GDScript · Photogrammetry · MIDI · Web Audio"],
+    links: [
+      {
+        label: "Project manifesto (PDF)",
+        href: "/projects/https/DOCUMENTATION v2.pdf",
+      },
+    ],
+    cover: img("/projects/https/https.png", "HTTPS cover"),
+    gallery: [
+      img("/projects/https/https.png", "HTTPS main visual"),
+      img("/projects/https/https1.png", "HTTPS environment view 1"),
+      img("/projects/https/https2.png", "HTTPS environment view 2"),
+      img("/projects/https/bully.png", "HTTPS territory reference"),
+    ],
+    featured: true,
+  },
+
+  {
     slug: "temoigner-pour-lutter",
     years: "2026",
     title: { fr: "Témoigner pour Lutter", en: "Testify to Resist" },
     subtitle: {
       fr: "Outil d’archive & performance - En cours. Navigation dans des témoignages, fragments média, structure documentaire.",
-      en: "Archive & performance tool - Ongoing. \nNavigating testimonies, media fragments, documentary structure.",
+      en: "Archive & performance tool - Ongoing.\nNavigating testimonies, media fragments, documentary structure.",
     },
     content: {
       fr: "Conception d’une interface de consultation pour un projet artistique et documentaire pour Ely & Marion Collective. Travail sur la structuration des données (références, tags, liens), la navigation (parcours, filtres), et la mise en scène des contenus (fragments texte / image / vidéo) dans une logique d’archive vivante. Attention particulière portée à la lisibilité, à l’accessibilité et à la robustesse face aux contenus incomplets.",
@@ -61,6 +95,10 @@ export const projects: Project[] = [
     roles: ["Full-Stack", "UX/UI"],
     stack: ["Next.js · TypeScript · Tailwind · Supabase"],
     links: [
+      {
+        label: "Live",
+        href: "https://temoigner-pour-lutter-tool.vercel.app/",
+      },
       {
         label: "GitHub",
         href: "https://github.com/thaliawoods/temoigner-pour-lutter-tool",
@@ -103,25 +141,155 @@ export const projects: Project[] = [
         "/projects/temoigner-pour-lutter/09.png",
         "Témoigner pour Lutter screenshot 9",
       ),
+    ],
+    featured: true,
+  },
+
+  {
+    slug: "hannah-hajar",
+    years: "2026",
+    title: {
+      fr: "Hannah Hajar",
+      en: "Hannah Hajar",
+    },
+    subtitle: {
+      fr: "Site expérimental audio / visuel - En cours.\nMap avec zones interactives, esthétique organique, narration.",
+      en: "Experimental audio/visual site - Ongoing.\nMap with interactive zones, organic aesthetics, narrative.",
+    },
+    content: {
+      fr: "Conception et développement d’un site expérimental pour un duo de performance musicale avec Mathilde Proy & Jeanne Merone. Travail sur une direction artistique web (formes organiques, atmosphère), une navigation par zones dans une map, et des interactions orientées expérience. Mise en place d’une base front robuste (components, responsive, perf) pour accueillir des contenus média et faire évoluer le projet.",
+      en: "Designed and built an experimental website for a musical performance duo formed by Mathilde Proy & Jeanne Merone. Worked on art direction (organic shapes, atmosphere), a zones-based navigation in a map, and experience-driven interactions. Set up a robust front-end foundation (components, responsive, perf) to host media and keep evolving the project.",
+    },
+    roles: ["Full-Stack", "UX/UI", "Art direction"],
+    stack: ["Next.js · TypeScript · Tailwind"],
+    links: [
+      {
+        label: "Live",
+        href: "https://hannah-hajar.vercel.app/",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/thaliawoods/hannah-hajar",
+      },
+    ],
+    cover: img("/projects/hannah-hajar/01.png", "Hannah Hajar cover"),
+    gallery: [
+      img("/projects/hannah-hajar/02.png", "Hannah Hajar screenshot 2"),
+      img("/projects/hannah-hajar/03.png", "Hannah Hajar screenshot 3"),
+      img("/projects/hannah-hajar/04.png", "Hannah Hajar screenshot 4"),
+      img("/projects/hannah-hajar/05.png", "Hannah Hajar screenshot 5"),
+      img("/projects/hannah-hajar/06.png", "Hannah Hajar screenshot 6"),
+      img("/projects/hannah-hajar/07.png", "Hannah Hajar screenshot 7"),
+      img("/projects/hannah-hajar/08.png", "Hannah Hajar screenshot 8"),
+      img("/projects/hannah-hajar/09.png", "Hannah Hajar screenshot 9"),
+    ],
+    featured: true,
+  },
+
+  {
+    slug: "detours-en-cinecourt",
+    years: "2026",
+    title: {
+      fr: "Détours en Cinécourt",
+      en: "Détours en Cinécourt",
+    },
+    subtitle: {
+      fr: "Plateforme interne de gestion de films pour un festival de courts-métrages — UX/UI, structure de données et interface métier.",
+      en: "Internal film management platform for a short film festival — UX/UI, data structure, and production interface.",
+    },
+    content: {
+      fr: "Conception et développement d’une plateforme interne utilisée par l’équipe de programmation pour centraliser la sélection de films. Pilotage de la refonte du produit : UX/UI (wireframes, parcours utilisateurs) et développement de l’interface en Next.js, React et Tailwind. Structuration de l’architecture des données et préparation de l’intégration backend avec MongoDB. Implémentation des fonctionnalités clés, gestion des accès et des données sensibles, avec une attention particulière portée à la lisibilité et à l’efficacité des workflows.",
+      en: "Designed and developed an internal platform used by a programming team to centralize film selection for a short film festival. Led a product redesign: UX/UI (wireframes, user flows) and front-end development with Next.js, React, and Tailwind. Structured the data architecture and prepared backend integration with MongoDB. Implemented core features, access control, and sensitive data handling, with a strong focus on clarity and efficient workflows.",
+    },
+    roles: ["Full-stack", "UX/UI"],
+    stack: ["Next.js · React · TypeScript · Tailwind · MongoDB"],
+    links: [],
+    cover: img(
+      "/projects/detours-en-cinecourt/films-detail.jpeg",
+      "Détours en Cinécourt film detail",
+    ),
+    gallery: [
       img(
-        "/projects/temoigner-pour-lutter/10.png",
-        "Témoigner pour Lutter screenshot 10",
+        "/projects/detours-en-cinecourt/films-carte.jpeg",
+        "Détours en Cinécourt card view",
       ),
       img(
-        "/projects/temoigner-pour-lutter/11.png",
-        "Témoigner pour Lutter screenshot 11",
+        "/projects/detours-en-cinecourt/films-liste.png",
+        "Détours en Cinécourt films list",
+      ),
+      img(
+        "/projects/detours-en-cinecourt/films-detail.jpeg",
+        "Détours en Cinécourt film detail",
+      ),
+      img(
+        "/projects/detours-en-cinecourt/films-filtres.jpeg",
+        "Détours en Cinécourt filters view",
+      ),
+      img(
+        "/projects/detours-en-cinecourt/films-tableau.png",
+        "Détours en Cinécourt table view",
+      ),
+      img(
+        "/projects/detours-en-cinecourt/dashboard.png",
+        "Détours en Cinécourt dashboard",
+      ),
+      img(
+        "/projects/detours-en-cinecourt/archives.png",
+        "Détours en Cinécourt archives",
+      ),
+      img(
+        "/projects/detours-en-cinecourt/login.jpeg",
+        "Détours en Cinécourt login screen",
+      ),
+      img(
+        "/projects/detours-en-cinecourt/profil.jpeg",
+        "Détours en Cinécourt profile page",
       ),
     ],
     featured: true,
   },
 
   {
+    slug: "jardin-solidaire",
+    years: "2025",
+    title: { fr: "Jardin Solidaire", en: "Jardin Solidaire" },
+    subtitle: {
+      fr: "Projet RNCP - plateforme de mise en relation: jardins, disponibilités, réservations sans conflit, authentification.",
+      en: "RNCP project - a matching platform: gardens, availability slots, conflict-free bookings, authentication.",
+    },
+    content: {
+      fr: "Conception et développement end-to-end d’une application full-stack orientée “production”. Modélisation PostgreSQL et API Express structurée (routes/contrôleurs), authentification JWT, contrôle d’accès et validation côté serveur. Le cœur du produit est la gestion de créneaux et de réservations avec prévention des chevauchements, statuts et parcours clairs. Environnement reproductible via Docker Compose, variables d’environnement, et tests automatisés (Playwright) intégrés au workflow CI.",
+      en: "End-to-end design and development of a production-oriented full-stack application. PostgreSQL modeling and a structured Express API (routes/controllers), JWT authentication, access control, and server-side validation. The product core is availability slots and bookings with conflict prevention, clear statuses and user flows. Reproducible environment via Docker Compose, environment variables, and automated testing (Playwright) integrated into CI.",
+    },
+    roles: ["Full-stack", "UX/UI"],
+    stack: [
+      "Next.js · Node.js · Express · Prisma · PostgreSQL · Docker · Playwright",
+    ],
+    links: [
+      {
+        label: "Live",
+        href: "https://jardin-solidaire.vercel.app/",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/thaliawoods/JardinSolidaire",
+      },
+    ],
+    cover: img(
+      "/projects/jardin-solidaire/cover.png",
+      "Jardin Solidaire interface",
+    ),
+    gallery: [],
+    featured: true,
+  },
+
+  {
     slug: "lydia-transactions-search",
     years: "2026",
-    title: { fr: "Test Technique Lydia", en: "Tech Lydia Test" },
+    title: { fr: "Test Technique Lydia", en: "Lydia Technical Test" },
     subtitle: {
       fr: "Test technique React - SPA de recherche dans des transactions, filtrage rapide et UI soignée.",
-      en: "React technical test - SPA to search transactions, fast filtering and polished UI. Ongoing Project",
+      en: "React technical test - SPA for transaction search, fast filtering, and polished UI. Ongoing project",
     },
     content: {
       fr: "Développement d’une SPA React à partir d’un fichier JSON de transactions : recherche non sensible à la casse, surlignage des occurrences, gestion des états (loading / vide / erreur), et composants UI réutilisables. Travail sur l’ergonomie (feedbacks, micro-interactions) et la qualité du code (composition, lisibilité, conventions).",
@@ -142,68 +310,6 @@ export const projects: Project[] = [
         "/projects/test-lydia/02.png",
         "Lydia transactions search screenshot 2",
       ),
-    ],
-    featured: true,
-  },
-
-  {
-    slug: "hannah-hajar",
-    years: "2026",
-    title: {
-      fr: "Hannah Hajar",
-      en: "Hannah Hajar",
-    },
-    subtitle: {
-      fr: "Site expérimental audio / visuel - En cours. \n Map avec zones interactives, esthétique organique, narration.",
-      en: "Experimental audio/visual site - Ongoing.\n Map with interactive zones, organic aesthetics, narrative.",
-    },
-    content: {
-      fr: "Conception et développement d’un site expérimental pour un duo de performance musicale with Mathilde Proy & Jeanne Merone. Travail sur une direction artistique web (formes organiques, atmosphère), une navigation par zones dans une map, et des interactions orientées expérience. Mise en place d’une base front robuste (components, responsive, perf) pour accueillir des contenus média et faire évoluer le projet.",
-      en: "Designed and built an experimental website for a musical performance duo formed by Mathilde Proy & Jeanne Merone. Worked on art direction (organic shapes, atmosphere), a zones-based navigation in a map, and experience-driven interactions. Set up a robust front-end foundation (components, responsive, perf) to host media and keep evolving the project.",
-    },
-    roles: ["Full-Stack", "UX/UI", "Art direction"],
-    stack: ["Next.js · TypeScript · Tailwind"],
-    links: [
-      { label: "GitHub", href: "https://github.com/thaliawoods/hannah-hajar"},
-    ],
-    cover: img("/projects/hannah-hajar/01.png", "Hannah Hajar cover"),
-    gallery: [
-      img("/projects/hannah-hajar/02.png", "Hannah Hajar screenshot 2"),
-      img("/projects/hannah-hajar/03.png", "Hannah Hajar screenshot 3"),
-      img("/projects/hannah-hajar/04.png", "Hannah Hajar screenshot 4"),
-      img("/projects/hannah-hajar/05.png", "Hannah Hajar screenshot 5"),
-      img("/projects/hannah-hajar/06.png", "Hannah Hajar screenshot 6"),
-      img("/projects/hannah-hajar/07.png", "Hannah Hajar screenshot 7"),
-      img("/projects/hannah-hajar/08.png", "Hannah Hajar screenshot 8"),
-      img("/projects/hannah-hajar/09.png", "Hannah Hajar screenshot 9"),
-    ],
-    featured: true,
-  },
-  {
-    slug: "jardin-solidaire",
-    years: "2025",
-    title: { fr: "Jardin Solidaire", en: "Jardin Solidaire" },
-    subtitle: {
-      fr: "Projet RNCP - plateforme de mise en relation: jardins, disponibilités, réservations sans conflit, authentification.",
-      en: "RNCP project - a matching platform: gardens, availability slots, conflict-free bookings, authentication.",
-    },
-    content: {
-      fr: "Conception et développement end-to-end d’une application full-stack orientée “production”. Modélisation PostgreSQL et API Express structurée (routes/contrôleurs), authentification JWT, contrôle d’accès et validation côté serveur. Le cœur du produit est la gestion de créneaux et de réservations avec prévention des chevauchements, statuts et parcours clairs. Environnement reproductible via Docker Compose, variables d’environnement, et tests automatisés (Playwright) intégrés au workflow CI.",
-      en: "End-to-end design and development of a production-oriented full-stack application. PostgreSQL modeling and a structured Express API (routes/controllers), JWT authentication, access control, and server-side validation. The product core is availability slots and bookings with conflict prevention, clear statuses and user flows. Reproducible environment via Docker Compose, environment variables, and automated testing (Playwright) integrated into CI.",
-    },
-    roles: ["Full-stack", "UX/UI"],
-    stack: [
-      "Next.js · Node.js · Express · Prisma · PostgreSQL · Docker · Playwright",
-    ],
-    links: [
-      {
-        label: "GitHub",
-        href: "https://github.com/thaliawoods/JardinSolidaire",
-      },
-    ],
-    cover: img("/projects/jardin-solidaire/cover.png", "JardinSolidaire cover"),
-    gallery: [
-      vid("/projects/jardin-solidaire/demo.mp4", "JardinSolidaire demo video"),
     ],
     featured: true,
   },
@@ -306,34 +412,34 @@ export const projects: Project[] = [
     ],
   },
 
-  {
-    slug: "gestion-de-caisse",
-    years: "2024",
-    title: { fr: "Gestion de caisse", en: "Cash Management" },
-    subtitle: {
-      fr: "Projet école - web app de gestion de caisse et de stocks pour une association étudiante.",
-      en: "School project - cash and inventory management web app for a student association.",
-    },
-    content: {
-      fr: "Conception d’une application full-stack pensée pour un usage réel : suivi des stocks, enregistrement des ventes, calcul automatique des totaux et distinction des rôles (utilisateur·ices / administrateur·ices). Le projet part de besoins exprimés sur le terrain (rotation des équipes, utilisation sur mobile, contraintes de connexion) et s’appuie sur une API Express connectée à une base PostgreSQL via Supabase, avec une interface React orientée simplicité et efficacité.",
-      en: "Design and implementation of a full-stack application built for real-world use: stock tracking, sales recording, automatic total calculation, and role separation (users / administrators). The project starts from concrete field needs (team rotation, mobile usage, connectivity constraints) and relies on an Express API connected to a PostgreSQL database via Supabase, with a React interface focused on clarity and efficiency.",
-    },
-    roles: ["Full-stack"],
-    stack: ["React · Node.js · Express · PostgreSQL · Supabase"],
-    links: [
-      { label: "GitHub", href: "https://github.com/thaliawoods/GestionCaisse" },
-    ],
-    cover: img(
-      "/projects/gestion-de-caisse/cover.png",
-      "Gestion de caisse cover",
-    ),
-    gallery: [
-      img(
-        "/projects/gestion-de-caisse/01.png",
-        "Gestion de caisse screenshot 1",
-      ),
-    ],
-  },
+  // {
+  //   slug: "gestion-de-caisse",
+  //   years: "2024",
+  //   title: { fr: "Gestion de caisse", en: "Cash Management" },
+  //   subtitle: {
+  //     fr: "Projet école - web app de gestion de caisse et de stocks pour une association étudiante.",
+  //     en: "School project - cash and inventory management web app for a student association.",
+  //   },
+  //   content: {
+  //     fr: "Conception d’une application full-stack pensée pour un usage réel : suivi des stocks, enregistrement des ventes, calcul automatique des totaux et distinction des rôles (utilisateur·ices / administrateur·ices). Le projet part de besoins exprimés sur le terrain (rotation des équipes, utilisation sur mobile, contraintes de connexion) et s’appuie sur une API Express connectée à une base PostgreSQL via Supabase, avec une interface React orientée simplicité et efficacité.",
+  //     en: "Design and implementation of a full-stack application built for real-world use: stock tracking, sales recording, automatic total calculation, and role separation (users / administrators). The project starts from concrete field needs (team rotation, mobile usage, connectivity constraints) and relies on an Express API connected to a PostgreSQL database via Supabase, with a React interface focused on clarity and efficiency.",
+  //   },
+  //   roles: ["Full-stack"],
+  //   stack: ["React · Node.js · Express · PostgreSQL · Supabase"],
+  //   links: [
+  //     { label: "GitHub", href: "https://github.com/thaliawoods/GestionCaisse" },
+  //   ],
+  //   cover: img(
+  //     "/projects/gestion-de-caisse/cover.png",
+  //     "Gestion de caisse cover",
+  //   ),
+  //   gallery: [
+  //     img(
+  //       "/projects/gestion-de-caisse/01.png",
+  //       "Gestion de caisse screenshot 1",
+  //     ),
+  //   ],
+  // },
 
   {
     slug: "safe-or-not",
@@ -359,43 +465,43 @@ export const projects: Project[] = [
     gallery: [img("/projects/safe-or-not/01.jpeg", "Safe or Not screenshot 1")],
   },
 
-  {
-    slug: "chess",
-    years: "2024",
-    title: { fr: "Chess", en: "Chess" },
-    subtitle: {
-      fr: "Jeu d’échecs (MVP) - échiquier 8×8, mouvements des pièces, conditions de victoire.",
-      en: "Chess game (MVP) - 8×8 board, piece movement logic, win conditions.",
-    },
-    content: {
-      fr: "Construction d’un MVP en JavaScript pour comprendre la logique d’un jeu à règles : génération du plateau, gestion des cases et des déplacements, état de partie et détection des situations de fin (échec et mat / victoire). Une V2 est en cours en TypeScript, avec une approche orientée objet. Les choix visuels sont pensés en gardant l’accessibilité en tête (couleurs en cours d’ajustement).",
-      en: "Built an MVP in JavaScript to understand the logic of a rules-based game: board generation, square handling and legal moves, game state, and end-game detection (checkmate / win). A TypeScript v2 is in progress with an object-oriented approach. Visual choices are made with accessibility in mind (colors are still being refined).",
-    },
-    roles: ["Front-end"],
-    stack: ["JavaScript · HTML · CSS · TypeScript"],
-    links: [{ label: "GitHub", href: "https://github.com/thaliawoods/Chess" }],
-    cover: img("/projects/chess/cover.png", "Chess cover"),
-    gallery: [],
-  },
+  // {
+  //   slug: "chess",
+  //   years: "2024",
+  //   title: { fr: "Chess", en: "Chess" },
+  //   subtitle: {
+  //     fr: "Jeu d’échecs (MVP) - échiquier 8×8, mouvements des pièces, conditions de victoire.",
+  //     en: "Chess game (MVP) - 8×8 board, piece movement logic, win conditions.",
+  //   },
+  //   content: {
+  //     fr: "Construction d’un MVP en JavaScript pour comprendre la logique d’un jeu à règles : génération du plateau, gestion des cases et des déplacements, état de partie et détection des situations de fin (échec et mat / victoire). Une V2 est en cours en TypeScript, avec une approche orientée objet. Les choix visuels sont pensés en gardant l’accessibilité en tête (couleurs en cours d’ajustement).",
+  //     en: "Built an MVP in JavaScript to understand the logic of a rules-based game: board generation, square handling and legal moves, game state, and end-game detection (checkmate / win). A TypeScript v2 is in progress with an object-oriented approach. Visual choices are made with accessibility in mind (colors are still being refined).",
+  //   },
+  //   roles: ["Front-end"],
+  //   stack: ["JavaScript · HTML · CSS · TypeScript"],
+  //   links: [{ label: "GitHub", href: "https://github.com/thaliawoods/Chess" }],
+  //   cover: img("/projects/chess/cover.png", "Chess cover"),
+  //   gallery: [],
+  // },
 
-  {
-    slug: "tetris",
-    years: "2024",
-    title: { fr: "Tetris", en: "Tetris" },
-    subtitle: {
-      fr: "Tetris en JavaScript — grille, tetrominos, collisions, lignes complétées et score.",
-      en: "Tetris in JavaScript — grid, tetrominoes, collisions, line clears, and scoring.",
-    },
-    content: {
-      fr: "Implémentation de la logique de jeu : gestion de la grille, déplacement et rotation des pièces, détection des collisions, suppression des lignes et calcul du score. Un projet idéal pour travailler l’algorithmie, la gestion d’état et une boucle de jeu claire côté front.",
-      en: "Implemented the core game logic: grid handling, piece movement and rotation, collision detection, line clearing, and score calculation. A great project to practice algorithms, state management, and a clean front-end game loop.",
-    },
-    roles: ["Front-end"],
-    stack: ["JavaScript · HTML · CSS"],
-    links: [{ label: "GitHub", href: "https://github.com/thaliawoods/Tetris" }],
-    cover: img("/projects/tetris/cover.png", "Tetris cover"),
-    gallery: [],
-  },
+  // {
+  //   slug: "tetris",
+  //   years: "2024",
+  //   title: { fr: "Tetris", en: "Tetris" },
+  //   subtitle: {
+  //     fr: "Tetris en JavaScript — grille, tetrominos, collisions, lignes complétées et score.",
+  //     en: "Tetris in JavaScript — grid, tetrominoes, collisions, line clears, and scoring.",
+  //   },
+  //   content: {
+  //     fr: "Implémentation de la logique de jeu : gestion de la grille, déplacement et rotation des pièces, détection des collisions, suppression des lignes et calcul du score. Un projet idéal pour travailler l’algorithmie, la gestion d’état et une boucle de jeu claire côté front.",
+  //     en: "Implemented the core game logic: grid handling, piece movement and rotation, collision detection, line clearing, and score calculation. A great project to practice algorithms, state management, and a clean front-end game loop.",
+  //   },
+  //   roles: ["Front-end"],
+  //   stack: ["JavaScript · HTML · CSS"],
+  //   links: [{ label: "GitHub", href: "https://github.com/thaliawoods/Tetris" }],
+  //   cover: img("/projects/tetris/cover.png", "Tetris cover"),
+  //   gallery: [],
+  // },
 
   {
     slug: "draw-together",
@@ -416,61 +522,61 @@ export const projects: Project[] = [
     ],
     cover: img("/projects/draw-together/cover.png", "Draw Together cover"),
     gallery: [],
-  },
+  }
 
-  {
-    slug: "social-network",
-    years: "2023",
-    title: { fr: "Social Network (PHP)", en: "Social Network (PHP)" },
-    subtitle: {
-      fr: "Projet école (binôme, 6 jours) — mini réseau social en PHP : comptes utilisateur·ices, articles, commentaires, base MySQL.",
-      en: "School project (pair work, 6 days) - a mini social network in PHP: user accounts, posts, comments, MySQL database.",
-    },
-    content: {
-      fr: "Conception d’une base relationnelle et mise en place d’un CRUD complet (listing / détail, création / édition). Authentification et gestion des sessions, formulaires de publication, et premiers mécanismes d’autorisations côté serveur (droits, modération). Un projet qui m’a permis de consolider le lien entre base de données, logique back et génération dynamique des pages.",
-      en: "Relational database design and implementation of a complete CRUD (list / detail, create / edit). Authentication and session management, publishing forms, and first server-side authorization mechanisms (access control, moderation). A project that helped me strengthen the link between databases, backend logic, and dynamic page generation.",
-    },
-    roles: ["Full-stack"],
-    stack: ["PHP · MySQL · phpMyAdmin"],
-    links: [
-      {
-        label: "GitHub",
-        href: "https://github.com/thaliawoods/reseau-social-php-reseau_social_thalia_fatouma",
-      },
-    ],
-    cover: img("/projects/social-network/cover.png", "Social Network cover"),
-    gallery: [],
-  },
+  // {
+  //   slug: "social-network",
+  //   years: "2023",
+  //   title: { fr: "Social Network (PHP)", en: "Social Network (PHP)" },
+  //   subtitle: {
+  //     fr: "Projet école (binôme, 6 jours) — mini réseau social en PHP : comptes utilisateur·ices, articles, commentaires, base MySQL.",
+  //     en: "School project (pair work, 6 days) - a mini social network in PHP: user accounts, posts, comments, MySQL database.",
+  //   },
+  //   content: {
+  //     fr: "Conception d’une base relationnelle et mise en place d’un CRUD complet (listing / détail, création / édition). Authentification et gestion des sessions, formulaires de publication, et premiers mécanismes d’autorisations côté serveur (droits, modération). Un projet qui m’a permis de consolider le lien entre base de données, logique back et génération dynamique des pages.",
+  //     en: "Relational database design and implementation of a complete CRUD (list / detail, create / edit). Authentication and session management, publishing forms, and first server-side authorization mechanisms (access control, moderation). A project that helped me strengthen the link between databases, backend logic, and dynamic page generation.",
+  //   },
+  //   roles: ["Full-stack"],
+  //   stack: ["PHP · MySQL · phpMyAdmin"],
+  //   links: [
+  //     {
+  //       label: "GitHub",
+  //       href: "https://github.com/thaliawoods/reseau-social-php-reseau_social_thalia_fatouma",
+  //     },
+  //   ],
+  //   cover: img("/projects/social-network/cover.png", "Social Network cover"),
+  //   gallery: [],
+  // },
 
-  {
-    slug: "evening-experience",
-    years: "2023",
-    title: { fr: "Evening Experience", en: "Evening Experience" },
-    subtitle: {
-      fr: "Projet école (groupe de 4, 6 jours) - web app qui recommande une recette et une musique selon l’humeur.",
-      en: "School project (team of 4, 6 days) - web app that recommends a recipe and music based on mood.",
-    },
-    content: {
-      fr: "Projet orienté UX : saisie d’un “mood” via des inputs simples, transformation de cette donnée en recommandations, puis restitution dans une interface ludique. Les suggestions musicales s’appuient sur des vidéos YouTube. Le projet a aussi permis de travailler le traitement de données côté front, l’animation web et l’organisation en équipe (répartition des tâches, synchronisation, Git).",
-      en: "UX-oriented project: collecting a “mood” through simple inputs, turning it into recommendations, and presenting results in a playful interface. Music suggestions rely on YouTube videos. The project also involved front-end data handling, web animation, and team collaboration (task distribution, sync, Git).",
-    },
-    roles: ["Front-end"],
-    stack: ["JavaScript · HTML · CSS"],
-    links: [
-      {
-        label: "GitHub",
-        href: "https://github.com/thaliawoods/dataviz-aisseta-thalia-oscar-claire",
-      },
-    ],
-    cover: img(
-      "/projects/evening-experience/cover.png",
-      "Evening Experience cover",
-    ),
-    gallery: [
-      img(
-        "/projects/evening-experience/01.png",
-        "Evening Experience screenshot 1",
-      ),
-    ],
-  },
+  // {
+  //   slug: "evening-experience",
+  //   years: "2023",
+  //   title: { fr: "Evening Experience", en: "Evening Experience" },
+  //   subtitle: {
+  //     fr: "Projet école (groupe de 4, 6 jours) - web app qui recommande une recette et une musique selon l’humeur.",
+  //     en: "School project (team of 4, 6 days) - web app that recommends a recipe and music based on mood.",
+  //   },
+  //   content: {
+  //     fr: "Projet orienté UX : saisie d’un “mood” via des inputs simples, transformation de cette donnée en recommandations, puis restitution dans une interface ludique. Les suggestions musicales s’appuient sur des vidéos YouTube. Le projet a aussi permis de travailler le traitement de données côté front, l’animation web et l’organisation en équipe (répartition des tâches, synchronisation, Git).",
+  //     en: "UX-oriented project: collecting a “mood” through simple inputs, turning it into recommendations, and presenting results in a playful interface. Music suggestions rely on YouTube videos. The project also involved front-end data handling, web animation, and team collaboration (task distribution, sync, Git).",
+  //   },
+  //   roles: ["Front-end"],
+  //   stack: ["JavaScript · HTML · CSS"],
+  //   links: [
+  //     {
+  //       label: "GitHub",
+  //       href: "https://github.com/thaliawoods/dataviz-aisseta-thalia-oscar-claire",
+  //     },
+  //   ],
+  //   cover: img(
+  //     "/projects/evening-experience/cover.png",
+  //     "Evening Experience cover",
+  //   ),
+  //   gallery: [
+  //     img(
+  //       "/projects/evening-experience/01.png",
+  //       "Evening Experience screenshot 1",
+  //     ),
+  //   ],
+  // },
 ];
