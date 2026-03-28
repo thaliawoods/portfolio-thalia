@@ -50,7 +50,7 @@ about3:
             { label: "Back", value: "Node.js · Express · Strapi · Python · PHP" },
             { label: "Data / ORM", value: "PostgreSQL · Prisma · MongoDB · MySQL" },
             { label: "Creative coding", value: "Godot · Three.js · MIDI · Web Audio API" },
-            { label: "Outils", value: "Docker · CI/CD · Git · LaTeX · Jira · Figma" },
+            { label: "Outils", value: "Docker · CI/CD · Git · LaTeX · Jira · Figma · Strapi · Photoshop · Indesign · Illustrator" },
           ],
 
           contactTitle: "Contact",
