@@ -145,44 +145,44 @@ export const projects: Project[] = [
     featured: true,
   },
 
-  {
-    slug: "hannah-hajar",
-    years: "2026",
-    title: {
-      fr: "Hannah Hajar",
-      en: "Hannah Hajar",
-    },
-    subtitle: {
-      fr: "Site expérimental audio / visuel - En cours.\nMap avec zones interactives, esthétique organique, narration.",
-      en: "Experimental audio/visual site - Ongoing.\nMap with interactive zones, organic aesthetics, narrative.",
-    },
-    content: {
-      fr: "Conception et développement d’un site expérimental pour un duo de performance musicale avec Mathilde Proy & Jeanne Merone. Travail sur une direction artistique web (formes organiques, atmosphère), une navigation par zones dans une map, et des interactions orientées expérience. Mise en place d’une base front robuste (components, responsive, perf) pour accueillir des contenus média et faire évoluer le projet.",
-      en: "Designed and built an experimental website for a musical performance duo formed by Mathilde Proy & Jeanne Merone. Worked on art direction (organic shapes, atmosphere), a zones-based navigation in a map, and experience-driven interactions. Set up a robust front-end foundation (components, responsive, perf) to host media and keep evolving the project.",
-    },
-    roles: ["Full-Stack", "UX/UI", "Art direction"],
-    stack: ["Next.js · TypeScript · Tailwind"],
-    links: [
-      {
-        label: "Live",
-        href: "https://hannah-hajar.vercel.app/",
-      },
-      {
-        label: "GitHub",
-        href: "https://github.com/thaliawoods/hannah-hajar",
-      },
-    ],
-    cover: img("/projects/hannah-hajar/cover.png", "Hannah Hajar cover"),
-    gallery: [
-      img("/projects/hannah-hajar/01.png", "Hannah Hajar screenshot 2"),
-      img("/projects/hannah-hajar/02.png", "Hannah Hajar screenshot 3"),
-      img("/projects/hannah-hajar/03.png", "Hannah Hajar screenshot 4"),
-      img("/projects/hannah-hajar/04.png", "Hannah Hajar screenshot 5"),
-      img("/projects/hannah-hajar/05.png", "Hannah Hajar screenshot 6"),
-      img("/projects/hannah-hajar/06.png", "Hannah Hajar screenshot 7"),
-    ],
-    featured: true,
+{
+  slug: "hannah-hajar",
+  years: "2026",
+  title: {
+    fr: "Hannah Hajar",
+    en: "Hannah Hajar",
   },
+  subtitle: {
+    fr: "Site expérimental audio / visuel - En cours.\nMap avec zones interactives, esthétique organique, narration.",
+    en: "Experimental audio/visual site - Ongoing.\nMap with interactive zones, organic aesthetics, narrative.",
+  },
+  content: {
+    fr: "Conception et développement d’un site expérimental pour un duo de performance musicale avec Mathilde Proy & Jeanne Merone. Travail sur une direction artistique web (formes organiques, atmosphère), une navigation par zones dans une map, et des interactions orientées expérience. Mise en place d’une base front robuste (components, responsive, perf) pour accueillir des contenus média et faire évoluer le projet.",
+    en: "Designed and built an experimental website for a musical performance duo formed by Mathilde Proy & Jeanne Merone. Worked on art direction (organic shapes, atmosphere), a zones-based navigation in a map, and experience-driven interactions. Set up a robust front-end foundation (components, responsive, perf) to host media and keep evolving the project.",
+  },
+  roles: ["Full-Stack", "UX/UI", "Art direction"],
+  stack: ["Next.js · TypeScript · Tailwind · Three.js"],
+  links: [
+    {
+      label: "Live",
+      href: "https://hannah-hajar.vercel.app/",
+    },
+    {
+      label: "GitHub",
+      href: "https://github.com/thaliawoods/hannah-hajar",
+    },
+  ],
+  cover: img("/projects/hannah-hajar/cover.png", "Hannah Hajar cover"),
+  gallery: [
+    img("/projects/hannah-hajar/01.png", "Hannah Hajar screenshot 2"),
+    img("/projects/hannah-hajar/02.png", "Hannah Hajar screenshot 3"),
+    img("/projects/hannah-hajar/03.png", "Hannah Hajar screenshot 4"),
+    img("/projects/hannah-hajar/04.png", "Hannah Hajar screenshot 5"),
+    img("/projects/hannah-hajar/05.png", "Hannah Hajar screenshot 6"),
+    img("/projects/hannah-hajar/06.png", "Hannah Hajar screenshot 7"),
+  ],
+  featured: true,
+},
 
   {
     slug: "detours-en-cinecourt",
