@@ -48,7 +48,44 @@ export default function PortfolioGrid({ projects, locale, title, countLabel }: P
     scrollRef.current?.scrollTo({ left: i * (scrollRef.current.clientWidth), behavior: "smooth" });
   };
 
-  /* ── Shared header ── */
+  /* ── Mobile: simple stacked list ── */
+  const MobileList = () => (
+    <div className="sm:hidden mx-auto px-8">
+      <div className="flex items-center justify-between py-8">
+        <h1 className="text-4xl font-light">{title}</h1>
+        <span className="text-xs text-black/40 font-light tracking-wide">{countLabel}</span>
+      </div>
+      <div className="pb-16 pt-2 flex flex-col gap-y-10">
+        {projects.map((p) => (
+          <Link
+            key={p.slug}
+            href={`/${locale}/projects/${p.slug}`}
+            className="group block"
+            aria-label={p.title[locale]}
+          >
+            <div className="relative overflow-hidden aspect-[4/3] bg-white">
+              <Image
+                src={p.cover.src}
+                alt={p.cover.alt}
+                fill
+                className="object-contain transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+                sizes="100vw"
+              />
+            </div>
+            <div className="mt-3 flex items-baseline justify-between">
+              <span className="text-base font-light">{p.title[locale]}</span>
+              <span className="text-xs text-black/40 font-light shrink-0 ml-3">{p.years}</span>
+            </div>
+            <p className="mt-1 text-sm font-light text-black/50 line-clamp-1">
+              {p.subtitle[locale]}
+            </p>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+
+  /* ── Shared header (desktop/tablet) ── */
   const PageHeader = () => (
     <div className="flex items-center justify-between px-8 lg:px-14 py-8 shrink-0">
       <h1 className="text-4xl font-light">{title}</h1>
@@ -73,111 +110,109 @@ export default function PortfolioGrid({ projects, locale, title, countLabel }: P
   /* ── View 1: full-height horizontal carousel ── */
   if (view === 1) {
     return (
-      <div className="flex flex-col" style={{ height: "calc(100vh - 4rem)" }}>
-        <PageHeader />
-
-        {/* Slides — fill remaining height, scroll horizontally */}
-        <div
-          ref={scrollRef}
-          className="flex-1 min-h-0 flex overflow-x-scroll snap-x snap-mandatory no-scrollbar"
-        >
-          {projects.map((p, i) => (
-            <div
-              key={p.slug}
-              className="flex-none w-full snap-start flex flex-col px-8 lg:px-14"
-            >
-              {/* Image fills all available vertical space */}
-              <Link
-                href={`/${locale}/projects/${p.slug}`}
-                className="group flex-1 min-h-0 relative block overflow-hidden bg-white"
-                aria-label={p.title[locale]}
+      <>
+        <MobileList />
+        <div className="hidden sm:flex flex-col" style={{ height: "calc(100vh - 4rem)" }}>
+          <PageHeader />
+          <div
+            ref={scrollRef}
+            className="flex-1 min-h-0 flex overflow-x-scroll snap-x snap-mandatory no-scrollbar"
+          >
+            {projects.map((p, i) => (
+              <div
+                key={p.slug}
+                className="flex-none w-full snap-start flex flex-col px-8 lg:px-14"
               >
-                <Image
-                  src={p.cover.src}
-                  alt={p.cover.alt}
-                  fill
-                  className="object-contain transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.02]"
-                  sizes="100vw"
-                  priority={i === 0}
-                />
-              </Link>
-
-              {/* Project info — pinned below image */}
-              <div className="shrink-0 mt-4 flex items-baseline justify-between">
-                <span className="text-base font-light">{p.title[locale]}</span>
-                <span className="text-xs text-black/40 font-light">{p.years}</span>
+                <Link
+                  href={`/${locale}/projects/${p.slug}`}
+                  className="group flex-1 min-h-0 relative block overflow-hidden bg-white"
+                  aria-label={p.title[locale]}
+                >
+                  <Image
+                    src={p.cover.src}
+                    alt={p.cover.alt}
+                    fill
+                    className="object-contain transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.02]"
+                    sizes="100vw"
+                    priority={i === 0}
+                  />
+                </Link>
+                <div className="shrink-0 mt-4 flex items-baseline justify-between">
+                  <span className="text-base font-light">{p.title[locale]}</span>
+                  <span className="text-xs text-black/40 font-light">{p.years}</span>
+                </div>
+                <p className="shrink-0 mt-1 text-sm font-light text-black/50 line-clamp-1 pb-5">
+                  {p.subtitle[locale]}
+                </p>
               </div>
-              <p className="shrink-0 mt-1 text-sm font-light text-black/50 line-clamp-1 pb-5">
-                {p.subtitle[locale]}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
+          <div className="shrink-0 flex items-center justify-between px-8 lg:px-14 py-4 border-t border-black/10">
+            <button
+              onClick={() => goTo(Math.max(0, activeIndex - 1))}
+              disabled={activeIndex === 0}
+              className="text-sm font-light text-black/40 hover:text-black transition-colors duration-200 disabled:opacity-20 w-8"
+            >
+              ←
+            </button>
+            <span className="text-xs font-light text-black/30 tabular-nums">
+              {activeIndex + 1} / {projects.length}
+            </span>
+            <button
+              onClick={() => goTo(Math.min(projects.length - 1, activeIndex + 1))}
+              disabled={activeIndex === projects.length - 1}
+              className="text-sm font-light text-black/40 hover:text-black transition-colors duration-200 disabled:opacity-20 w-8 text-right"
+            >
+              →
+            </button>
+          </div>
         </div>
-
-        {/* Navigation bar */}
-        <div className="shrink-0 flex items-center justify-between px-8 lg:px-14 py-4 border-t border-black/10">
-          <button
-            onClick={() => goTo(Math.max(0, activeIndex - 1))}
-            disabled={activeIndex === 0}
-            className="text-sm font-light text-black/40 hover:text-black transition-colors duration-200 disabled:opacity-20 w-8"
-          >
-            ←
-          </button>
-          <span className="text-xs font-light text-black/30 tabular-nums">
-            {activeIndex + 1} / {projects.length}
-          </span>
-          <button
-            onClick={() => goTo(Math.min(projects.length - 1, activeIndex + 1))}
-            disabled={activeIndex === projects.length - 1}
-            className="text-sm font-light text-black/40 hover:text-black transition-colors duration-200 disabled:opacity-20 w-8 text-right"
-          >
-            →
-          </button>
-        </div>
-      </div>
+      </>
     );
   }
 
   /* ── Views 2 & 3: clean uniform grid ── */
   return (
-    <div className="mx-auto max-w-7xl px-8">
-      <PageHeader />
-
-      <div className={[
-        "pb-16 pt-2",
-        view === 2
-          ? "grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-14"
-          : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10",
-      ].join(" ")}>
-        {projects.map((p) => (
-          <Link
-            key={p.slug}
-            href={`/${locale}/projects/${p.slug}`}
-            className="group block"
-            aria-label={p.title[locale]}
-          >
-            <div className="relative overflow-hidden aspect-[4/3] bg-white">
-              <Image
-                src={p.cover.src}
-                alt={p.cover.alt}
-                fill
-                className="object-contain transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
-                sizes={view === 2 ? "(max-width:640px) 100vw, 50vw" : "(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"}
-              />
-            </div>
-            <div className="mt-3 flex items-baseline justify-between">
-              <span className="text-base font-light group-hover:opacity-60 transition-opacity duration-200">
-                {p.title[locale]}
-              </span>
-              <span className="text-xs text-black/40 font-light shrink-0 ml-3">{p.years}</span>
-            </div>
-            <p className="mt-1 text-sm font-light text-black/50 line-clamp-1">
-              {p.subtitle[locale]}
-            </p>
-          </Link>
-        ))}
+    <>
+      <MobileList />
+      <div className="hidden sm:block mx-auto max-w-7xl px-8">
+        <PageHeader />
+        <div className={[
+          "pb-16 pt-2",
+          view === 2
+            ? "grid grid-cols-2 gap-x-8 gap-y-14"
+            : "grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10",
+        ].join(" ")}>
+          {projects.map((p) => (
+            <Link
+              key={p.slug}
+              href={`/${locale}/projects/${p.slug}`}
+              className="group block"
+              aria-label={p.title[locale]}
+            >
+              <div className="relative overflow-hidden aspect-[4/3] bg-white">
+                <Image
+                  src={p.cover.src}
+                  alt={p.cover.alt}
+                  fill
+                  className="object-contain transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+                  sizes={view === 2 ? "50vw" : "(max-width:1024px) 50vw, 33vw"}
+                />
+              </div>
+              <div className="mt-3 flex items-baseline justify-between">
+                <span className="text-base font-light group-hover:opacity-60 transition-opacity duration-200">
+                  {p.title[locale]}
+                </span>
+                <span className="text-xs text-black/40 font-light shrink-0 ml-3">{p.years}</span>
+              </div>
+              <p className="mt-1 text-sm font-light text-black/50 line-clamp-1">
+                {p.subtitle[locale]}
+              </p>
+            </Link>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
