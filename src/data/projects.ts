@@ -104,7 +104,7 @@ export const projects: Project[] = [
     links: [
       {
         label: "Live",
-        href: "https://temoigner-pour-lutter-tool.vercel.app/",
+        href: "https://temoigner-pour-lutter.vercel.app/",
       },
       {
         label: "GitHub",
