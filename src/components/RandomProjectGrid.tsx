@@ -1,16 +1,16 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ScrollHint from "./ScrollHint";
 
 type ImageData = { src: string; alt: string };
 
-type ProjectData = {
+export type ProjectData = {
   slug: string;
   title: string;
-  years: string;
+  years?: string;
   cover: ImageData;
   gallery: ImageData[];
 };
@@ -26,15 +26,11 @@ export default function RandomProjectGrid({
   projects: ProjectData[];
   locale: string;
 }) {
-  const [displayImages, setDisplayImages] = useState<ImageData[]>(() =>
-    projects.map((p) => p.cover)
+  const initialImages = useMemo(
+    () => projects.map((p) => pickRandom([p.cover, ...p.gallery])),
+    [projects]
   );
-
-  useEffect(() => {
-    setDisplayImages(
-      projects.map((p) => pickRandom([p.cover, ...p.gallery]))
-    );
-  }, [projects]);
+  const [displayImages, setDisplayImages] = useState<ImageData[]>(initialImages);
 
   const shuffle = useCallback(() => {
     setDisplayImages(
