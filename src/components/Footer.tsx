@@ -22,7 +22,6 @@ export default function Footer({ locale }: { locale: Locale }) {
       <div className="mx-auto max-w-7xl px-8 py-10">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 items-start">
 
-          {/* Left — name + copyright */}
           <div>
             <Link
               href={`/${locale}`}
@@ -35,7 +34,6 @@ export default function Footer({ locale }: { locale: Locale }) {
             </p>
           </div>
 
-          {/* Center — navigation */}
           <div className="flex flex-col gap-2">
             {nav.map((l) => (
               <Link
@@ -48,7 +46,6 @@ export default function Footer({ locale }: { locale: Locale }) {
             ))}
           </div>
 
-          {/* Right — contact */}
           <div className="flex flex-col gap-2 sm:items-end">
             <a
               href="mailto:thaliadwoods@gmail.com"

@@ -1,8 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
 import { projects, type Locale } from "@/data/projects";
 import FadeIn from "@/components/FadeIn";
-import ScrollHint from "@/components/ScrollHint";
+import RandomProjectGrid from "@/components/RandomProjectGrid";
 
 export default async function HomePage({
   params,
@@ -14,26 +13,31 @@ export default async function HomePage({
   const t =
     locale === "fr"
       ? {
-          role: "Développeuse web — Front / Full-stack",
+          role: "Développeuse web - Front / Full-stack",
           blurb:
-            "Je conçois et développe des interfaces où se rencontrent code, interaction et direction visuelle.",
+            "Je conçois et développe des interfaces où se rencontrent\ncode, interaction, narration et direction visuelle.",
           cta: "Portfolio",
           cta2: "Contact",
         }
       : {
-          role: "Web developer — Front / Full-stack",
+          role: "Web developer - Front / Full-stack",
           blurb:
-            "I design and build interfaces where code, interaction, and visual direction meet.",
+            "I design and build interfaces where code, interaction, narrative, and visual direction meet.",
           cta: "Portfolio",
           cta2: "Contact",
         };
 
-  const featured = [...projects].filter((p) => p.featured);
+  const featured = [...projects].filter((p) => p.featured).map((p) => ({
+    slug: p.slug,
+    title: p.title[locale],
+    years: p.years,
+    cover: p.cover,
+    gallery: p.gallery,
+  }));
 
   return (
     <main className="flex flex-col lg:grid lg:grid-cols-[42%_58%]">
 
-      {/* ── Left panel — sticky hero ── */}
       <div className="lg:sticky lg:top-16 lg:h-[calc(100vh-4rem)] flex flex-col justify-center px-8 lg:px-14 py-20 lg:py-0">
         <FadeIn>
           <h1 className="text-5xl lg:text-6xl font-light tracking-tight leading-[1.05] uppercase">
@@ -48,7 +52,7 @@ export default async function HomePage({
         </FadeIn>
 
         <FadeIn delay={160}>
-          <p className="mt-8 text-sm font-light leading-relaxed text-black/60 max-w-xs">
+          <p className="mt-8 text-sm font-light leading-relaxed text-black/60 max-w-sm whitespace-pre-line">
             {t.blurb}
           </p>
         </FadeIn>
@@ -71,35 +75,7 @@ export default async function HomePage({
         </FadeIn>
       </div>
 
-      {/* ── Right panel — horizontal scroll on mobile, vertical on desktop ── */}
-      <div className="flex lg:flex-col gap-6 lg:gap-10 overflow-x-auto lg:overflow-x-visible snap-x snap-mandatory lg:snap-none no-scrollbar px-4 lg:pl-1 lg:pr-20 pb-20">
-        {featured.map((p, i) => (
-          <Link
-            key={p.slug}
-            href={`/${locale}/projects/${p.slug}`}
-            className="group relative block flex-none w-[85vw] h-[60vh] lg:w-auto lg:h-[calc(100vh-4rem)] bg-white snap-start"
-            aria-label={p.title[locale]}
-          >
-            <Image
-              src={p.cover.src}
-              alt={p.cover.alt}
-              fill
-              className="object-contain transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.025]"
-              sizes="(max-width: 1024px) 85vw, 58vw"
-              priority={i === 0}
-            />
-
-            {/* Project label on hover */}
-            <div className="absolute bottom-0 left-0 right-0 px-7 py-6 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-white text-sm font-light">{p.title[locale]}</p>
-              <p className="text-white/60 text-xs font-light mt-0.5">{p.years}</p>
-            </div>
-
-            {/* Scroll hint — only on first image */}
-            {i === 0 && <ScrollHint />}
-          </Link>
-        ))}
-      </div>
+      <RandomProjectGrid projects={featured} locale={locale} />
 
     </main>
   );

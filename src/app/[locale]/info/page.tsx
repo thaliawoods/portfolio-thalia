@@ -15,7 +15,7 @@ export default async function InfoPage({
 
 aboutTitle: "À propos",
 about1:
-  "Développeuse web — front-end / full-stack.",
+  "Développeuse web - front-end / full-stack.",
 about2:
   "Mon travail se situe à la croisée de la technique et de la direction artistique : je conçois des interfaces claires, sensibles et robustes, en portant autant d’attention à la structure des données et à la maintenabilité qu’à l’UX/UI, aux interactions et aux détails visuels.",
 about3:
@@ -34,12 +34,12 @@ about3:
             },
             {
               institution: "Aix-Marseille University",
-              degree: "DAEU A — Mention Très Bien",
+              degree: "DAEU A - Mention Très Bien",
               year: "2020–2021",
             },
             {
               institution: "Atelier de Sèvres",
-              degree: "Prépa d'Art — Option Mode",
+              degree: "Prépa d'Art - Option Mode",
               year: "2016–2017",
             },
           ],
@@ -50,7 +50,7 @@ about3:
             { label: "Back", value: "Node.js · Express · Strapi · Python · PHP" },
             { label: "Data / ORM", value: "PostgreSQL · Prisma · MongoDB · MySQL" },
             { label: "Creative coding", value: "Godot · Three.js · MIDI · Web Audio API" },
-            { label: "Outils", value: "Docker · CI/CD · Git · LaTeX · Jira · Figma · Strapi · Photoshop · Indesign · Illustrator" },
+            { label: "Outils", value: "Docker · Git · LaTeX · Jira · Figma · Blender · Strapi · Photoshop · Indesign · Illustrator" },
           ],
 
           contactTitle: "Contact",
@@ -65,7 +65,7 @@ about3:
 
 aboutTitle: "About",
 about1:
-  "Web developer — front-end / full-stack.",
+  "Web developer - front-end / full-stack.",
 about2:
   "My work sits at the intersection of technical development and art direction: I design interfaces that are clear, thoughtful, and robust, with as much attention to data structure and maintainability as to UX/UI, interactions, and visual details.",
 about3:
@@ -84,12 +84,12 @@ about3:
             },
             {
               institution: "Aix-Marseille University",
-              degree: "DAEU A — Honors",
+              degree: "DAEU A - Honors",
               year: "2020–2021",
             },
             {
               institution: "Atelier de Sèvres",
-              degree: "Foundation course — Art & Fashion",
+              degree: "Foundation course - Art & Fashion",
               year: "2016–2017",
             },
           ],
@@ -100,7 +100,7 @@ about3:
             { label: "Back", value: "Node.js · Express · Strapi · Python · PHP" },
             { label: "Data / ORM", value: "PostgreSQL · Prisma · MongoDB · MySQL" },
             { label: "Creative coding", value: "Godot · Three.js · MIDI · Web Audio API" },
-            { label: "Tools", value: "Docker · Git · LaTeX · Jira · Figma · Strapi · Photoshop · Indesign · Illustrator" },
+            { label: "Tools", value: "Docker · Git · LaTeX · Jira · Figma · Blender · Strapi · Photoshop · Indesign · Illustrator" },
           ],
 
           contactTitle: "Contact",
@@ -135,7 +135,7 @@ about3:
           </section>
         </FadeIn>
 
-        {/* Contact — top right, aligned with About */}
+        {/* Contact - top right, aligned with About */}
         <FadeIn delay={80} className="lg:col-span-4">
           <section>
             <p className="text-xs tracking-widest text-black/30 uppercase mb-6">

@@ -18,7 +18,7 @@ export default function ContactPage() {
           message: "Message",
           send: "Envoyer",
           sending: "Envoi en cours...",
-          sent: "Message envoyé — merci !",
+          sent: "Message envoyé - merci !",
           error: "Une erreur est survenue. Réessayez ou écrivez directement à thaliadwoods@gmail.com.",
         }
       : {
@@ -28,7 +28,7 @@ export default function ContactPage() {
           message: "Message",
           send: "Send",
           sending: "Sending...",
-          sent: "Message sent — thank you!",
+          sent: "Message sent - thank you!",
           error: "Something went wrong. Try again or write directly to thaliadwoods@gmail.com.",
         };
 
@@ -64,12 +64,11 @@ export default function ContactPage() {
           <h1 className="text-5xl font-light mb-4">{t.title}</h1>
           <p className="text-sm font-light text-black/50">
             {locale === "fr"
-              ? "Pour collaborer ou juste discuter — n'hésitez pas."
-              : "Whether you'd like to collaborate or just chat — feel free to reach out."}
+              ? "Pour collaborer ou juste discuter - n'hésitez pas."
+              : "Whether you'd like to collaborate or just chat - feel free to reach out."}
           </p>
         </FadeIn>
 
-        {/* Contact links — right, aligned with title */}
         <FadeIn delay={60} className="lg:col-span-4">
           <div className="space-y-3">
             <a
@@ -99,7 +98,6 @@ export default function ContactPage() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
-        {/* Form — left */}
         <FadeIn delay={120} className="lg:col-span-8">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

@@ -19,7 +19,6 @@ export default function PortfolioGrid({ projects, locale, title, countLabel }: P
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Convert vertical wheel → horizontal scroll in view 1
   useEffect(() => {
     if (view !== 1) return;
     const el = scrollRef.current;
@@ -34,7 +33,6 @@ export default function PortfolioGrid({ projects, locale, title, countLabel }: P
     return () => el.removeEventListener("wheel", onWheel);
   }, [view]);
 
-  // Track active slide index
   useEffect(() => {
     if (view !== 1) return;
     const el = scrollRef.current;
@@ -48,7 +46,6 @@ export default function PortfolioGrid({ projects, locale, title, countLabel }: P
     scrollRef.current?.scrollTo({ left: i * (scrollRef.current.clientWidth), behavior: "smooth" });
   };
 
-  /* ── Mobile: simple stacked list ── */
   const MobileList = () => (
     <div className="sm:hidden mx-auto px-8">
       <div className="flex items-center justify-between py-8">
@@ -85,7 +82,6 @@ export default function PortfolioGrid({ projects, locale, title, countLabel }: P
     </div>
   );
 
-  /* ── Shared header (desktop/tablet) ── */
   const PageHeader = () => (
     <div className="flex items-center justify-between px-8 lg:px-14 py-8 shrink-0">
       <h1 className="text-4xl font-light">{title}</h1>
@@ -107,7 +103,6 @@ export default function PortfolioGrid({ projects, locale, title, countLabel }: P
     </div>
   );
 
-  /* ── View 1: full-height horizontal carousel ── */
   if (view === 1) {
     return (
       <>
@@ -171,7 +166,6 @@ export default function PortfolioGrid({ projects, locale, title, countLabel }: P
     );
   }
 
-  /* ── Views 2 & 3: clean uniform grid ── */
   return (
     <>
       <MobileList />
@@ -216,7 +210,6 @@ export default function PortfolioGrid({ projects, locale, title, countLabel }: P
   );
 }
 
-/* ── Grid switcher icons ── */
 function GridIcon({ cols }: { cols: View }) {
   if (cols === 1) {
     return (

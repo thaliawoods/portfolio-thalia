@@ -45,7 +45,6 @@ export default async function ProjectPage({
 
   return (
     <main className="mx-auto max-w-7xl px-8 py-6">
-      {/* Back link */}
       <FadeIn>
         <Link
           href={`/${locale}/portfolio`}
@@ -55,7 +54,6 @@ export default async function ProjectPage({
         </Link>
       </FadeIn>
 
-      {/* Header: title + subtitle */}
       <FadeIn delay={60}>
         <div className="mt-6 mb-2">
           <p className="text-xs tracking-widest text-black/40 uppercase mb-2">
@@ -70,10 +68,8 @@ export default async function ProjectPage({
         </div>
       </FadeIn>
 
-      {/* Two-column: meta + content left, media right */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-8">
         <div className="lg:col-span-4 lg:pt-6">
-          {/* Meta: role · stack · links */}
           <FadeIn delay={120}>
             <div className="space-y-5 mb-8">
               <div>
@@ -106,7 +102,6 @@ export default async function ProjectPage({
             </div>
           </FadeIn>
 
-          {/* Content text */}
           {content && (
             <FadeIn delay={180}>
               <p className="text-base font-light leading-relaxed text-black/60">
