@@ -32,7 +32,7 @@ export default async function HomePage({
     title: p.title[locale],
     years: p.years,
     cover: p.cover,
-    gallery: p.gallery,
+    gallery: p.gallery.filter((m) => !m.src.includes("midi-controller")),
   }));
 
   return (
