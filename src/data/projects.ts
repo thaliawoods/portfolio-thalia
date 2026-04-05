@@ -241,10 +241,6 @@ export const projects: Project[] = [
         "Détours en Cinécourt filters view",
       ),
       img(
-        "/projects/detours-en-cinecourt/films-detail.png",
-        "Détours en Cinécourt film detail",
-      ),
-      img(
         "/projects/detours-en-cinecourt/films-liste.png",
         "Détours en Cinécourt list view",
       ),
