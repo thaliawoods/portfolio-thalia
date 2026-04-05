@@ -224,44 +224,44 @@ export const projects: Project[] = [
     stack: ["Next.js · React · TypeScript · Tailwind · MongoDB"],
     links: [],
     cover: img(
-      "/projects/detours-en-cinecourt/films-detail.jpeg",
+      "/projects/detours-en-cinecourt/films-detail.png",
       "Détours en Cinécourt film detail",
     ),
     gallery: [
       img(
-        "/projects/detours-en-cinecourt/films-carte.jpeg",
+        "/projects/detours-en-cinecourt/login.jpeg",
+        "Détours en Cinécourt login screen",
+      ),
+      img(
+        "/projects/detours-en-cinecourt/films-carte.png",
         "Détours en Cinécourt card view",
       ),
       img(
-        "/projects/detours-en-cinecourt/films-liste.png",
-        "Détours en Cinécourt films list",
+        "/projects/detours-en-cinecourt/films-filtres.png",
+        "Détours en Cinécourt filters view",
       ),
       img(
-        "/projects/detours-en-cinecourt/films-detail.jpeg",
+        "/projects/detours-en-cinecourt/films-detail.png",
         "Détours en Cinécourt film detail",
       ),
       img(
-        "/projects/detours-en-cinecourt/films-filtres.jpeg",
-        "Détours en Cinécourt filters view",
+        "/projects/detours-en-cinecourt/films-liste.png",
+        "Détours en Cinécourt list view",
       ),
       img(
         "/projects/detours-en-cinecourt/films-tableau.png",
         "Détours en Cinécourt table view",
       ),
       img(
-        "/projects/detours-en-cinecourt/dashboard.png",
-        "Détours en Cinécourt dashboard",
-      ),
-      img(
         "/projects/detours-en-cinecourt/archives.png",
         "Détours en Cinécourt archives",
       ),
       img(
-        "/projects/detours-en-cinecourt/login.jpeg",
-        "Détours en Cinécourt login screen",
+        "/projects/detours-en-cinecourt/dashboard.png",
+        "Détours en Cinécourt dashboard",
       ),
       img(
-        "/projects/detours-en-cinecourt/profil.jpeg",
+        "/projects/detours-en-cinecourt/profil.png",
         "Détours en Cinécourt profile page",
       ),
     ],
