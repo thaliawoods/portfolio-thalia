@@ -88,7 +88,18 @@
 }
 
 /* ── Custom cursor ── */
-* {
+*,
+*::before,
+*::after,
+a,
+button,
+input,
+textarea,
+select,
+label,
+iframe,
+canvas,
+[role="button"] {
   cursor: url("/cursor.svg") 12 12, crosshair !important;
 }
 

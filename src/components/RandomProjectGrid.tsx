@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ScrollHint from "./ScrollHint";
@@ -19,6 +19,10 @@ function pickRandom(images: ImageData[]) {
   return images[Math.floor(Math.random() * images.length)];
 }
 
+function randomize(projects: ProjectData[]) {
+  return projects.map((p) => pickRandom([p.cover, ...p.gallery]));
+}
+
 export default function RandomProjectGrid({
   projects,
   locale,
@@ -26,16 +30,21 @@ export default function RandomProjectGrid({
   projects: ProjectData[];
   locale: string;
 }) {
-  const initialImages = useMemo(
-    () => projects.map((p) => pickRandom([p.cover, ...p.gallery])),
-    [projects]
-  );
-  const [displayImages, setDisplayImages] = useState<ImageData[]>(initialImages);
+  const hasMounted = useRef(false);
+  const [displayImages, setDisplayImages] = useState<ImageData[]>(() => {
+    if (typeof window === "undefined") return projects.map((p) => p.cover);
+    return randomize(projects);
+  });
+
+  if (!hasMounted.current && typeof window !== "undefined") {
+    hasMounted.current = true;
+    const randomized = randomize(projects);
+    const needsUpdate = randomized.some((img, i) => img.src !== displayImages[i].src);
+    if (needsUpdate) setDisplayImages(randomized);
+  }
 
   const shuffle = useCallback(() => {
-    setDisplayImages(
-      projects.map((p) => pickRandom([p.cover, ...p.gallery]))
-    );
+    setDisplayImages(randomize(projects));
   }, [projects]);
 
   return (

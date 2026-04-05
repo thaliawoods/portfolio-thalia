@@ -59,11 +59,11 @@ export const projects: Project[] = [
       en: "3D interactive experience - exploratory game combining photogrammetry, narrative, and spatial audio.",
     },
     content: {
-      fr: "HTTPS est un jeu vidéo exploratoire développé dans le cadre d'une résidence Création en cours des Ateliers Médicis. Construit à partir d'archives photogrammétriques, le projet interroge les liens entre territoires, mémoires et espaces numériques à travers une expérience immersive.\n\nLe joueur évolue dans des environnements hybrides où l'exploration active des strates sonores et des fragments de récits. Un contrôleur MIDI permet de piloter en temps réel les interactions, transformant le jeu en un dispositif à la frontière entre instrument et installation.\n\nDéveloppé avec Godot, le projet repose sur une architecture modulaire intégrant chargement dynamique des scènes, synchronisation audio/visuelle et génération procédurale d'espaces navigables.",
-      en: "HTTPS is an exploratory video game developed as part of a Création en cours residency at Ateliers Médicis. Built from photogrammetric archives, the project questions the links between territories, memories, and digital spaces through an immersive experience.\n\nThe player navigates hybrid environments where exploration activates sonic layers and narrative fragments. A MIDI controller enables real-time interaction, turning the game into a device at the boundary between instrument and installation.\n\nDeveloped with Godot, the project relies on a modular architecture integrating dynamic scene loading, audio/visual synchronization, and procedural generation of navigable spaces.",
+      fr: "HTTPS est un jeu vidéo exploratoire développé dans le cadre d'une résidence Création en cours des Ateliers Médicis. Construit à partir d'archives photogrammétriques, le projet interroge les liens entre territoires, mémoires et espaces numériques à travers une expérience immersive. Ces photogrammétries sont retravaillées dans Blender afin de supprimer les éléments parasites.\n\nLe joueur évolue dans des environnements hybrides où l'exploration active des strates sonores et des fragments de récits. Un contrôleur MIDI permet de piloter en temps réel les interactions, transformant le jeu en un dispositif à la frontière entre instrument et installation.\n\nDéveloppé avec Godot, le projet repose sur une architecture modulaire intégrant chargement dynamique des scènes, synchronisation audio/visuelle et génération procédurale d'espaces navigables.",
+      en: "HTTPS is an exploratory video game developed as part of a Création en cours residency at Ateliers Médicis. Built from photogrammetric archives, the project questions the links between territories, memories, and digital spaces through an immersive experience. These photogrammetric scans are reworked in Blender to remove unwanted artifacts.\n\nThe player navigates hybrid environments where exploration activates sonic layers and narrative fragments. A MIDI controller enables real-time interaction, turning the game into a device at the boundary between instrument and installation.\n\nDeveloped with Godot, the project relies on a modular architecture integrating dynamic scene loading, audio/visual synchronization, and procedural generation of navigable spaces.",
     },
     roles: ["Creative coding", "Game dev", "Interactive design"],
-    stack: ["Godot Engine · Photogrammetry · MIDI · Web Audio"],
+    stack: ["Godot Engine · Blender · Photogrammetry · MIDI · Web Audio"],
     links: [
       {
         label: "GitHub",
@@ -76,6 +76,7 @@ export const projects: Project[] = [
     ],
     cover: img("/projects/https/w5-statue.png", "Https :// cover"),
     gallery: [
+      vid("https://vz-1091ebdd-3b9.b-cdn.net/6e8bc210-2375-4c47-83d4-a44c90393c1e/playlist.m3u8", "Https :// gameplay video", "https://vz-1091ebdd-3b9.b-cdn.net/6e8bc210-2375-4c47-83d4-a44c90393c1e/thumbnail.jpg"),
       img("/projects/https/w1-colonnes.png", "Https :// world 1 - colonnes"),
       img("/projects/https/w2-batiment.png", "Https :// world 2 - bâtiment"),
       img("/projects/https/w4-porte.png", "Https :// world 4 - porte"),
@@ -109,6 +110,10 @@ export const projects: Project[] = [
       {
         label: "GitHub",
         href: "https://github.com/thaliawoods/temoigner-pour-lutter-tool",
+      },
+      {
+        label: "Dossier artistique (PDF)",
+        href: "/projects/temoigner-pour-lutter/dossier-artistique.pdf",
       },
     ],
     cover: img(
@@ -173,6 +178,10 @@ export const projects: Project[] = [
     {
       label: "GitHub",
       href: "https://github.com/thaliawoods/hannah-hajar",
+    },
+    {
+      label: "Dossier (PDF)",
+      href: "/projects/hannah-hajar/dossier-en.pdf",
     },
   ],
   cover: img("/projects/hannah-hajar/cover.png", "Hannah Hajar cover"),

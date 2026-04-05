@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
+import Hls from "hls.js";
 
 type Media =
   | { kind: "image"; src: string; alt: string }
@@ -10,12 +11,14 @@ type Media =
 export default function ProjectCarousel({ items }: { items: Media[] }) {
   const slides = useMemo(() => items.filter(Boolean), [items]);
   const [i, setI] = useState(0);
+  const [playing, setPlaying] = useState(false);
   const max = slides.length;
 
   const prev = () => setI((v) => (v - 1 + max) % max);
   const next = () => setI((v) => (v + 1) % max);
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const hlsRef = useRef<Hls | null>(null);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -26,13 +29,46 @@ export default function ProjectCarousel({ items }: { items: Media[] }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [max]);
 
+  // Reset playing state when switching slides
   useEffect(() => {
-    const current = slides[i];
-    if (current?.kind === "video" && videoRef.current) {
-      videoRef.current.playbackRate = 1.5;
-      videoRef.current.defaultPlaybackRate = 1.5;
+    setPlaying(false);
+    if (hlsRef.current) {
+      hlsRef.current.destroy();
+      hlsRef.current = null;
     }
-  }, [i, slides]);
+  }, [i]);
+
+  useEffect(() => {
+    if (!playing || !videoRef.current) return;
+    const video = videoRef.current;
+    const current = slides[i];
+    if (current.kind !== "video") return;
+
+    const isHls = current.src.endsWith(".m3u8");
+
+    if (isHls && Hls.isSupported()) {
+      const hls = new Hls();
+      hlsRef.current = hls;
+      hls.loadSource(current.src);
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED, () => {
+        video.playbackRate = 1.5;
+        video.play();
+      });
+    } else {
+      // Safari handles HLS natively, or it's a direct mp4
+      video.src = current.src;
+      video.playbackRate = 1.5;
+      video.play();
+    }
+
+    return () => {
+      if (hlsRef.current) {
+        hlsRef.current.destroy();
+        hlsRef.current = null;
+      }
+    };
+  }, [playing, i, slides]);
 
   if (max === 0) return null;
 
@@ -51,19 +87,35 @@ export default function ProjectCarousel({ items }: { items: Media[] }) {
               sizes="(max-width: 1024px) 100vw, 900px"
               priority
             />
+          ) : !playing ? (
+            <button
+              type="button"
+              onClick={() => setPlaying(true)}
+              className="relative h-full w-full cursor-pointer bg-black"
+              aria-label="Play video"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={current.poster || current.src}
+                alt={current.alt}
+                className="h-full w-full object-contain"
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 shadow-lg">
+                  <svg viewBox="0 0 24 24" fill="black" className="h-7 w-7 ml-1">
+                    <polygon points="5,3 19,12 5,21" />
+                  </svg>
+                </div>
+              </div>
+            </button>
           ) : (
             <video
               ref={videoRef}
               className="h-full w-full object-contain"
               controls
               playsInline
-              preload="metadata"
-              poster={current.poster}
               muted
-            >
-              <source src={current.src} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            />
           )}
         </div>
 
@@ -112,8 +164,18 @@ export default function ProjectCarousel({ items }: { items: Media[] }) {
                 {m.kind === "image" ? (
                   <Image src={m.src} alt={m.alt} fill className="object-cover" />
                 ) : (
-                  <div className="h-full w-full flex items-center justify-center text-[10px] tracking-widest text-black/60">
-                    VIDEO
+                  <div className="relative h-full w-full">
+                    {m.poster && (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={m.poster} alt={m.alt} className="h-full w-full object-cover" />
+                    )}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white/90">
+                        <svg viewBox="0 0 24 24" fill="black" className="h-3 w-3 ml-0.5">
+                          <polygon points="5,3 19,12 5,21" />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>
