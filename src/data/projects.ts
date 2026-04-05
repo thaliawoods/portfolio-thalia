@@ -48,7 +48,7 @@ const vid = (src: string, alt: string, poster?: string): ProjectVideo => ({
 
 export const projects: Project[] = [
   {
-    slug: "https-experience",
+    slug: "https",
     years: "2026",
     title: {
       fr: "Https ://",
