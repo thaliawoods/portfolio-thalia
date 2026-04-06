@@ -13,14 +13,14 @@ export default async function HomePage({
   const t =
     locale === "fr"
       ? {
-          role: "Développeuse web - Front / Full-stack",
+          role: "Développeuse Web & Creative Tech",
           blurb:
             "Je conçois et développe des interfaces où se rencontrent\ncode, interaction, narration et direction visuelle.",
           cta: "Portfolio",
           cta2: "Contact",
         }
       : {
-          role: "Web developer - Front / Full-stack",
+          role: "Web Developer & Creative Tech",
           blurb:
             "I design and build interfaces where code, interaction, narrative, and visual direction meet.",
           cta: "Portfolio",

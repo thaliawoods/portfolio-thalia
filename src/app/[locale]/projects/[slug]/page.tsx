@@ -22,8 +22,8 @@ export default async function ProjectPage({
   const content = project.content?.[locale];
 
   const media: ProjectMedia[] = [
-    project.cover,
     ...(project.gallery ?? []),
+    project.cover,
   ].filter(Boolean) as ProjectMedia[];
 
   const t =

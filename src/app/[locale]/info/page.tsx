@@ -15,7 +15,7 @@ export default async function InfoPage({
 
 aboutTitle: "À propos",
 about1:
-  "Développeuse web - front-end / full-stack.",
+  "Développeuse Web & Creative Tech.",
 about2:
   "Mon travail se situe à la croisée de la technique et de la direction artistique : je conçois des interfaces claires, sensibles et robustes, en portant autant d’attention à la structure des données et à la maintenabilité qu’à l’UX/UI, aux interactions et aux détails visuels.",
 about3:
@@ -65,7 +65,7 @@ about3:
 
 aboutTitle: "About",
 about1:
-  "Web developer - front-end / full-stack.",
+  "Web Developer & Creative Tech.",
 about2:
   "My work sits at the intersection of technical development and art direction: I design interfaces that are clear, thoughtful, and robust, with as much attention to data structure and maintainability as to UX/UI, interactions, and visual details.",
 about3:
