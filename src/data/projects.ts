@@ -229,8 +229,8 @@ export const projects: Project[] = [
     stack: ["Next.js · React · TypeScript · Tailwind · MongoDB"],
     links: [],
     cover: img(
-      "/projects/detours-en-cinecourt/films-detail.png",
-      "Détours en Cinécourt film detail",
+      "/projects/detours-en-cinecourt/film-detail-light.png",
+      "Détours en Cinécourt fiche film",
     ),
     gallery: [
       img(
@@ -238,32 +238,44 @@ export const projects: Project[] = [
         "Détours en Cinécourt login screen",
       ),
       img(
-        "/projects/detours-en-cinecourt/films-carte.png",
-        "Détours en Cinécourt card view",
+        "/projects/detours-en-cinecourt/films-light.png",
+        "Détours en Cinécourt films catalogue (clair)",
       ),
       img(
-        "/projects/detours-en-cinecourt/films-filtres.png",
-        "Détours en Cinécourt filters view",
+        "/projects/detours-en-cinecourt/films-filtres-light.png",
+        "Détours en Cinécourt films filtres avancés (clair)",
       ),
       img(
-        "/projects/detours-en-cinecourt/films-liste.png",
-        "Détours en Cinécourt list view",
+        "/projects/detours-en-cinecourt/archives-light.png",
+        "Détours en Cinécourt archives (clair)",
       ),
       img(
-        "/projects/detours-en-cinecourt/films-tableau.png",
-        "Détours en Cinécourt table view",
+        "/projects/detours-en-cinecourt/film-detail-light.png",
+        "Détours en Cinécourt fiche film (clair)",
       ),
       img(
-        "/projects/detours-en-cinecourt/archives.png",
-        "Détours en Cinécourt archives",
+        "/projects/detours-en-cinecourt/admin-light.png",
+        "Détours en Cinécourt administration (clair)",
       ),
       img(
-        "/projects/detours-en-cinecourt/dashboard.png",
-        "Détours en Cinécourt dashboard",
+        "/projects/detours-en-cinecourt/profil-light.png",
+        "Détours en Cinécourt profil (clair)",
       ),
       img(
-        "/projects/detours-en-cinecourt/profil.png",
-        "Détours en Cinécourt profile page",
+        "/projects/detours-en-cinecourt/films-dark.png",
+        "Détours en Cinécourt films catalogue (sombre)",
+      ),
+      img(
+        "/projects/detours-en-cinecourt/archives-dark.png",
+        "Détours en Cinécourt archives (sombre)",
+      ),
+      img(
+        "/projects/detours-en-cinecourt/film-detail-dark.png",
+        "Détours en Cinécourt fiche film (sombre)",
+      ),
+      img(
+        "/projects/detours-en-cinecourt/admin-dark.png",
+        "Détours en Cinécourt administration (sombre)",
       ),
     ],
     featured: true,
