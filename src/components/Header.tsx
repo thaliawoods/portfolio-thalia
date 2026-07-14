@@ -18,7 +18,7 @@ export default function Header({ locale }: { locale: Locale }) {
   };
 
   return (
-    <header className="px-8 lg:px-14 h-16 flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm px-8 lg:px-14 h-16 flex items-center justify-between">
       <Link
         href={`/${locale}`}
         className="text-base italic font-light tracking-wide hover:opacity-70 transition-opacity duration-200"
