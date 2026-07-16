@@ -59,7 +59,7 @@ export const projects: Project[] = [
       en: "3D interactive experience - exploratory game combining photogrammetry, narrative, and spatial audio.",
     },
     content: {
-      fr: "HTTPS est un jeu vidéo exploratoire développé avec l'artiste Marion Serclérat dans le cadre d'une résidence Création en cours des Ateliers Médicis. Construit à partir d'archives photogrammétriques, le projet interroge les liens entre territoires, mémoires et espaces numériques à travers une expérience immersive. Ces photogrammétries sont retravaillées dans Blender afin de supprimer les éléments parasites.\n\nLe joueur évolue dans des environnements hybrides où l'exploration active des strates sonores et des fragments de récits. Un contrôleur MIDI permet de piloter en temps réel les interactions, transformant le jeu en un dispositif à la frontière entre instrument et installation.\n\nDéveloppé avec Godot, le projet repose sur une architecture modulaire intégrant chargement dynamique des scènes, synchronisation audio/visuelle et génération procédurale d'espaces navigables.\n\nLe projet est désormais accessible en ligne dans une version web, jouable directement depuis le navigateur, sans installation.",
+      fr: "HTTPS est un jeu vidéo exploratoire développé avec l'artiste Marion Serclérat dans le cadre d'une résidence Création en cours des Ateliers Médicis. Construit à partir d'archives photogrammétriques, le projet interroge les liens entre territoires, mémoires et espaces numériques à travers une expérience immersive. Ces photogrammétries sont retravaillées dans Blender afin de supprimer les éléments parasites.\n\nLe joueur évolue dans des environnements hybrides où l'exploration active les strates sonores et les fragments de récits. Un contrôleur MIDI permet de piloter en temps réel les interactions, transformant le jeu en un dispositif à la frontière entre instrument et installation.\n\nDéveloppé avec Godot, le projet repose sur une architecture modulaire intégrant chargement dynamique des scènes, synchronisation audio/visuelle et génération procédurale d'espaces navigables.\n\nLe projet est désormais accessible en ligne dans une version web, jouable directement depuis le navigateur, sans installation.",
       en: "HTTPS is an exploratory video game developed with artist Marion Serclérat as part of a Création en cours residency at Ateliers Médicis. Built from photogrammetric archives, the project questions the links between territories, memories, and digital spaces through an immersive experience. These photogrammetric scans are reworked in Blender to remove unwanted artifacts.\n\nThe player navigates hybrid environments where exploration activates sonic layers and narrative fragments. A MIDI controller enables real-time interaction, turning the game into a device at the boundary between instrument and installation.\n\nDeveloped with Godot, the project relies on a modular architecture integrating dynamic scene loading, audio/visual synchronization, and procedural generation of navigable spaces.\n\nThe project is now available online as a web version, playable directly in the browser — no installation required.",
     },
     roles: ["Creative coding", "Game dev", "Interactive design"],
@@ -132,7 +132,7 @@ export const projects: Project[] = [
     years: "2026",
     title: { fr: "Témoigner pour Lutter", en: "Testify to Resist" },
     subtitle: {
-      fr: "Outil d'archive & performance. Navigation dans des témoignages, fragments média, structure documentaire.",
+      fr: "Outil d'archive & performance.\nNavigation dans des témoignages, fragments média, structure documentaire.",
       en: "Archive & performance tool.\nNavigating testimonies, media fragments, documentary structure.",
     },
     content: {
@@ -364,7 +364,7 @@ export const projects: Project[] = [
     title: { fr: "Test Technique Lydia", en: "Lydia Technical Test" },
     subtitle: {
       fr: "Test technique React - SPA de recherche dans des transactions, filtrage rapide et UI soignée.",
-      en: "React technical test - SPA for transaction search, fast filtering, and polished UI. Ongoing project",
+      en: "React technical test - SPA for transaction search, fast filtering, and polished UI.",
     },
     content: {
       fr: "Développement d'une SPA React à partir d'un fichier JSON de transactions : recherche non sensible à la casse, surlignage des occurrences, gestion des états (loading / vide / erreur), et composants UI réutilisables. Travail sur l'ergonomie (feedbacks, micro-interactions) et la qualité du code (composition, lisibilité, conventions).",

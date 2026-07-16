@@ -50,7 +50,7 @@ about3:
             { label: "Back", value: "Node.js · Express · Strapi · Python · PHP" },
             { label: "Data / ORM", value: "PostgreSQL · Prisma · MongoDB · MySQL" },
             { label: "Creative coding", value: "Godot · Three.js · MIDI · Web Audio API" },
-            { label: "Outils", value: "Docker · Git · LaTeX · Jira · Figma · Blender · Strapi · Photoshop · Indesign · Illustrator" },
+            { label: "Outils", value: "Docker · Git · LaTeX · Jira · Figma · Blender · Strapi · Photoshop · InDesign · Illustrator" },
           ],
 
           contactTitle: "Contact",
@@ -84,7 +84,7 @@ about3:
             },
             {
               institution: "Aix-Marseille University",
-              degree: "DAEU A - Honors",
+              degree: "DAEU A - Highest Honors",
               year: "2020–2021",
             },
             {
@@ -100,7 +100,7 @@ about3:
             { label: "Back", value: "Node.js · Express · Strapi · Python · PHP" },
             { label: "Data / ORM", value: "PostgreSQL · Prisma · MongoDB · MySQL" },
             { label: "Creative coding", value: "Godot · Three.js · MIDI · Web Audio API" },
-            { label: "Tools", value: "Docker · Git · LaTeX · Jira · Figma · Blender · Strapi · Photoshop · Indesign · Illustrator" },
+            { label: "Tools", value: "Docker · Git · LaTeX · Jira · Figma · Blender · Strapi · Photoshop · InDesign · Illustrator" },
           ],
 
           contactTitle: "Contact",
