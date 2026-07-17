@@ -1,7 +1,29 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { projects, type Locale } from "@/data/projects";
+import { buildMetadata } from "@/lib/metadata";
 import FadeIn from "@/components/FadeIn";
 import RandomProjectGrid from "@/components/RandomProjectGrid";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: Locale } | Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await Promise.resolve(params);
+  const fr = locale === "fr";
+  return buildMetadata({
+    locale,
+    path: "",
+    absoluteTitle: true,
+    title: fr
+      ? "Thalia Woods — Développeuse Web & Creative Tech"
+      : "Thalia Woods — Web Developer & Creative Tech",
+    description: fr
+      ? "Portfolio de Thalia Woods. Je conçois et développe des interfaces où se rencontrent code, interaction, narration et direction visuelle."
+      : "Portfolio of Thalia Woods. I design and build interfaces where code, interaction, narrative, and visual direction meet.",
+  });
+}
 
 export default async function HomePage({
   params,

@@ -1,11 +1,31 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { projects, type Locale, type ProjectMedia } from "@/data/projects";
+import { buildMetadata } from "@/lib/metadata";
 import ProjectCarousel from "@/components/ProjectCarousel";
 import FadeIn from "@/components/FadeIn";
 
 type Params = { locale: Locale; slug: string };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Params | Promise<Params>;
+}): Promise<Metadata> {
+  const { locale, slug } = await Promise.resolve(params);
+  const project = projects.find((p) => p.slug === slug);
+  if (!project) return {};
+
+  return buildMetadata({
+    locale,
+    path: `/projects/${slug}`,
+    title: project.title[locale],
+    description: project.subtitle[locale],
+    images: [{ url: project.cover.src, alt: project.cover.alt }],
+  });
+}
 
 export default async function ProjectPage({
   params,

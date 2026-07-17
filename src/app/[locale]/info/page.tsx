@@ -1,5 +1,24 @@
+import type { Metadata } from "next";
 import type { Locale } from "@/data/projects";
+import { buildMetadata } from "@/lib/metadata";
 import FadeIn from "@/components/FadeIn";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: Locale } | Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await Promise.resolve(params);
+  const fr = locale === "fr";
+  return buildMetadata({
+    locale,
+    path: "/info",
+    title: fr ? "Infos" : "Info",
+    description: fr
+      ? "Développeuse web & creative tech. Mon travail se situe à la croisée de la technique et de la direction artistique — parcours, compétences et formation."
+      : "Web developer & creative technologist. My work sits at the intersection of technical development and art direction — background, skills and education.",
+  });
+}
 
 export default async function InfoPage({
   params,

@@ -1,6 +1,25 @@
+import type { Metadata } from "next";
 import type { Locale } from "@/data/projects";
+import { buildMetadata } from "@/lib/metadata";
 import CvClient from "./CvClient";
 import FadeIn from "@/components/FadeIn";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: Locale } | Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await Promise.resolve(params);
+  const fr = locale === "fr";
+  return buildMetadata({
+    locale,
+    path: "/cv",
+    title: "CV",
+    description: fr
+      ? "Le parcours, les compétences et l'expérience de Thalia Woods, développeuse web & creative tech. Versions française et anglaise."
+      : "Background, skills and experience of Thalia Woods, web developer & creative technologist. French and English versions.",
+  });
+}
 
 export default async function CvPage({
   params,
