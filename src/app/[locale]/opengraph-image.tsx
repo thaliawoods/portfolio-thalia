@@ -3,7 +3,7 @@ import type { Locale } from "@/data/projects";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "Thalia Woods — Développeuse Web & Creative Tech";
+export const alt = "Thalia Woods | Développeuse Web & Creative Tech";
 
 export default async function OpengraphImage({
   params,

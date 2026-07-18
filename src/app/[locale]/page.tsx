@@ -17,8 +17,8 @@ export async function generateMetadata({
     path: "",
     absoluteTitle: true,
     title: fr
-      ? "Thalia Woods — Développeuse Web & Creative Tech"
-      : "Thalia Woods — Web Developer & Creative Tech",
+      ? "Thalia Woods | Développeuse Web & Creative Tech"
+      : "Thalia Woods | Web Developer & Creative Tech",
     description: fr
       ? "Portfolio de Thalia Woods. Je conçois et développe des interfaces où se rencontrent code, interaction, narration et direction visuelle."
       : "Portfolio of Thalia Woods. I design and build interfaces where code, interaction, narrative, and visual direction meet.",

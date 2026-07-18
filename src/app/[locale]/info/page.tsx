@@ -15,8 +15,8 @@ export async function generateMetadata({
     path: "/info",
     title: fr ? "Infos" : "Info",
     description: fr
-      ? "Développeuse web & creative tech. Mon travail se situe à la croisée de la technique et de la direction artistique — parcours, compétences et formation."
-      : "Web developer & creative technologist. My work sits at the intersection of technical development and art direction — background, skills and education.",
+      ? "Développeuse web & creative tech. Mon travail se situe à la croisée de la technique et de la direction artistique - parcours, compétences et formation."
+      : "Web developer & creative technologist. My work sits at the intersection of technical development and art direction - background, skills and education.",
   });
 }
 
@@ -49,17 +49,17 @@ about3:
             {
               institution: "Ada Tech School",
               degree: "RNCP niveau VI (Bac+3)\nConception et développement d'applications",
-              year: "2023–2026",
+              year: "2023-2026",
             },
             {
               institution: "Aix-Marseille University",
               degree: "DAEU A - Mention Très Bien",
-              year: "2020–2021",
+              year: "2020-2021",
             },
             {
               institution: "Atelier de Sèvres",
               degree: "Prépa d'Art - Option Mode",
-              year: "2016–2017",
+              year: "2016-2017",
             },
           ],
 
@@ -99,17 +99,17 @@ about3:
             {
               institution: "Ada Tech School",
               degree: "RNCP Level VI (Bachelor)\nApplication design & development",
-              year: "2023–2026",
+              year: "2023-2026",
             },
             {
               institution: "Aix-Marseille University",
               degree: "DAEU A - Highest Honors",
-              year: "2020–2021",
+              year: "2020-2021",
             },
             {
               institution: "Atelier de Sèvres",
               degree: "Foundation course - Art & Fashion",
-              year: "2016–2017",
+              year: "2016-2017",
             },
           ],
 

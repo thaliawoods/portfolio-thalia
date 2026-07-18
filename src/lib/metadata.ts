@@ -10,7 +10,7 @@ type BuildArgs = {
   path: string;
   title: string;
   description: string;
-  /** When true, the title is used as-is (no "— Thalia Woods" suffix). */
+  /** When true, the title is used as-is (no " | Thalia Woods" suffix). */
   absoluteTitle?: boolean;
   images?: { url: string; alt?: string }[];
 };
@@ -23,7 +23,7 @@ export function buildMetadata({
   absoluteTitle,
   images,
 }: BuildArgs): Metadata {
-  const displayTitle = absoluteTitle ? title : `${title} — ${SITE_NAME}`;
+  const displayTitle = absoluteTitle ? title : `${title} | ${SITE_NAME}`;
   const canonical = `/${locale}${path}`;
 
   return {
