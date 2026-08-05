@@ -102,11 +102,11 @@ export const projects: Project[] = [
     },
     subtitle: {
       fr: "Atelier d'initiation à la programmation pour enfants (Ateliers Médicis) - mini-jeu web & supports papier autour d'une fraise qui a perdu sa couleur.",
-      en: "Introduction-to-programming workshop for children (Ateliers Médicis) - a browser mini-game and printable materials around a strawberry who lost her colour.",
+      en: "Introduction-to-programming workshop for children (Ateliers Médicis) - a browser mini-game and printable materials around a strawberry who lost her color.",
     },
     content: {
-      fr: "Madame Tagada est un atelier d'initiation à la programmation destiné aux enfants, conçu dans le cadre de la résidence Création en cours des Ateliers Médicis, en prolongement du jeu vidéo Https://. Autour d'un fil rouge narratif - Madame Tagada, une fraise qui a perdu sa couleur - les élèves deviennent les programmeur·euses chargé·es de lui écrire un programme pour la retrouver.\n\nL'atelier se déploie sur trois temps : programmer une Tagada à l'écran, devenir soi-même le robot en exécutant des instructions avec son corps, puis une chasse au trésor finale mêlant contraintes et bugs à résoudre en équipe. J'ai développé le support numérique : un mini-jeu web (HTML + Canvas, sans dépendance) où l'on construit une suite d'instructions (haut, bas, gauche, droite) puis on l'exécute pour guider Tagada à travers une grille 6×6, collecter trois étoiles et rejoindre le pot de peinture - sans jamais repasser deux fois sur la même case.\n\nLe dispositif fait vivre concrètement les notions d'instruction, de programme, d'exécution et de bug, avec cinq plateaux iso-difficiles déclinés en versions papier (plateaux A3, fiches programme) pour prolonger le jeu hors de l'écran.",
-      en: "Madame Tagada is an introduction-to-programming workshop for children, created as part of the Création en cours residency at Ateliers Médicis, extending the video game Https://. Around a narrative thread - Madame Tagada, a strawberry who has lost her colour - the pupils become the programmers tasked with writing her a program to find it again.\n\nThe workshop unfolds over three sessions: programming a Tagada on screen, becoming the robot yourself by executing instructions with your body, then a final treasure hunt mixing constraints and bugs to solve as a team. I developed the digital tool: a browser mini-game (HTML + Canvas, no dependencies) where you build a sequence of instructions (up, down, left, right) then run it to guide Tagada across a 6×6 grid, collect three stars and reach the paint pot - never stepping on the same cell twice.\n\nThe project brings the notions of instruction, program, execution and bug to life, with five iso-difficulty boards also produced as print versions (A3 boards, program sheets) to extend the game beyond the screen.",
+      fr: "Madame Tagada est un atelier d'initiation à la programmation destiné aux enfants, conçu dans le cadre de la résidence Création en cours des Ateliers Médicis, en prolongement du jeu vidéo Https://. Autour d'un fil rouge narratif - Madame Tagada, une fraise qui a perdu sa couleur - les élèves deviennent les programmeur·euses chargé·es de lui écrire un programme pour la retrouver.\n\nL'atelier se déploie sur trois temps : programmer une Tagada à l'écran, devenir soi-même le robot en exécutant des instructions avec son corps, puis une chasse au trésor finale mêlant contraintes et bugs à résoudre en équipe. J'ai développé le support numérique : un mini-jeu web (HTML + Canvas, sans dépendance) où l'on construit une suite d'instructions (haut, bas, gauche, droite) puis on l'exécute pour guider Tagada à travers une grille 6×6, collecter trois étoiles et rejoindre le pot de peinture - sans jamais repasser deux fois sur la même case.\n\nLe dispositif fait vivre concrètement les notions d'instruction, de programme, d'exécution et de bug, avec cinq plateaux de difficulté équivalente déclinés en versions papier (plateaux A3, fiches programme) pour prolonger le jeu hors de l'écran.",
+      en: "Madame Tagada is an introduction-to-programming workshop for children, created as part of the Création en cours residency at Ateliers Médicis, extending the video game Https://. Around a narrative thread - Madame Tagada, a strawberry who has lost her color - the pupils become the programmers tasked with writing her a program to find it again.\n\nThe workshop unfolds over three sessions: programming a Tagada on screen, becoming the robot yourself by executing instructions with your body, then a final treasure hunt mixing constraints and bugs to solve as a team. I developed the digital tool: a browser mini-game (HTML + Canvas, no dependencies) where you build a sequence of instructions (up, down, left, right) then run it to guide Tagada across a 6×6 grid, collect three stars and reach the paint pot - never stepping on the same cell twice.\n\nThe project brings the notions of instruction, program, execution and bug to life, with five boards of equal difficulty also produced as print versions (A3 boards, program sheets) to extend the game beyond the screen.",
     },
     roles: ["Creative coding", "Médiation / Atelier", "Game design"],
     stack: ["HTML5 Canvas · JavaScript (vanilla)"],
@@ -132,14 +132,14 @@ export const projects: Project[] = [
     years: "2026",
     title: { fr: "Témoigner pour Lutter", en: "Testify to Resist" },
     subtitle: {
-      fr: "Outil d'archive & performance.\nNavigation dans des témoignages, fragments média, structure documentaire.",
-      en: "Archive & performance tool.\nNavigating testimonies, media fragments, documentary structure.",
+      fr: "Archive vivante & outil de performance.\nComposer, réactiver et rejouer des fragments militants.",
+      en: "Living archive & performance tool.\nCompose, reactivate and replay activist fragments.",
     },
     content: {
       fr: "Témoigner pour lutter est un dispositif numérique conçu comme une archive vivante, à la croisée de l'art, de la performance et de l'engagement politique. Développée pour le collectif Ely & Marion, la plateforme permet de rassembler, manipuler et réactiver des contenus militants (textes, images, vidéos, sons).\n\nPensée comme une expérience active, elle propose un espace de composition (Do It Yourself) où les utilisateur·ices peuvent recomposer des fragments sur un canvas et produire leurs propres formes. Utilisable en contexte performatif, elle devient un outil collectif en constante évolution.\n\nLe projet explore le potentiel du design et du code comme outils de mémoire et de résistance.",
       en: "Testify to Resist is a digital platform designed as a living archive, at the intersection of art, performance, and political engagement. Built for the Ely & Marion collective, the platform brings together, manipulates, and reactivates activist content (texts, images, videos, sounds).\n\nConceived as an active experience, it offers a composition space (Do It Yourself) where users can rearrange fragments on a canvas and produce their own forms. Usable in performative contexts, it becomes a collective tool in constant evolution.\n\nThe project explores the potential of design and code as tools of memory and resistance.",
     },
-    roles: ["Full-Stack", "UX/UI"],
+    roles: ["Full-stack", "UX/UI"],
     stack: ["Next.js 16 · React 19 · TypeScript · Tailwind · Bunny CDN · Web Audio API"],
     links: [
       {
@@ -200,14 +200,14 @@ export const projects: Project[] = [
     en: "Hannah Hajar",
   },
   subtitle: {
-    fr: "Site expérimental audio / visuel.\nMap avec zones interactives, esthétique organique, narration.",
-    en: "Experimental audio/visual site.\nMap with interactive zones, organic aesthetics, narrative.",
+    fr: "Site expérimental audio-visuel.\nCartographie 3D navigable et sonore, pour un duo musical.",
+    en: "Experimental audio-visual site.\nA navigable, sonic 3D map, for a musical duo.",
   },
   content: {
     fr: "« Hannah Hajar » est un site expérimental audio-visuel conçu pour un duo musical, pensé comme une cartographie 3D immersive de leur univers. L'expérience s'ouvre sur une séquence centrée sur le logo, puis invite à naviguer librement dans un espace où les contenus sont répartis sur une sphère déformée inspirée d'une spirale de Fibonacci. À mesure que l'on se déplace, certains éléments émergent et activent différentes variations sonores, faisant du site une extension numérique de la performance plutôt qu'un simple support de présentation.\n\nLe projet traduit visuellement une musique faite de textures instables et de rythmes fragmentés. L'espace est conçu comme un environnement flottant, en recomposition permanente, où formes, sons et interactions se répondent dans une expérience sensible et immersive, développée en étroite collaboration avec les artistes.",
-    en: "\"Hannah Hajar\" is an experimental audio-visual website designed for a musical duo, conceived as an immersive 3D cartography of their universe. The experience opens with a logo-centered sequence, then invites free navigation through a space where content is distributed across a deformed sphere inspired by a Fibonacci spiral. As users move through the space, elements emerge and trigger different sonic variations, making the site a digital extension of the performance rather than a simple presentation platform.\n\nThe project visually translates music made of unstable textures and fragmented rhythms. The space is designed as a floating environment in constant recomposition, where shapes, sounds, and interactions respond to one another in a sensory and immersive experience, developed in close collaboration with the artists.",
+    en: "\"Hannah Hajar\" is an experimental audio-visual website designed for a musical duo, conceived as an immersive 3D map of their world. The experience opens with a logo-centered sequence, then invites free navigation through a space where content is distributed across a deformed sphere inspired by a Fibonacci spiral. As users move through the space, elements emerge and trigger different sonic variations, making the site a digital extension of the performance rather than a simple presentation platform.\n\nThe project visually translates music made of unstable textures and fragmented rhythms. The space is designed as a floating environment in constant recomposition, where shapes, sounds, and interactions respond to one another in a sensory and immersive experience, developed in close collaboration with the artists.",
   },
-  roles: ["Full-Stack", "UX/UI", "Art direction"],
+  roles: ["Full-stack", "UX/UI", "Art direction"],
   stack: ["Next.js · TypeScript · Tailwind · Three.js"],
   links: [
     {
@@ -257,7 +257,7 @@ export const projects: Project[] = [
     },
     subtitle: {
       fr: "Plateforme interne de gestion de films pour un festival de courts-métrages - En cours. UX/UI, structure de données et interface métier.",
-      en: "Internal film management platform for a short film festival - Ongoing. UX/UI, data structure, and production interface.",
+      en: "Internal film management platform for a short film festival - Ongoing. UX/UI, data structure, and internal tooling.",
     },
     content: {
       fr: "Conception et développement d'une plateforme interne utilisée par l'équipe de programmation pour centraliser la sélection de films. Pilotage de la refonte du produit : UX/UI (wireframes, parcours utilisateurs) et développement de l'interface en Next.js, React et Tailwind. Structuration de l'architecture des données et préparation de l'intégration backend avec MongoDB. Implémentation des fonctionnalités clés, gestion des accès et des données sensibles, avec une attention particulière portée à la lisibilité et à l'efficacité des workflows.",
@@ -324,8 +324,8 @@ export const projects: Project[] = [
     years: "2025",
     title: { fr: "Jardin Solidaire", en: "Jardin Solidaire" },
     subtitle: {
-      fr: "Projet RNCP - plateforme de mise en relation: jardins, disponibilités, réservations sans conflit, authentification.",
-      en: "RNCP project - a matching platform: gardens, availability slots, conflict-free bookings, authentication.",
+      fr: "Plateforme qui connecte des jardins inutilisés avec des personnes qui veulent jardiner. (projet RNCP, équipe de 3)",
+      en: "A platform that connects underused gardens with people who want to garden. (RNCP project, team of 3)",
     },
     content: {
       fr: "Jardin Solidaire est une application web full stack développée en équipe de trois, visant à favoriser le lien social local en mettant en relation des propriétaires de jardins sous-utilisés avec des personnes souhaitant jardiner.\n\nLa plateforme couvre l'ensemble du parcours utilisateur : inscription avec vérification par e-mail, création de profils, publication de jardins géolocalisés, gestion des disponibilités, système de réservation sans conflit et messagerie intégrée.\n\nRéalisé de la conception au déploiement dans le cadre d'un projet RNCP, Jardin Solidaire constitue une première expérience complète en développement full stack, alliant collaboration en équipe, enjeux techniques et impact social.",
@@ -394,8 +394,8 @@ export const projects: Project[] = [
     years: "2025",
     title: { fr: "Julaya - Landing Page", en: "Julaya - Landing Page" },
     subtitle: {
-      fr: "Projet d'entreprise - évolutions front sur la landing Julaya (UI, composants, SEO & performance).",
-      en: "Company project - front-end work on Julaya's landing page (UI, components, SEO & performance).",
+      fr: "Refonte front de la landing Julaya, pilotée depuis le CMS (UI, composants, SEO & performance). (alternance)",
+      en: "Front-end rework of Julaya's landing page, CMS-driven (UI, components, SEO & performance). (apprenticeship)",
     },
     content: {
       fr: "Suite au développement du blog et à la mise en place du CMS dans Strapi, j'ai étendu le projet à la landing page. Initialement gérée de manière statique, je l'ai repensée pour qu'elle soit entièrement pilotée depuis le CMS.\n\nJ'ai modélisé de nouveaux contenus dans Strapi, créé les collections et les relations nécessaires, puis restructuré les différentes sections de la page. J'ai ensuite connecté le front en Next.js à ces données pour permettre un affichage dynamique.\n\nCette évolution poursuit le même objectif : permettre à l'équipe marketing de modifier, organiser et faire évoluer la landing page en autonomie, sans dépendre de l'équipe technique, tout en améliorant le référencement naturel du site.",
@@ -417,8 +417,8 @@ export const projects: Project[] = [
     years: "2025",
     title: { fr: "Julaya - Blog", en: "Julaya - Blog" },
     subtitle: {
-      fr: "Projet d'entreprise - intégration et structuration du blog public Julaya.",
-      en: "Company project - integration and structuring of Julaya's public blog.",
+      fr: "Intégration et structuration du blog public Julaya, piloté via CMS. (alternance)",
+      en: "Integration and structuring of Julaya's public blog, CMS-driven. (apprenticeship)",
     },
     content: {
       fr: "Développement d'un blog à partir d'une maquette Figma, avec une approche complète allant de l'intégration front à la structuration du back office. Le projet inclut la modélisation des contenus dans Strapi, la création des collections et des relations, ainsi que la mise en place de l'API.\n\nLe front, développé en Next.js, est connecté au CMS pour afficher les contenus de manière dynamique. Cette architecture est pensée pour rendre l'équipe marketing autonome dans la gestion et la publication des contenus, sans dépendre de l'équipe technique, tout en assurant une structure claire et évolutive.",
@@ -437,8 +437,8 @@ export const projects: Project[] = [
     years: "2024",
     title: { fr: "Besti-Blog", en: "Besti-Blog" },
     subtitle: {
-      fr: "Projet école (groupe de 3, 6 jours) - plateforme de micro-blogging photo dédiée aux animaux.",
-      en: "School project (team of 3, 6 days) - photo micro-blogging platform dedicated to animals.",
+      fr: "Plateforme de micro-blogging photo dédiée aux animaux. (projet école, 3 pers., 6 jours)",
+      en: "A photo micro-blogging platform dedicated to animals. (school project, team of 3, 6 days)",
     },
     content: {
       fr: "Projet collectif de type Instagram-like, centré sur la publication de posts image + texte. Mise en place d'un socle full-stack avec Laravel : authentification (Breeze), pages feed et profil, création et suppression de posts, gestion des abonnements et structuration d'une base relationnelle PostgreSQL. Le projet s'appuie sur un environnement Docker et une UI Tailwind, avec une attention portée à la clarté des parcours (s'inscrire, publier, consulter). Plusieurs fonctionnalités sont laissées en extension (likes, commentaires, pagination).",
@@ -464,8 +464,8 @@ export const projects: Project[] = [
     years: "2024",
     title: { fr: "Vintage Gallery", en: "Vintage Gallery" },
     subtitle: {
-      fr: "Projet école (7 personnes, 7 jours) - e-commerce de meubles de seconde main, avec contraintes «client».",
-      en: "School project (7 people, 7 days) - second-hand furniture e-commerce with client-style constraints.",
+      fr: "E-commerce de meubles de seconde main, sous contraintes «client». (projet école, 7 pers., 7 jours)",
+      en: "Second-hand furniture e-commerce, under client-style constraints. (school project, 7 people, 7 days)",
     },
     content: {
       fr: "Projet collectif mené sous contraintes : UI en Bootstrap, organisation en deux équipes (front / back) puis inversion à mi-parcours. Contribution sur le front la première semaine (React + pages e-commerce : listing, détail produit, admin) puis sur le back la seconde (API Express, base MongoDB via Mongoose, premières briques d'auth). Le projet couvre le parcours principal (catalogue → fiche produit) et une base d'administration ; certaines fonctionnalités restent en MVP (login/panier non finalisés).",
@@ -521,8 +521,8 @@ export const projects: Project[] = [
     years: "2024",
     title: { fr: "Safe or Not?", en: "Safe or Not?" },
     subtitle: {
-      fr: "Projet école (6 jours) - app iOS SwiftUI : avis, alertes, niveau de confiance.",
-      en: "School project (6 days) - SwiftUI iOS app: reviews, alerts, trust level.",
+      fr: "App iOS (SwiftUI) : avis, alertes et niveau de confiance. (projet école, 6 jours)",
+      en: "SwiftUI iOS app: reviews, alerts and trust level. (school project, 6 days)",
     },
     content: {
       fr: "Exploration de l'approche mobile avec SwiftUI : conception UI, navigation simple depuis une liste vers des écrans détail, et gestion des états. L'app est pensée pour répertorier des professionnel·les de santé selon un niveau de confiance, permettre la publication d'avis et la création d'alertes.",
@@ -583,8 +583,8 @@ export const projects: Project[] = [
     years: "2024",
     title: { fr: "Draw Together", en: "Draw Together" },
     subtitle: {
-      fr: "Projet école (individuel) - app iOS responsive, réseau social de dessin orienté création collective.",
-      en: "School project (individual) - responsive iOS app, a drawing social app focused on collective creation.",
+      fr: "App iOS de dessin collaboratif, un réseau social orienté création collective. (projet école, individuel)",
+      en: "A collaborative-drawing iOS app, a social app focused on collective creation. (school project, solo)",
     },
     content: {
       fr: "Application iOS de dessin collaboratif pensée comme un espace de création partagé. Chaque utilisateur·ice peut dessiner, contribuer et interagir au sein d'une toile commune, en temps réel ou de manière asynchrone. Le projet explore les mécaniques de co-création à travers une interface simple et lisible, où les contributions individuelles s'assemblent pour former une œuvre collective.\n\nDéveloppée en Swift, l'application s'appuie sur les patterns iOS (navigation, gestion des écrans et des états) afin d'offrir une expérience fluide sur mobile et tablette.",
