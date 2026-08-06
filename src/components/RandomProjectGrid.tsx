@@ -47,7 +47,7 @@ export default function RandomProjectGrid({
     locale === "fr" ? "Actualiser les images" : "Refresh images";
 
   return (
-    <div className="relative flex lg:flex-col gap-6 lg:gap-10 overflow-x-auto lg:overflow-x-visible snap-x snap-mandatory lg:snap-none no-scrollbar px-4 lg:pl-1 lg:pr-20 pb-20">
+    <div className="relative flex flex-col gap-8 lg:gap-10 lg:overflow-x-visible no-scrollbar px-4 lg:pl-1 lg:pr-20 pb-20">
       <button
         onClick={shuffle}
         className="fixed bottom-6 right-6 z-50 text-2xl text-[#424242] hover:text-black transition-colors duration-200"
@@ -61,25 +61,34 @@ export default function RandomProjectGrid({
         <Link
           key={p.slug}
           href={`/${locale}/projects/${p.slug}`}
-          className="group relative block flex-none w-[85vw] h-[60vh] lg:w-auto lg:h-[calc(100vh-4rem)] bg-white snap-start"
+          className="group block shrink-0 lg:h-[calc(100vh-4rem)] bg-white"
           aria-label={p.title}
         >
-          <Image
-            src={displayImages[i].src}
-            alt={displayImages[i].alt}
-            fill
-            className="object-contain transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.025]"
-            sizes="(max-width: 1024px) 85vw, 58vw"
-            quality={88}
-            priority={i === 0}
-          />
+          <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-full overflow-hidden bg-white">
+            <Image
+              src={displayImages[i].src}
+              alt={displayImages[i].alt}
+              fill
+              className="object-contain transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.025]"
+              sizes="(max-width: 1024px) 100vw, 58vw"
+              quality={88}
+              priority={i === 0}
+            />
 
-          <div className="absolute bottom-0 left-0 right-0 px-7 py-6 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <p className="text-white text-sm font-light">{p.title}</p>
-            <p className="text-white/75 text-xs font-light mt-0.5">{p.years}</p>
+            {/* Desktop : titre au survol */}
+            <div className="hidden lg:block absolute bottom-0 left-0 right-0 px-7 py-6 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <p className="text-white text-sm font-light">{p.title}</p>
+              <p className="text-white/75 text-xs font-light mt-0.5">{p.years}</p>
+            </div>
+
+            {i === 0 && <ScrollHint />}
           </div>
 
-          {i === 0 && <ScrollHint />}
+          {/* Mobile : titre toujours visible */}
+          <div className="lg:hidden mt-3 flex items-baseline justify-between">
+            <span className="text-base font-light">{p.title}</span>
+            <span className="text-xs text-[#6b6b6b] font-light">{p.years}</span>
+          </div>
         </Link>
       ))}
     </div>
