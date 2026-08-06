@@ -14,7 +14,7 @@ export default function LocaleSwitch({ locale }: { locale: Locale }) {
     return (
       <Link
         href={`/${nextLocale}`}
-        className="text-black/80 hover:text-black underline underline-offset-4"
+        className="text-[#6b6b6b] hover:text-[#111111] underline underline-offset-4"
       >
         {nextLocale.toUpperCase()}
       </Link>
@@ -32,7 +32,7 @@ export default function LocaleSwitch({ locale }: { locale: Locale }) {
   return (
     <Link
       href={href}
-      className="text-black/80 hover:text-black underline underline-offset-4"
+      className="text-[#6b6b6b] hover:text-[#111111] underline underline-offset-4"
     >
       {nextLocale.toUpperCase()}
     </Link>

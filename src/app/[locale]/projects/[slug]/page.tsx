@@ -68,7 +68,7 @@ export default async function ProjectPage({
       <FadeIn>
         <Link
           href={`/${locale}/portfolio`}
-          className="text-xs tracking-wide text-black/40 hover:text-black transition-colors duration-200 uppercase"
+          className="text-xs tracking-wide text-[#6b6b6b] hover:text-black transition-colors duration-200 uppercase"
         >
           {t.back}
         </Link>
@@ -76,13 +76,13 @@ export default async function ProjectPage({
 
       <FadeIn delay={60}>
         <div className="mt-6 mb-2">
-          <p className="text-xs tracking-widest text-black/40 uppercase mb-2">
+          <p className="text-xs tracking-widest text-[#6b6b6b] uppercase mb-2">
             {project.years}
           </p>
           <h1 className="text-5xl font-light leading-tight tracking-tight">
             {title}
           </h1>
-          <p className="mt-2 text-xl italic font-light text-black/50">
+          <p className="mt-2 text-xl italic font-light text-[#424242]">
             {subtitle}
           </p>
         </div>
@@ -93,16 +93,16 @@ export default async function ProjectPage({
           <FadeIn delay={120}>
             <div className="space-y-5 mb-8">
               <div>
-                <p className="text-xs tracking-widest text-black/30 uppercase mb-1">{t.role}</p>
+                <p className="text-xs tracking-widest text-[#6b6b6b] uppercase mb-1">{t.role}</p>
                 <p className="text-base font-light text-black/70">{project.roles.join(" · ")}</p>
               </div>
               <div>
-                <p className="text-xs tracking-widest text-black/30 uppercase mb-1">{t.stack}</p>
+                <p className="text-xs tracking-widest text-[#6b6b6b] uppercase mb-1">{t.stack}</p>
                 <p className="text-base font-light text-black/70">{project.stack.join(" · ")}</p>
               </div>
               {project.links.length > 0 && (
                 <div>
-                  <p className="text-xs tracking-widest text-black/30 uppercase mb-1">{t.links}</p>
+                  <p className="text-xs tracking-widest text-[#6b6b6b] uppercase mb-1">{t.links}</p>
                   <ul className="flex gap-4">
                     {project.links.map((l) => (
                       <li key={l.href}>
@@ -124,7 +124,7 @@ export default async function ProjectPage({
 
           {content && (
             <FadeIn delay={180}>
-              <p className="text-base font-light leading-relaxed text-black/60">
+              <p className="text-base font-light leading-relaxed text-[#424242]">
                 {content}
               </p>
             </FadeIn>

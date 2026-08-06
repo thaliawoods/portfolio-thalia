@@ -70,13 +70,13 @@ export default async function HomePage({
         </FadeIn>
 
         <FadeIn delay={80}>
-          <p className="mt-4 text-base italic font-light text-black/50">
+          <p className="mt-4 text-base italic font-light text-[#424242]">
             {t.role}
           </p>
         </FadeIn>
 
         <FadeIn delay={160}>
-          <p className="mt-8 text-sm font-light leading-relaxed text-black/60 max-w-sm whitespace-pre-line">
+          <p className="mt-8 text-sm font-light leading-relaxed text-[#424242] max-w-sm whitespace-pre-line">
             {t.blurb}
           </p>
         </FadeIn>
