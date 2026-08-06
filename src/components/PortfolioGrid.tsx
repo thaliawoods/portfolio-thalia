@@ -46,7 +46,7 @@ export default function PortfolioGrid({ projects, locale, title, countLabel }: P
     scrollRef.current?.scrollTo({ left: i * (scrollRef.current.clientWidth), behavior: "smooth" });
   };
 
-  const MobileList = () => (
+  const renderMobileList = () => (
     <div className="sm:hidden mx-auto px-8">
       <div className="flex items-center justify-between py-8">
         <h1 className="text-4xl font-light">{title}</h1>
@@ -83,7 +83,7 @@ export default function PortfolioGrid({ projects, locale, title, countLabel }: P
     </div>
   );
 
-  const PageHeader = () => (
+  const renderPageHeader = () => (
     <div className="flex items-center justify-between px-8 lg:px-14 py-8 shrink-0">
       <h1 className="text-4xl font-light">{title}</h1>
       <div className="flex items-center gap-5">
@@ -107,9 +107,9 @@ export default function PortfolioGrid({ projects, locale, title, countLabel }: P
   if (view === 1) {
     return (
       <>
-        <MobileList />
+        {renderMobileList()}
         <div className="hidden sm:flex flex-col" style={{ height: "calc(100vh - 4rem)" }}>
-          <PageHeader />
+          {renderPageHeader()}
           <div
             ref={scrollRef}
             className="flex-1 min-h-0 flex overflow-x-scroll snap-x snap-mandatory no-scrollbar"
@@ -170,9 +170,9 @@ export default function PortfolioGrid({ projects, locale, title, countLabel }: P
 
   return (
     <>
-      <MobileList />
+      {renderMobileList()}
       <div className="hidden sm:block mx-auto max-w-7xl px-8">
-        <PageHeader />
+        {renderPageHeader()}
         <div className={[
           "pb-16 pt-2",
           view === 2

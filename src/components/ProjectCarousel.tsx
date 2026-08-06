@@ -25,8 +25,8 @@ export default function ProjectCarousel({
       ? { play: "Lire la vidéo", prev: "Précédent", next: "Suivant", goto: "Aller à l'élément" }
       : { play: "Play video", prev: "Previous", next: "Next", goto: "Go to item" };
 
-  const prev = () => setI((v) => (v - 1 + max) % max);
-  const next = () => setI((v) => (v + 1) % max);
+  const prev = () => { setPlaying(false); setI((v) => (v - 1 + max) % max); };
+  const next = () => { setPlaying(false); setI((v) => (v + 1) % max); };
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const hlsRef = useRef<Hls | null>(null);
@@ -40,14 +40,8 @@ export default function ProjectCarousel({
     return () => window.removeEventListener("keydown", onKey);
   }, [max]);
 
-  // Reset playing state when switching slides
-  useEffect(() => {
-    setPlaying(false);
-    if (hlsRef.current) {
-      hlsRef.current.destroy();
-      hlsRef.current = null;
-    }
-  }, [i]);
+  // La lecture est réinitialisée dans les handlers de navigation (prev/next/vignettes) ;
+  // le nettoyage HLS est géré par le cleanup de l'effet de lecture ci-dessous.
 
   useEffect(() => {
     if (!playing || !videoRef.current) return;
@@ -166,7 +160,7 @@ export default function ProjectCarousel({
             <button
               key={`${m.kind}-${m.src}-${idx}`}
               type="button"
-              onClick={() => setI(idx)}
+              onClick={() => { setPlaying(false); setI(idx); }}
               className={`relative shrink-0 border ${
                 idx === i ? "border-black/40" : "border-black/10"
               } bg-white`}

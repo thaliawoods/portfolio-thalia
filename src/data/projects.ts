@@ -487,35 +487,6 @@ export const projects: Project[] = [
     ],
   },
 
-  // {
-  //   slug: "gestion-de-caisse",
-  //   years: "2024",
-  //   title: { fr: "Gestion de caisse", en: "Cash Management" },
-  //   subtitle: {
-  //     fr: "Projet école - web app de gestion de caisse et de stocks pour une association étudiante.",
-  //     en: "School project - cash and inventory management web app for a student association.",
-  //   },
-  //   content: {
-  //     fr: "Conception d'une application full-stack pensée pour un usage réel : suivi des stocks, enregistrement des ventes, calcul automatique des totaux et distinction des rôles (utilisateur·ices / administrateur·ices). Le projet part de besoins exprimés sur le terrain (rotation des équipes, utilisation sur mobile, contraintes de connexion) et s'appuie sur une API Express connectée à une base PostgreSQL via Supabase, avec une interface React orientée simplicité et efficacité.",
-  //     en: "Design and implementation of a full-stack application built for real-world use: stock tracking, sales recording, automatic total calculation, and role separation (users / administrators). The project starts from concrete field needs (team rotation, mobile usage, connectivity constraints) and relies on an Express API connected to a PostgreSQL database via Supabase, with a React interface focused on clarity and efficiency.",
-  //   },
-  //   roles: ["Full-stack"],
-  //   stack: ["React · Node.js · Express · PostgreSQL · Supabase"],
-  //   links: [
-  //     { label: "GitHub", href: "https://github.com/thaliawoods/GestionCaisse" },
-  //   ],
-  //   cover: img(
-  //     "/projects/gestion-de-caisse/cover.png",
-  //     "Gestion de caisse cover",
-  //   ),
-  //   gallery: [
-  //     img(
-  //       "/projects/gestion-de-caisse/01.png",
-  //       "Gestion de caisse screenshot 1",
-  //     ),
-  //   ],
-  // },
-
   {
     slug: "safe-or-not",
     years: "2024",
@@ -540,44 +511,6 @@ export const projects: Project[] = [
     gallery: [img("/projects/safe-or-not/01.webp", "Safe or Not screenshot 1")],
   },
 
-  // {
-  //   slug: "chess",
-  //   years: "2024",
-  //   title: { fr: "Chess", en: "Chess" },
-  //   subtitle: {
-  //     fr: "Jeu d'échecs (MVP) - échiquier 8×8, mouvements des pièces, conditions de victoire.",
-  //     en: "Chess game (MVP) - 8×8 board, piece movement logic, win conditions.",
-  //   },
-  //   content: {
-  //     fr: "Construction d'un MVP en JavaScript pour comprendre la logique d'un jeu à règles : génération du plateau, gestion des cases et des déplacements, état de partie et détection des situations de fin (échec et mat / victoire). Une V2 est en cours en TypeScript, avec une approche orientée objet. Les choix visuels sont pensés en gardant l'accessibilité en tête (couleurs en cours d'ajustement).",
-  //     en: "Built an MVP in JavaScript to understand the logic of a rules-based game: board generation, square handling and legal moves, game state, and end-game detection (checkmate / win). A TypeScript v2 is in progress with an object-oriented approach. Visual choices are made with accessibility in mind (colors are still being refined).",
-  //   },
-  //   roles: ["Front-end"],
-  //   stack: ["JavaScript · HTML · CSS · TypeScript"],
-  //   links: [{ label: "GitHub", href: "https://github.com/thaliawoods/Chess" }],
-  //   cover: img("/projects/chess/cover.png", "Chess cover"),
-  //   gallery: [],
-  // },
-
-  // {
-  //   slug: "tetris",
-  //   years: "2024",
-  //   title: { fr: "Tetris", en: "Tetris" },
-  //   subtitle: {
-  //     fr: "Tetris en JavaScript - grille, tetrominos, collisions, lignes complétées et score.",
-  //     en: "Tetris in JavaScript - grid, tetrominoes, collisions, line clears, and scoring.",
-  //   },
-  //   content: {
-  //     fr: "Implémentation de la logique de jeu : gestion de la grille, déplacement et rotation des pièces, détection des collisions, suppression des lignes et calcul du score. Un projet idéal pour travailler l'algorithmie, la gestion d'état et une boucle de jeu claire côté front.",
-  //     en: "Implemented the core game logic: grid handling, piece movement and rotation, collision detection, line clearing, and score calculation. A great project to practice algorithms, state management, and a clean front-end game loop.",
-  //   },
-  //   roles: ["Front-end"],
-  //   stack: ["JavaScript · HTML · CSS"],
-  //   links: [{ label: "GitHub", href: "https://github.com/thaliawoods/Tetris" }],
-  //   cover: img("/projects/tetris/cover.png", "Tetris cover"),
-  //   gallery: [],
-  // },
-
   {
     slug: "draw-together",
     years: "2024",
@@ -599,59 +532,4 @@ export const projects: Project[] = [
     gallery: [],
   }
 
-  // {
-  //   slug: "social-network",
-  //   years: "2023",
-  //   title: { fr: "Social Network (PHP)", en: "Social Network (PHP)" },
-  //   subtitle: {
-  //     fr: "Projet école (binôme, 6 jours) - mini réseau social en PHP : comptes utilisateur·ices, articles, commentaires, base MySQL.",
-  //     en: "School project (pair work, 6 days) - a mini social network in PHP: user accounts, posts, comments, MySQL database.",
-  //   },
-  //   content: {
-  //     fr: "Conception d'une base relationnelle et mise en place d'un CRUD complet (listing / détail, création / édition). Authentification et gestion des sessions, formulaires de publication, et premiers mécanismes d'autorisations côté serveur (droits, modération). Un projet qui m'a permis de consolider le lien entre base de données, logique back et génération dynamique des pages.",
-  //     en: "Relational database design and implementation of a complete CRUD (list / detail, create / edit). Authentication and session management, publishing forms, and first server-side authorization mechanisms (access control, moderation). A project that helped me strengthen the link between databases, backend logic, and dynamic page generation.",
-  //   },
-  //   roles: ["Full-stack"],
-  //   stack: ["PHP · MySQL · phpMyAdmin"],
-  //   links: [
-  //     {
-  //       label: "GitHub",
-  //       href: "https://github.com/thaliawoods/reseau-social-php-reseau_social_thalia_fatouma",
-  //     },
-  //   ],
-  //   cover: img("/projects/social-network/cover.png", "Social Network cover"),
-  //   gallery: [],
-  // },
-
-  // {
-  //   slug: "evening-experience",
-  //   years: "2023",
-  //   title: { fr: "Evening Experience", en: "Evening Experience" },
-  //   subtitle: {
-  //     fr: "Projet école (groupe de 4, 6 jours) - web app qui recommande une recette et une musique selon l'humeur.",
-  //     en: "School project (team of 4, 6 days) - web app that recommends a recipe and music based on mood.",
-  //   },
-  //   content: {
-  //     fr: "Projet orienté UX : saisie d'un "mood" via des inputs simples, transformation de cette donnée en recommandations, puis restitution dans une interface ludique. Les suggestions musicales s'appuient sur des vidéos YouTube. Le projet a aussi permis de travailler le traitement de données côté front, l'animation web et l'organisation en équipe (répartition des tâches, synchronisation, Git).",
-  //     en: "UX-oriented project: collecting a "mood" through simple inputs, turning it into recommendations, and presenting results in a playful interface. Music suggestions rely on YouTube videos. The project also involved front-end data handling, web animation, and team collaboration (task distribution, sync, Git).",
-  //   },
-  //   roles: ["Front-end"],
-  //   stack: ["JavaScript · HTML · CSS"],
-  //   links: [
-  //     {
-  //       label: "GitHub",
-  //       href: "https://github.com/thaliawoods/dataviz-aisseta-thalia-oscar-claire",
-  //     },
-  //   ],
-  //   cover: img(
-  //     "/projects/evening-experience/cover.png",
-  //     "Evening Experience cover",
-  //   ),
-  //   gallery: [
-  //     img(
-  //       "/projects/evening-experience/01.png",
-  //       "Evening Experience screenshot 1",
-  //     ),
-  //   ],
-  // },
 ];
