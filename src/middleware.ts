@@ -18,6 +18,11 @@ function detectLocale(acceptLanguage: string): "fr" | "en" {
 export default function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
+  // Serve the app icon for the browser's default /favicon.ico request.
+  if (pathname === "/favicon.ico") {
+    return NextResponse.rewrite(new URL("/icon.png", req.url));
+  }
+
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||

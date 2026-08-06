@@ -106,14 +106,14 @@ export default async function ProjectPage({
                   <ul className="flex gap-4">
                     {project.links.map((l) => (
                       <li key={l.href}>
-                        <Link
+                        <a
                           href={l.href}
                           target="_blank"
                           rel="noreferrer"
                           className="text-base font-light underline underline-offset-4 hover:opacity-60 transition-opacity duration-200"
                         >
                           {l.label}
-                        </Link>
+                        </a>
                       </li>
                     ))}
                   </ul>
