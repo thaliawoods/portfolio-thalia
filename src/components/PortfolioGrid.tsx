@@ -67,6 +67,7 @@ export default function PortfolioGrid({ projects, locale, title, countLabel }: P
                 fill
                 className="object-contain transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
                 sizes="100vw"
+                quality={88}
               />
             </div>
             <div className="mt-3 flex items-baseline justify-between">
@@ -129,6 +130,7 @@ export default function PortfolioGrid({ projects, locale, title, countLabel }: P
                     fill
                     className="object-contain transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.02]"
                     sizes="100vw"
+                    quality={88}
                     priority={i === 0}
                   />
                 </Link>
@@ -191,6 +193,7 @@ export default function PortfolioGrid({ projects, locale, title, countLabel }: P
                   fill
                   className="object-contain transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
                   sizes={view === 2 ? "50vw" : "(max-width:1024px) 50vw, 33vw"}
+                  quality={88}
                 />
               </div>
               <div className="mt-3 flex items-baseline justify-between">

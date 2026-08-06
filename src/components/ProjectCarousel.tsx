@@ -96,6 +96,7 @@ export default function ProjectCarousel({
               fill
               className="object-contain"
               sizes="(max-width: 1024px) 100vw, 900px"
+              quality={88}
               priority
             />
           ) : !playing ? (

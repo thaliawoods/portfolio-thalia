@@ -70,6 +70,7 @@ export default function RandomProjectGrid({
             fill
             className="object-contain transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.025]"
             sizes="(max-width: 1024px) 85vw, 58vw"
+            quality={88}
             priority={i === 0}
           />
 

@@ -154,6 +154,7 @@ export default async function ProjectPage({
                       fill
                       className="object-contain"
                       sizes="(max-width: 1024px) 100vw, 900px"
+                      quality={88}
                       priority
                     />
                   )}
