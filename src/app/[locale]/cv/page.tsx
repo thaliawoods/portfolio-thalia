@@ -44,7 +44,7 @@ export default async function CvPage({
       <FadeIn>
         <div className="mb-10">
           <h1 className="text-4xl font-light">{t.title}</h1>
-          <p className="mt-3 text-sm font-light text-black/50">{t.subtitle}</p>
+          <p className="mt-3 text-sm font-light text-[#424242]">{t.subtitle}</p>
         </div>
       </FadeIn>
 

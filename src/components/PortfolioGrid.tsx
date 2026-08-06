@@ -50,7 +50,7 @@ export default function PortfolioGrid({ projects, locale, title, countLabel }: P
     <div className="sm:hidden mx-auto px-8">
       <div className="flex items-center justify-between py-8">
         <h1 className="text-4xl font-light">{title}</h1>
-        <span className="text-xs text-black/40 font-light tracking-wide">{countLabel}</span>
+        <span className="text-xs text-[#6b6b6b] font-light tracking-wide">{countLabel}</span>
       </div>
       <div className="pb-16 pt-2 flex flex-col gap-y-10">
         {projects.map((p) => (
@@ -71,9 +71,9 @@ export default function PortfolioGrid({ projects, locale, title, countLabel }: P
             </div>
             <div className="mt-3 flex items-baseline justify-between">
               <span className="text-base font-light">{p.title[locale]}</span>
-              <span className="text-xs text-black/40 font-light shrink-0 ml-3">{p.years}</span>
+              <span className="text-xs text-[#6b6b6b] font-light shrink-0 ml-3">{p.years}</span>
             </div>
-            <p className="mt-1 text-sm font-light text-black/50 line-clamp-1">
+            <p className="mt-1 text-sm font-light text-[#424242] line-clamp-1">
               {p.subtitle[locale]}
             </p>
           </Link>
@@ -86,7 +86,7 @@ export default function PortfolioGrid({ projects, locale, title, countLabel }: P
     <div className="flex items-center justify-between px-8 lg:px-14 py-8 shrink-0">
       <h1 className="text-4xl font-light">{title}</h1>
       <div className="flex items-center gap-5">
-        <span className="text-xs text-black/40 font-light tracking-wide">{countLabel}</span>
+        <span className="text-xs text-[#6b6b6b] font-light tracking-wide">{countLabel}</span>
         <div className="flex items-center gap-3">
           {([1, 2, 3] as View[]).map((v) => (
             <button
@@ -134,9 +134,9 @@ export default function PortfolioGrid({ projects, locale, title, countLabel }: P
                 </Link>
                 <div className="shrink-0 mt-4 flex items-baseline justify-between">
                   <span className="text-base font-light">{p.title[locale]}</span>
-                  <span className="text-xs text-black/40 font-light">{p.years}</span>
+                  <span className="text-xs text-[#6b6b6b] font-light">{p.years}</span>
                 </div>
-                <p className="shrink-0 mt-1 text-sm font-light text-black/50 line-clamp-1 pb-5">
+                <p className="shrink-0 mt-1 text-sm font-light text-[#424242] line-clamp-1 pb-5">
                   {p.subtitle[locale]}
                 </p>
               </div>
@@ -146,17 +146,17 @@ export default function PortfolioGrid({ projects, locale, title, countLabel }: P
             <button
               onClick={() => goTo(Math.max(0, activeIndex - 1))}
               disabled={activeIndex === 0}
-              className="text-sm font-light text-black/40 hover:text-black transition-colors duration-200 disabled:opacity-20 w-8"
+              className="text-sm font-light text-[#424242] hover:text-black transition-colors duration-200 disabled:opacity-20 w-8"
             >
               ←
             </button>
-            <span className="text-xs font-light text-black/30 tabular-nums">
+            <span className="text-xs font-light text-[#6b6b6b] tabular-nums">
               {activeIndex + 1} / {projects.length}
             </span>
             <button
               onClick={() => goTo(Math.min(projects.length - 1, activeIndex + 1))}
               disabled={activeIndex === projects.length - 1}
-              className="text-sm font-light text-black/40 hover:text-black transition-colors duration-200 disabled:opacity-20 w-8 text-right"
+              className="text-sm font-light text-[#424242] hover:text-black transition-colors duration-200 disabled:opacity-20 w-8 text-right"
             >
               →
             </button>
@@ -197,9 +197,9 @@ export default function PortfolioGrid({ projects, locale, title, countLabel }: P
                 <span className="text-base font-light group-hover:opacity-60 transition-opacity duration-200">
                   {p.title[locale]}
                 </span>
-                <span className="text-xs text-black/40 font-light shrink-0 ml-3">{p.years}</span>
+                <span className="text-xs text-[#6b6b6b] font-light shrink-0 ml-3">{p.years}</span>
               </div>
-              <p className="mt-1 text-sm font-light text-black/50 line-clamp-1">
+              <p className="mt-1 text-sm font-light text-[#424242] line-clamp-1">
                 {p.subtitle[locale]}
               </p>
             </Link>

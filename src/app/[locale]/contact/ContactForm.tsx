@@ -62,7 +62,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 mb-10">
         <FadeIn className="lg:col-span-8">
           <h1 className="text-5xl font-light mb-4">{t.title}</h1>
-          <p className="text-sm font-light text-black/50">
+          <p className="text-sm font-light text-[#424242]">
             {locale === "fr"
               ? "Pour collaborer ou juste discuter - n'hésitez pas."
               : "Whether you'd like to collaborate or just chat - feel free to reach out."}
@@ -102,7 +102,7 @@ export default function ContactForm() {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="name" className="block text-xs tracking-widest text-black/30 uppercase mb-2">
+                <label htmlFor="name" className="block text-xs tracking-widest text-[#6b6b6b] uppercase mb-2">
                   {t.name}
                 </label>
                 <input
@@ -115,7 +115,7 @@ export default function ContactForm() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-xs tracking-widest text-black/30 uppercase mb-2">
+                <label htmlFor="email" className="block text-xs tracking-widest text-[#6b6b6b] uppercase mb-2">
                   {t.email}
                 </label>
                 <input
@@ -129,7 +129,7 @@ export default function ContactForm() {
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-xs tracking-widest text-black/30 uppercase mb-2">
+              <label htmlFor="message" className="block text-xs tracking-widest text-[#6b6b6b] uppercase mb-2">
                 {t.message}
               </label>
               <textarea

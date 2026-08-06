@@ -12,8 +12,8 @@ export default function Header({ locale }: { locale: Locale }) {
   const linkClass = (href: string) => {
     const isActive = pathname === href || pathname.startsWith(href + "/");
     return [
-      "transition-opacity duration-200",
-      isActive ? "opacity-100" : "opacity-40 hover:opacity-100",
+      "transition-colors duration-200",
+      isActive ? "text-[#111111]" : "text-[#6b6b6b] hover:text-[#111111]",
     ].join(" ");
   };
 

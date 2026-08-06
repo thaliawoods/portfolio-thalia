@@ -136,7 +136,7 @@ about3:
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 mb-20">
         <FadeIn className="lg:col-span-8">
           <section>
-            <p className="text-xs tracking-widest text-black/30 uppercase mb-6">
+            <p className="text-xs tracking-widest text-[#6b6b6b] uppercase mb-6">
               {t.aboutTitle}
             </p>
 
@@ -144,11 +144,11 @@ about3:
               {t.about1}
             </p>
 
-            <p className="text-base font-light leading-relaxed text-black/60 max-w-2xl mb-4">
+            <p className="text-base font-light leading-relaxed text-[#424242] max-w-2xl mb-4">
               {t.about2}
             </p>
 
-            <p className="text-base font-light leading-relaxed text-black/60 max-w-2xl">
+            <p className="text-base font-light leading-relaxed text-[#424242] max-w-2xl">
               {t.about3}
             </p>
           </section>
@@ -157,7 +157,7 @@ about3:
         {/* Contact - top right, aligned with About */}
         <FadeIn delay={80} className="lg:col-span-4">
           <section>
-            <p className="text-xs tracking-widest text-black/30 uppercase mb-6">
+            <p className="text-xs tracking-widest text-[#6b6b6b] uppercase mb-6">
               {t.contactTitle}
             </p>
 
@@ -196,17 +196,17 @@ about3:
         {/* Skills */}
         <FadeIn delay={120} className="lg:col-span-8">
           <section>
-            <p className="text-xs tracking-widest text-black/30 uppercase mb-6">
+            <p className="text-xs tracking-widest text-[#6b6b6b] uppercase mb-6">
               {t.skillsTitle}
             </p>
 
             <div className="space-y-6">
               {t.skills.map((s) => (
                 <div key={s.label}>
-                  <p className="text-sm font-light text-black/40 mb-1">
+                  <p className="text-sm font-light text-[#6b6b6b] mb-1">
                     {s.label}
                   </p>
-                  <p className="text-base font-light leading-relaxed text-black/60">
+                  <p className="text-base font-light leading-relaxed text-[#424242]">
                     {s.value}
                   </p>
                 </div>
@@ -218,7 +218,7 @@ about3:
         {/* Education */}
         <FadeIn delay={160} className="lg:col-span-4">
           <section>
-            <p className="text-xs tracking-widest text-black/30 uppercase mb-6">
+            <p className="text-xs tracking-widest text-[#6b6b6b] uppercase mb-6">
               {t.eduTitle}
             </p>
 
@@ -226,8 +226,8 @@ about3:
               {t.edu.map((e) => (
                 <li key={e.institution}>
                   <p className="text-base font-light">{e.institution}</p>
-                  <p className="text-sm font-light text-black/50 mt-0.5 whitespace-pre-line">{e.degree}</p>
-                  <p className="text-sm font-light text-black/30 mt-0.5">{e.year}</p>
+                  <p className="text-sm font-light text-[#424242] mt-0.5 whitespace-pre-line">{e.degree}</p>
+                  <p className="text-sm font-light text-[#6b6b6b] mt-0.5">{e.year}</p>
                 </li>
               ))}
             </ul>

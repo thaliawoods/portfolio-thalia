@@ -83,7 +83,7 @@ export default function CVViewer({ locale }: Props) {
             </button>
           </div>
 
-          <div className="flex gap-5 text-xs underline underline-offset-4 text-black/60">
+          <div className="flex gap-5 text-xs underline underline-offset-4 text-[#6b6b6b]">
             <a href={file} target="_blank" rel="noreferrer" className="hover:text-black">
               {t.open}
             </a>
@@ -99,7 +99,7 @@ export default function CVViewer({ locale }: Props) {
           <div className="mx-auto" style={{ width: targetWidth || "100%" }}>
             <Document
               file={file}
-              loading={<div className="text-sm text-black/60">{locale === "fr" ? "chargement…" : "loading…"}</div>}
+              loading={<div className="text-sm text-[#424242]">{locale === "fr" ? "chargement…" : "loading…"}</div>}
             >
               <Page
                 pageNumber={1}

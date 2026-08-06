@@ -50,7 +50,7 @@ export default function RandomProjectGrid({
     <div className="relative flex lg:flex-col gap-6 lg:gap-10 overflow-x-auto lg:overflow-x-visible snap-x snap-mandatory lg:snap-none no-scrollbar px-4 lg:pl-1 lg:pr-20 pb-20">
       <button
         onClick={shuffle}
-        className="fixed bottom-6 right-6 z-50 text-2xl text-black/40 hover:text-black transition-colors duration-200"
+        className="fixed bottom-6 right-6 z-50 text-2xl text-[#424242] hover:text-black transition-colors duration-200"
         title={refreshLabel}
         aria-label={refreshLabel}
       >
@@ -75,7 +75,7 @@ export default function RandomProjectGrid({
 
           <div className="absolute bottom-0 left-0 right-0 px-7 py-6 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <p className="text-white text-sm font-light">{p.title}</p>
-            <p className="text-white/60 text-xs font-light mt-0.5">{p.years}</p>
+            <p className="text-white/75 text-xs font-light mt-0.5">{p.years}</p>
           </div>
 
           {i === 0 && <ScrollHint />}

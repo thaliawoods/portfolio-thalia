@@ -152,7 +152,7 @@ export default function ProjectCarousel({
               →
             </button>
 
-            <div className="absolute right-2 top-2 text-[10px] tracking-widest text-black/60 bg-white/90 px-2 py-1 border border-black/10">
+            <div className="absolute right-2 top-2 text-[10px] tracking-widest text-[#6b6b6b] bg-white/90 px-2 py-1 border border-black/10">
               {i + 1}/{max}
             </div>
           </>

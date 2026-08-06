@@ -29,7 +29,7 @@ export default function Footer({ locale }: { locale: Locale }) {
             >
               Thalia Woods
             </Link>
-            <p className="mt-2 text-xs font-light text-black/40">
+            <p className="mt-2 text-xs font-light text-[#6b6b6b]">
               © {year}
             </p>
           </div>
@@ -39,7 +39,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-xs font-light text-black/50 hover:text-black transition-colors duration-200 w-fit"
+                className="text-xs font-light text-[#6b6b6b] hover:text-black transition-colors duration-200 w-fit"
               >
                 {l.label}
               </Link>
@@ -49,7 +49,7 @@ export default function Footer({ locale }: { locale: Locale }) {
           <div className="flex flex-col gap-2 sm:items-end">
             <a
               href="mailto:thaliadwoods@gmail.com"
-              className="text-xs font-light text-black/50 hover:text-black transition-colors duration-200"
+              className="text-xs font-light text-[#6b6b6b] hover:text-black transition-colors duration-200"
             >
               thaliadwoods@gmail.com
             </a>
@@ -57,7 +57,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               href="https://github.com/thaliawoods"
               target="_blank"
               rel="noreferrer"
-              className="text-xs font-light text-black/50 hover:text-black transition-colors duration-200"
+              className="text-xs font-light text-[#6b6b6b] hover:text-black transition-colors duration-200"
             >
               GitHub
             </a>
@@ -65,7 +65,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               href="https://www.linkedin.com/"
               target="_blank"
               rel="noreferrer"
-              className="text-xs font-light text-black/50 hover:text-black transition-colors duration-200"
+              className="text-xs font-light text-[#6b6b6b] hover:text-black transition-colors duration-200"
             >
               LinkedIn
             </a>
