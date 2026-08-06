@@ -93,7 +93,7 @@ export default function PortfolioGrid({ projects, locale, title, countLabel }: P
               key={v}
               onClick={() => { setView(v); setActiveIndex(0); }}
               className={`transition-opacity duration-200 ${view === v ? "opacity-100" : "opacity-20 hover:opacity-60"}`}
-              aria-label={`${v}-column view`}
+              aria-label={locale === "fr" ? `Vue ${v} colonne${v > 1 ? "s" : ""}` : `${v}-column view`}
             >
               <GridIcon cols={v} />
             </button>

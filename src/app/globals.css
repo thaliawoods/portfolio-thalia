@@ -93,14 +93,30 @@
 *::after,
 a,
 button,
-input,
-textarea,
 select,
 label,
 iframe,
 canvas,
 [role="button"] {
-  cursor: url("/cursor.svg") 12 12, crosshair !important;
+  cursor: url("/cursor.svg") 12 12, auto;
+}
+
+/* Keep meaningful cursors where they carry information */
+input:not([type="button"]):not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
+textarea {
+  cursor: text;
+}
+
+button:disabled,
+[aria-disabled="true"],
+:disabled {
+  cursor: not-allowed;
+}
+
+/* ── Keyboard focus (visible only when navigating with the keyboard) ── */
+:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 2px;
 }
 
 /* ── Base styles ── */

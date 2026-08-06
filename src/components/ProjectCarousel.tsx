@@ -8,11 +8,22 @@ type Media =
   | { kind: "image"; src: string; alt: string }
   | { kind: "video"; src: string; alt: string; poster?: string };
 
-export default function ProjectCarousel({ items }: { items: Media[] }) {
+export default function ProjectCarousel({
+  items,
+  locale,
+}: {
+  items: Media[];
+  locale: "fr" | "en";
+}) {
   const slides = useMemo(() => items.filter(Boolean), [items]);
   const [i, setI] = useState(0);
   const [playing, setPlaying] = useState(false);
   const max = slides.length;
+
+  const t =
+    locale === "fr"
+      ? { play: "Lire la vidéo", prev: "Précédent", next: "Suivant", goto: "Aller à l'élément" }
+      : { play: "Play video", prev: "Previous", next: "Next", goto: "Go to item" };
 
   const prev = () => setI((v) => (v - 1 + max) % max);
   const next = () => setI((v) => (v + 1) % max);
@@ -92,7 +103,7 @@ export default function ProjectCarousel({ items }: { items: Media[] }) {
               type="button"
               onClick={() => setPlaying(true)}
               className="relative h-full w-full cursor-pointer bg-black"
-              aria-label="Play video"
+              aria-label={t.play}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -124,7 +135,7 @@ export default function ProjectCarousel({ items }: { items: Media[] }) {
             <button
               type="button"
               onClick={prev}
-              aria-label="Previous"
+              aria-label={t.prev}
               className="absolute left-2 top-1/2 -translate-y-1/2 h-9 w-9 flex items-center justify-center
                          border border-black/10 bg-white/90 hover:bg-white text-black shadow-sm"
             >
@@ -134,7 +145,7 @@ export default function ProjectCarousel({ items }: { items: Media[] }) {
             <button
               type="button"
               onClick={next}
-              aria-label="Next"
+              aria-label={t.next}
               className="absolute right-2 top-1/2 -translate-y-1/2 h-9 w-9 flex items-center justify-center
                          border border-black/10 bg-white/90 hover:bg-white text-black shadow-sm"
             >
@@ -158,7 +169,7 @@ export default function ProjectCarousel({ items }: { items: Media[] }) {
               className={`relative shrink-0 border ${
                 idx === i ? "border-black/40" : "border-black/10"
               } bg-white`}
-              aria-label={`Go to item ${idx + 1}`}
+              aria-label={`${t.goto} ${idx + 1}`}
             >
               <div className="relative h-[64px] w-[96px] overflow-hidden">
                 {m.kind === "image" ? (

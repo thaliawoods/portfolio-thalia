@@ -3,6 +3,12 @@ import type { Locale } from "@/data/projects";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+export function generateStaticParams() {
+  return [{ locale: "fr" }, { locale: "en" }];
+}
+
+export const dynamicParams = false;
+
 export default async function LocaleLayout({
   children,
   params,

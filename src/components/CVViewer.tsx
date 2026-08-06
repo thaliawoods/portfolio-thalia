@@ -99,7 +99,7 @@ export default function CVViewer({ locale }: Props) {
           <div className="mx-auto" style={{ width: targetWidth || "100%" }}>
             <Document
               file={file}
-              loading={<div className="text-sm text-black/60">loading…</div>}
+              loading={<div className="text-sm text-black/60">{locale === "fr" ? "chargement…" : "loading…"}</div>}
             >
               <Page
                 pageNumber={1}

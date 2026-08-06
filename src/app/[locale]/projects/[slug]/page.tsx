@@ -160,7 +160,7 @@ export default async function ProjectPage({
                 </div>
               </div>
             ) : (
-              <ProjectCarousel items={media} />
+              <ProjectCarousel items={media} locale={locale} />
             )}
           </FadeIn>
         </section>

@@ -7,7 +7,7 @@ const CVViewer = dynamic(() => import("@/components/CVViewer"), {
   ssr: false,
   loading: () => (
     <div className="border border-black/10 bg-white p-6 text-sm text-black/60">
-      loading…
+      …
     </div>
   ),
 });

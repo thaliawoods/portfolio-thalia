@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ScrollHint from "./ScrollHint";
@@ -30,30 +30,29 @@ export default function RandomProjectGrid({
   projects: ProjectData[];
   locale: string;
 }) {
-  const hasMounted = useRef(false);
-  const [displayImages, setDisplayImages] = useState<ImageData[]>(() => {
-    if (typeof window === "undefined") return projects.map((p) => p.cover);
-    return randomize(projects);
-  });
+  const [displayImages, setDisplayImages] = useState<ImageData[]>(() =>
+    projects.map((p) => p.cover)
+  );
 
-  if (!hasMounted.current && typeof window !== "undefined") {
-    hasMounted.current = true;
-    const randomized = randomize(projects);
-    const needsUpdate = randomized.some((img, i) => img.src !== displayImages[i].src);
-    if (needsUpdate) setDisplayImages(randomized);
-  }
+  // Randomize only after mount so server and first client render match.
+  useEffect(() => {
+    setDisplayImages(randomize(projects));
+  }, [projects]);
 
   const shuffle = useCallback(() => {
     setDisplayImages(randomize(projects));
   }, [projects]);
+
+  const refreshLabel =
+    locale === "fr" ? "Actualiser les images" : "Refresh images";
 
   return (
     <div className="relative flex lg:flex-col gap-6 lg:gap-10 overflow-x-auto lg:overflow-x-visible snap-x snap-mandatory lg:snap-none no-scrollbar px-4 lg:pl-1 lg:pr-20 pb-20">
       <button
         onClick={shuffle}
         className="fixed bottom-6 right-6 z-50 text-2xl text-black/40 hover:text-black transition-colors duration-200"
-        title="Refresh images"
-        aria-label="Refresh images"
+        title={refreshLabel}
+        aria-label={refreshLabel}
       >
         ↻
       </button>
