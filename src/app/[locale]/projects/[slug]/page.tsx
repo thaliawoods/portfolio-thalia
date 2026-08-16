@@ -124,9 +124,11 @@ export default async function ProjectPage({
 
           {content && (
             <FadeIn delay={180}>
-              <p className="text-base font-light leading-relaxed text-[#424242]">
-                {content}
-              </p>
+              <div className="space-y-4 text-base font-light leading-relaxed text-[#424242]">
+                {content.split("\n\n").map((para, idx) => (
+                  <p key={idx}>{para}</p>
+                ))}
+              </div>
             </FadeIn>
           )}
         </div>
