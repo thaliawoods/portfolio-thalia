@@ -441,11 +441,11 @@ export const projects: Project[] = [
       en: "A photo micro-blogging platform dedicated to animals. (school project, team of 3, 6 days)",
     },
     content: {
-      fr: "Projet collectif de type Instagram-like, centré sur la publication de posts image + texte. Mise en place d'un socle full-stack avec Laravel : authentification (Breeze), pages feed et profil, création et suppression de posts, gestion des abonnements et structuration d'une base relationnelle PostgreSQL.\n\nLe projet s'appuie sur un environnement Docker et une UI Tailwind, avec une attention portée à la clarté des parcours (s'inscrire, publier, consulter). Plusieurs fonctionnalités sont laissées en extension (likes, commentaires, pagination).",
-      en: "Team project inspired by Instagram-like platforms, focused on image + text posting. Built a full-stack foundation with Laravel: authentication (Breeze), feed and profile pages, post creation and deletion, follow relationships, and a relational PostgreSQL database.\n\nThe project relies on a Docker environment and a Tailwind-based UI, with a focus on clear user flows (sign up, publish, browse). Several features remain as extensions (likes, comments, pagination).",
+      fr: "Projet collectif de type Instagram-like, centré sur la publication de posts image + texte. Socle full-stack avec Laravel : authentification (Breeze), pages feed et profil, création et suppression de posts, commentaires et abonnements entre membres, sur une base relationnelle PostgreSQL (utilisateurs, posts, commentaires).\n\nLe projet tourne dans un environnement Docker, avec une UI Tailwind et Alpine.js, en soignant la clarté des parcours (s'inscrire, publier, consulter). Les likes et la pagination sont restés en extension.",
+      en: "Team project inspired by Instagram-like platforms, focused on image + text posting. Full-stack foundation with Laravel: authentication (Breeze), feed and profile pages, post creation and deletion, comments and follow relationships, on a relational PostgreSQL database (users, posts, comments).\n\nThe project runs in a Docker environment, with a Tailwind and Alpine.js UI, keeping user flows clear (sign up, publish, browse). Likes and pagination remained as extensions.",
     },
     roles: ["Full-stack (collectif)"],
-    stack: ["Laravel · PHP · Tailwind · PostgreSQL · Docker"],
+    stack: ["Laravel · PHP · Tailwind · Alpine.js · PostgreSQL · Docker"],
     links: [
       {
         label: "GitHub",
@@ -472,7 +472,7 @@ export const projects: Project[] = [
       en: "Team project built under constraints: Bootstrap UI, split into two teams (front / back) then switching mid-way. I contributed on the front in week one (React + e-commerce pages: listing, product detail, admin) and on the back in week two (Express API, MongoDB via Mongoose, first auth building blocks).\n\nThe project covers the core journey (catalog → product page) and an admin baseline; some features remain MVP-level (login/cart not fully completed).",
     },
     roles: ["Full-stack (collectif)"],
-    stack: ["Node.js · Mongoose · Bootstrap"],
+    stack: ["React · Bootstrap · Node.js · Express · MongoDB (Mongoose) · JWT"],
     links: [
       {
         label: "GitHub",
@@ -492,15 +492,15 @@ export const projects: Project[] = [
     years: "2024",
     title: { fr: "Safe or Not?", en: "Safe or Not?" },
     subtitle: {
-      fr: "App iOS (SwiftUI) : avis, alertes et niveau de confiance. (projet école, 6 jours)",
-      en: "SwiftUI iOS app: reviews, alerts and trust level. (school project, 6 days)",
+      fr: "Exploration SwiftUI : carte, recherche et liste de professionnels de santé. (projet école, 6 jours)",
+      en: "SwiftUI exploration: map, search and a list of healthcare professionals. (school project, 6 days)",
     },
     content: {
-      fr: "Exploration de l'approche mobile avec SwiftUI : conception UI, navigation simple depuis une liste vers des écrans détail, et gestion des états. L'app est pensée pour répertorier des professionnel·les de santé selon un niveau de confiance, permettre la publication d'avis et la création d'alertes.",
-      en: "Exploring the mobile approach with SwiftUI: UI design, simple navigation from a list to detail screens, and state handling. The app is designed to list healthcare professionals by trust level, allow users to post reviews, and create alerts.",
+      fr: "Exploration de l'approche mobile avec SwiftUI, en équipe : barre d'onglets, écran de recherche, carte MapKit et fiches praticien combinant carte, photo et présentation. L'app est pensée pour répertorier des professionnel·les de santé de confiance selon les besoins de chacun ; les avis, les alertes et le niveau de confiance sont restés au stade du concept, ce projet court ayant surtout servi de prise en main de SwiftUI.",
+      en: "Exploring the mobile approach with SwiftUI, as a team: a tab bar, a search screen, a MapKit map and practitioner cards combining map, photo and bio. The app is meant to list trusted healthcare professionals based on each person's needs; reviews, alerts and the trust level remained at the concept stage, this short project mainly serving as hands-on practice with SwiftUI.",
     },
     roles: ["Mobile"],
-    stack: ["SwiftUI · iOS"],
+    stack: ["Swift · SwiftUI · MapKit · iOS"],
     links: [
       {
         label: "GitHub",
