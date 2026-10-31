@@ -20,8 +20,8 @@ export async function generateMetadata({
       ? "Thalia Woods | Développeuse Web & Creative Tech"
       : "Thalia Woods | Web Developer & Creative Tech",
     description: fr
-      ? "Portfolio de Thalia Woods. Je conçois et développe des interfaces où se rencontrent code, interaction, narration et direction visuelle."
-      : "Portfolio of Thalia Woods. I design and build interfaces where code, interaction, narrative, and visual direction meet.",
+      ? "Thalia Woods, étudiante en Master Expert en création numérique interactive à Gobelins. Interfaces mêlant code, interaction, narration et direction visuelle."
+      : "Thalia Woods, Master’s student at Gobelins Paris. Interfaces where code, interaction, narrative and visual direction meet.",
   });
 }
 
@@ -37,14 +37,14 @@ export default async function HomePage({
       ? {
           role: "Développeuse Web & Creative Tech",
           blurb:
-            "Je conçois et développe des interfaces où se rencontrent\ncode, interaction, narration et direction visuelle.",
+            "Étudiante en Master Expert en création numérique interactive à Gobelins.\n\nJe conçois et développe des interfaces où se rencontrent code, interaction, narration et direction visuelle.",
           cta: "Portfolio",
           cta2: "Contact",
         }
       : {
           role: "Web Developer & Creative Tech",
           blurb:
-            "I design and build interfaces where code, interaction, narrative, and visual direction meet.",
+            "Master’s student at Gobelins Paris, in Expert en création numérique interactive.\n\nI design and build interfaces where code, interaction, narrative, and visual direction meet.",
           cta: "Portfolio",
           cta2: "Contact",
         };
@@ -55,12 +55,17 @@ export default async function HomePage({
     years: p.years,
     cover: p.cover,
     gallery: p.gallery.filter(
-      (m) => m.kind === "image" && !m.src.includes("midi-controller")
+      (m) =>
+        m.kind === "image" &&
+        !m.src.includes("midi-controller") &&
+        !m.src.includes("canvas-audio/06") &&
+        !m.src.includes("test-lydia/02") &&
+        !m.src.includes("-dark")
     ),
   }));
 
   return (
-    <main className="flex flex-col lg:grid lg:grid-cols-[42%_58%]">
+    <main className="flex flex-col lg:grid lg:grid-cols-[36%_64%]">
 
       <div className="lg:sticky lg:top-16 lg:h-[calc(100vh-4rem)] flex flex-col justify-center px-8 lg:px-14 py-20 lg:py-0">
         <FadeIn>
@@ -76,9 +81,13 @@ export default async function HomePage({
         </FadeIn>
 
         <FadeIn delay={160}>
-          <p className="mt-8 text-sm font-light leading-relaxed text-[#424242] max-w-sm whitespace-pre-line">
-            {t.blurb}
-          </p>
+          <div className="mt-8 space-y-2 text-sm font-light leading-relaxed text-[#424242] max-w-sm">
+            {t.blurb.split("\n\n").map((para, i) => (
+              <p key={i} className="whitespace-pre-line">
+                {para}
+              </p>
+            ))}
+          </div>
         </FadeIn>
 
         <FadeIn delay={240}>

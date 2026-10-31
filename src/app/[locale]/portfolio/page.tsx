@@ -15,7 +15,7 @@ export async function generateMetadata({
     path: "/portfolio",
     title: "Portfolio",
     description: fr
-      ? "Sélection de projets de Thalia Woods : creative coding, web full-stack, design d'interface et collaborations artistiques."
+      ? "Sélection de projets de Thalia Woods : creative coding, web full-stack, design d’interface et collaborations artistiques."
       : "Selected projects by Thalia Woods: creative coding, full-stack web, interface design and artistic collaborations.",
   });
 }

@@ -16,7 +16,7 @@ export async function generateMetadata({
     path: "/cv",
     title: "CV",
     description: fr
-      ? "Le parcours, les compétences et l'expérience de Thalia Woods, développeuse web & creative tech. Versions française et anglaise."
+      ? "Le parcours, les compétences et l’expérience de Thalia Woods, développeuse web & creative tech. Versions française et anglaise."
       : "Background, skills and experience of Thalia Woods, web developer & creative technologist. French and English versions.",
   });
 }

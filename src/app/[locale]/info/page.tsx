@@ -38,9 +38,14 @@ about1:
 about2:
   "Mon travail se situe à la croisée de la technique et de la direction artistique : je conçois des interfaces claires, sensibles et robustes, en portant autant d’attention à la structure des données et à la maintenabilité qu’à l’UX/UI, aux interactions et aux détails visuels.",
 about3:
-  "Après avoir terminé une alternance en tant que développeuse front-end chez Julaya (fintech B2B), je suis actuellement en stage chez Détours en Cinécourt et recherche une alternance de 24 mois dans le cadre de mon Master. À terme, je veux évoluer vers un rôle de Lead Technique : structurer, anticiper et décider, tout en accompagnant une vision créative.",
+  "Actuellement en alternance à la DICOM (Ministère de l’Intérieur) pendant mon Master à Gobelins, après une alternance front-end chez Julaya (fintech B2B) et un stage chez Détours en Cinécourt. À terme, je veux évoluer vers un rôle de Lead Technique : structurer, anticiper et décider, tout en accompagnant une vision créative.",
           eduTitle: "Formation",
           edu: [
+            {
+              institution: "Gobelins Paris",
+              degree: "Titre RNCP niveau 7 (Bac+5)\nExpert en création numérique interactive",
+              year: "2026-2028",
+            },
             {
               institution: "Three.js Journey",
               degree: "Formation en ligne\nThree.js, WebGL, shaders, 3D web",
@@ -48,7 +53,7 @@ about3:
             },
             {
               institution: "Ada Tech School",
-              degree: "RNCP niveau VI (Bac+3)\nConception et développement d'applications",
+              degree: "RNCP niveau VI (Bac+3)\nConception et développement d’applications",
               year: "2023-2026",
             },
             {
@@ -58,7 +63,7 @@ about3:
             },
             {
               institution: "Atelier de Sèvres",
-              degree: "Prépa d'Art - Option Mode",
+              degree: "Prépa d’Art - Option Mode",
               year: "2016-2017",
             },
           ],
@@ -68,8 +73,8 @@ about3:
             { label: "Front", value: "Next.js · React · TypeScript · Tailwind · Angular · HTML · CSS · iOS (SwiftUI)" },
             { label: "Back", value: "Node.js · Express · Strapi · Python · PHP" },
             { label: "Data / ORM", value: "PostgreSQL · Prisma · MongoDB · MySQL" },
-            { label: "Creative coding", value: "Godot · Three.js · MIDI · Web Audio API" },
-            { label: "Outils", value: "Docker · Git · LaTeX · Jira · Figma · Blender · Strapi · Photoshop · InDesign · Illustrator" },
+            { label: "Creative coding", value: "Godot · Three.js · Canvas 2D · GLSL · MIDI · Web Audio API" },
+            { label: "Outils", value: "Docker · Git · CI/CD (GitHub Actions) · Tests (Jest, Playwright) · LaTeX · Jira · Figma · Blender · Photoshop · InDesign · Illustrator" },
           ],
 
           contactTitle: "Contact",
@@ -77,7 +82,7 @@ about3:
           github: "GitHub",
           linkedin: "LinkedIn",
           githubUrl: "https://github.com/thaliawoods",
-          linkedinUrl: "https://www.linkedin.com/",
+          linkedinUrl: "https://www.linkedin.com/in/thalia-woods-794917281/",
         }
       : {
           title: "Info",
@@ -88,9 +93,14 @@ about1:
 about2:
   "My work sits at the intersection of technical development and art direction: I design interfaces that are clear, thoughtful, and robust, with as much attention to data structure and maintainability as to UX/UI, interactions, and visual details.",
 about3:
-  "After completing a front-end developer apprenticeship at Julaya (B2B fintech), I am currently an intern at Détours en Cinécourt and am looking for a 24-month apprenticeship as part of my Master’s degree. In time, I want to grow into a Lead Technical role: structuring, anticipating and deciding, while supporting a creative vision.",
+  "Currently on a work-study contract at DICOM (French Ministry of the Interior) alongside my Master’s at Gobelins, after a front-end apprenticeship at Julaya (B2B fintech) and an internship at Détours en Cinécourt. In time, I want to grow into a Lead Technical role: structuring, anticipating and deciding, while supporting a creative vision.",
           eduTitle: "Education",
           edu: [
+            {
+              institution: "Gobelins Paris",
+              degree: "RNCP Level 7 (Master’s)\nExpert en création numérique interactive",
+              year: "2026-2028",
+            },
             {
               institution: "Three.js Journey",
               degree: "Online course\nThree.js, WebGL, shaders, 3D web",
@@ -118,8 +128,8 @@ about3:
             { label: "Front", value: "Next.js · React · TypeScript · Tailwind · Angular · HTML · CSS · iOS (SwiftUI)" },
             { label: "Back", value: "Node.js · Express · Strapi · Python · PHP" },
             { label: "Data / ORM", value: "PostgreSQL · Prisma · MongoDB · MySQL" },
-            { label: "Creative coding", value: "Godot · Three.js · MIDI · Web Audio API" },
-            { label: "Tools", value: "Docker · Git · LaTeX · Jira · Figma · Blender · Strapi · Photoshop · InDesign · Illustrator" },
+            { label: "Creative coding", value: "Godot · Three.js · Canvas 2D · GLSL · MIDI · Web Audio API" },
+            { label: "Tools", value: "Docker · Git · CI/CD (GitHub Actions) · Testing (Jest, Playwright) · LaTeX · Jira · Figma · Blender · Photoshop · InDesign · Illustrator" },
           ],
 
           contactTitle: "Contact",
@@ -127,7 +137,7 @@ about3:
           github: "GitHub",
           linkedin: "LinkedIn",
           githubUrl: "https://github.com/thaliawoods",
-          linkedinUrl: "https://www.linkedin.com/",
+          linkedinUrl: "https://www.linkedin.com/in/thalia-woods-794917281/",
         };
 
   return (

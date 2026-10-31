@@ -62,7 +62,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               GitHub
             </a>
             <a
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/thalia-woods-794917281/"
               target="_blank"
               rel="noreferrer"
               className="text-xs font-light text-[#6b6b6b] hover:text-black transition-colors duration-200"

@@ -64,8 +64,8 @@ export default function ContactForm() {
           <h1 className="text-5xl font-light mb-4">{t.title}</h1>
           <p className="text-sm font-light text-[#424242]">
             {locale === "fr"
-              ? "Pour collaborer ou juste discuter - n'hésitez pas."
-              : "Whether you'd like to collaborate or just chat - feel free to reach out."}
+              ? "Pour collaborer ou juste discuter - n’hésitez pas."
+              : "Whether you’d like to collaborate or just chat - feel free to reach out."}
           </p>
         </FadeIn>
 
@@ -86,7 +86,7 @@ export default function ContactForm() {
               GitHub
             </a>
             <a
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/thalia-woods-794917281/"
               target="_blank"
               rel="noreferrer"
               className="block text-sm font-light underline underline-offset-4 hover:opacity-60 transition-opacity duration-200"
