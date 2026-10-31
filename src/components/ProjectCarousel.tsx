@@ -22,7 +22,7 @@ export default function ProjectCarousel({
 
   const t =
     locale === "fr"
-      ? { play: "Lire la vidéo", prev: "Précédent", next: "Suivant", goto: "Aller à l'élément" }
+      ? { play: "Lire la vidéo", prev: "Précédent", next: "Suivant", goto: "Aller à l’élément" }
       : { play: "Play video", prev: "Previous", next: "Next", goto: "Go to item" };
 
   const prev = () => { setPlaying(false); setI((v) => (v - 1 + max) % max); };
@@ -39,9 +39,6 @@ export default function ProjectCarousel({
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [max]);
-
-  // La lecture est réinitialisée dans les handlers de navigation (prev/next/vignettes) ;
-  // le nettoyage HLS est géré par le cleanup de l'effet de lecture ci-dessous.
 
   useEffect(() => {
     if (!playing || !videoRef.current) return;

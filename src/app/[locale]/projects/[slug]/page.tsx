@@ -88,52 +88,8 @@ export default async function ProjectPage({
         </div>
       </FadeIn>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-8">
-        <div className="lg:col-span-4 lg:pt-6">
-          <FadeIn delay={120}>
-            <div className="space-y-5 mb-8">
-              <div>
-                <p className="text-xs tracking-widest text-[#6b6b6b] uppercase mb-1">{t.role}</p>
-                <p className="text-base font-light text-black/70">{project.roles.join(" · ")}</p>
-              </div>
-              <div>
-                <p className="text-xs tracking-widest text-[#6b6b6b] uppercase mb-1">{t.stack}</p>
-                <p className="text-base font-light text-black/70">{project.stack.join(" · ")}</p>
-              </div>
-              {project.links.length > 0 && (
-                <div>
-                  <p className="text-xs tracking-widest text-[#6b6b6b] uppercase mb-1">{t.links}</p>
-                  <ul className="flex gap-4">
-                    {project.links.map((l) => (
-                      <li key={l.href}>
-                        <a
-                          href={l.href}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="text-base font-light underline underline-offset-4 hover:opacity-60 transition-opacity duration-200"
-                        >
-                          {l.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          </FadeIn>
-
-          {content && (
-            <FadeIn delay={180}>
-              <div className="space-y-4 text-base font-light leading-relaxed text-[#424242]">
-                {content.split("\n\n").map((para, idx) => (
-                  <p key={idx}>{para}</p>
-                ))}
-              </div>
-            </FadeIn>
-          )}
-        </div>
-
-        <section className={content ? "lg:col-span-8" : "lg:col-span-12"}>
+      <div className="mt-8">
+        <section className="relative z-10 mb-8 lg:float-right lg:mb-0 lg:w-[calc(66.6667%+26.67px)] lg:pl-10">
           <FadeIn delay={180}>
             {media.length <= 1 ? (
               <div className="w-full overflow-hidden bg-white">
@@ -167,6 +123,55 @@ export default async function ProjectPage({
             )}
           </FadeIn>
         </section>
+
+        <div className="lg:pt-6">
+          <FadeIn delay={120}>
+            <div className="space-y-5 mb-8">
+              <div>
+                <p className="text-xs tracking-widest text-[#6b6b6b] uppercase mb-1">{t.role}</p>
+                <p className="text-base font-light text-black/70">{project.roles.join(" · ")}</p>
+              </div>
+              <div>
+                <p className="text-xs tracking-widest text-[#6b6b6b] uppercase mb-1">{t.stack}</p>
+                <p className="text-base font-light text-black/70">{project.stack.join(" · ")}</p>
+              </div>
+              {project.links.length > 0 && (
+                <div>
+                  <p className="text-xs tracking-widest text-[#6b6b6b] uppercase mb-1">{t.links}</p>
+                  <ul className="flex gap-4">
+                    {project.links.map((l) => (
+                      <li key={l.href}>
+                        <a
+                          href={l.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-base font-light underline underline-offset-4 hover:opacity-60 transition-opacity duration-200"
+                        >
+                          {l.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </FadeIn>
+
+        </div>
+
+        {content && (
+          <FadeIn delay={240}>
+            <div className="space-y-7 text-base font-light leading-relaxed text-[#424242]">
+              {content.split("\n\n").map((para, idx) => (
+                <p key={idx} className="flow-root">
+                  {para}
+                </p>
+              ))}
+            </div>
+          </FadeIn>
+        )}
+
+        <div className="clear-both" />
       </div>
     </main>
   );
