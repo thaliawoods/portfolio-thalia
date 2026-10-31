@@ -61,7 +61,7 @@ export default function RandomProjectGrid({
         <Link
           key={p.slug}
           href={`/${locale}/projects/${p.slug}`}
-          className="group block shrink-0 lg:h-[calc(100vh-4rem)] bg-white"
+          className={`group block shrink-0 lg:h-[calc(100vh-4rem)] bg-white ${i === projects.length - 1 ? "" : "lg:snap-start lg:[scroll-snap-stop:always]"}`}
           aria-label={p.title}
         >
           <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-full overflow-hidden bg-white">

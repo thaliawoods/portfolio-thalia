@@ -159,3 +159,14 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 4rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-snap-type: none;
+  }
+}
