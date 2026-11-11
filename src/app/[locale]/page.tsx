@@ -58,6 +58,7 @@ export default async function HomePage({
       (m) =>
         m.kind === "image" &&
         !m.src.includes("midi-controller") &&
+        !m.src.includes("canvas-audio/05") &&
         !m.src.includes("canvas-audio/06") &&
         !m.src.includes("test-lydia/02") &&
         !m.src.includes("-dark")
