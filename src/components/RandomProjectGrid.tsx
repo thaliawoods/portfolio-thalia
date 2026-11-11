@@ -91,8 +91,8 @@ function ProjectCard({
   return (
     <Link
       href={`/${locale}/projects/${project.slug}`}
-      className={`group block shrink-0 lg:h-[calc(100vh-4rem)] bg-white ${
-        snap ? "lg:snap-start lg:[scroll-snap-stop:always]" : ""
+      className={`group block shrink-0 lg:h-[calc(100vh-4rem)] lg:flex lg:flex-col lg:justify-center bg-white ${
+        snap ? "lg:snap-start" : ""
       }`}
       aria-label={project.title}
       onMouseEnter={() => {
@@ -101,7 +101,7 @@ function ProjectCard({
       }}
       onMouseLeave={stop}
     >
-      <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-full overflow-hidden bg-white">
+      <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-full lg:max-h-[70vh] overflow-hidden bg-white">
         {shown.map((m) => (
           <Image
             key={m.src}
