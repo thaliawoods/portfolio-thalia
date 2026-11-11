@@ -38,7 +38,7 @@ about1:
 about2:
   "Mon travail se situe à la croisée de la technique et de la direction artistique : je conçois des interfaces claires, sensibles et robustes, en portant autant d’attention à la structure des données et à la maintenabilité qu’à l’UX/UI, aux interactions et aux détails visuels.",
 about3:
-  "Actuellement en alternance à la DICOM (Ministère de l’Intérieur) pendant mon Master à Gobelins, après une alternance front-end chez Julaya (fintech B2B) et un stage chez Détours en Cinécourt. À terme, je veux évoluer vers un rôle de Lead Technique : structurer, anticiper et décider, tout en accompagnant une vision créative.",
+  "Actuellement en alternance à la DICOM (Ministère de l’Intérieur) pendant mon Master à Gobelins, après une alternance front-end chez Julaya (fintech B2B) et un stage chez Détours en Cinécourt.",
           eduTitle: "Formation",
           edu: [
             {
@@ -93,7 +93,7 @@ about1:
 about2:
   "My work sits at the intersection of technical development and art direction: I design interfaces that are clear, thoughtful, and robust, with as much attention to data structure and maintainability as to UX/UI, interactions, and visual details.",
 about3:
-  "Currently on a work-study contract at DICOM (French Ministry of the Interior) alongside my Master’s at Gobelins, after a front-end apprenticeship at Julaya (B2B fintech) and an internship at Détours en Cinécourt. In time, I want to grow into a Lead Technical role: structuring, anticipating and deciding, while supporting a creative vision.",
+  "Currently on a work-study contract at DICOM (French Ministry of the Interior) alongside my Master’s at Gobelins, after a front-end apprenticeship at Julaya (B2B fintech) and an internship at Détours en Cinécourt.",
           eduTitle: "Education",
           edu: [
             {
