@@ -101,7 +101,7 @@ canvas,
   cursor: url("/cursor.svg") 12 12, auto;
 }
 
-/* Keep meaningful cursors where they carry information */
+/* keep meaningful cursors where they carry information */
 input:not([type="button"]):not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
 textarea {
   cursor: text;
@@ -113,7 +113,7 @@ button:disabled,
   cursor: not-allowed;
 }
 
-/* ── Keyboard focus (visible only when navigating with the keyboard) ── */
+/* ── keyboard focus (visible only when navigating with the keyboard) ── */
 :focus-visible {
   outline: 2px solid var(--foreground);
   outline-offset: 2px;
